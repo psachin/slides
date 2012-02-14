@@ -1,0 +1,148 @@
+\documentclass[10pt,mathserif]{beamer}
+\mode<presentation>{
+\usetheme{Frankfurt}
+\beamertemplateshadingbackground{red!5}{yellow!5}
+\setbeamertemplate{navigation symbols}{}
+\useinnertheme{rounded}
+\useoutertheme{shadow}
+\useoutertheme{infolines}
+\usecolortheme[RGB={0,104,139}]{structure}%deepskyblue
+\usefonttheme{serif}
+}
+
+\usepackage{graphicx}
+%\usepackage{graphics,floatflt}
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{wasysym}
+\usepackage{helvet}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title[mutt/pine/pop/bash]{Terminal emailers: mutt}
+\author[Dilawar \& Prashant]{Dilawar Singh. \&
+			Prashant Dave\\
+                        $\;$\\
+Department of Electrical Engineering\\
+Indian Institute of Technology Bombay}
+
+\institute[IIT Bombay]{ }
+
+\date[]{February 18, 2012}
+\begin{document}
+\bibliographystyle{alpha}
+
+\begin{frame}
+\maketitle
+\end{frame}
+
+\begin{frame}
+ \frametitle{Outline}
+\begin{enumerate}
+ \item How to pop : getmail/fetchmail
+\item msmtp for sending email 
+\item mutt for reading (like pine)
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+Please download following files from github repository of\\
+Dilawar Singh: https://github.com/dilawar
+
+Go to MyPublic, and then to scripts and download:
+
+\begin{itemize}
+\item muttrc (the main one)
+\item getmail for each of gpo and ee
+\item msmtprc (for sending email)
+
+\item python file mutt-ldap.py  (for using control-t for completing using ldap ids, then
+   to choose)
+
+\item ldap (perl script)
+\end{itemize}
+
+We prefer that ubuntu GNU/linux laptops be brought.\\
+
+(cygwin too is fine, perhaps.)
+
+\end{frame}
+
+\end{document}
+
+How to pop using getmail utility
+(also fetchmail)
+
+msmtp (for sending email ) like sendmail (perhaps)
+
+mutt is for just reading. Just like pine.
+
+mbox and maildir (two formats for storing files in our computer: for searching
+purposes, etc differences)
+
+crontab for scheduling getmail (for every half hour, etc) to get from 
+
+python script to send queries to ldap (iitb allows this)
+for getting gpo email-addresses
+
+Dilawar's github repository
+
+editor can be our preference. (vim/gedit/nano/emacs)
+
+aliases of various email addresses
+
+mailing list (one alias for several addresses, course participant/TAs)
+
+html browsing (from within emailer)  (for extracting email)
+
+can send content carefully typed in a txt file, and send that to several.
+(tag several emails and respond including all emails into our response.)
+
+pgp (for certificate signature)  (for more security)
+
+
+
+
+
+
+-0----
+
+from Dilawar's github
+
+MyPublic/scripts
+
+muttrc (the main one)
+getmail for each of gpo and ee
+msmtprc (for sending email)
+
+python file mutt-ldap.py  (for using control-t for completing using ldap ids, then
+   to choose)
+
+ldap (perl script)
+
+bring linux (ubuntu).
+  We might be able to help *in the workshop* if you have cygwin (in case you have 
+     windows.)
+
+can also *leave* emails on the server. pop without deleting from server.
+(server as main one.)
+
+lee (wireless)
+
+tunnelling for gmail (only due to iit firewall)
+
+can overall *keep* emails on server, but can copy of ALL emails
+or JUST ONE email on our computer. Can also delete all from THERE.
+
+
+--------
+pine is better for :
+for mime-types (for certain files (like pdf, html, wmv, mov, automatically
+understand which program to use, and NOT from file extension , but
+header)
+
+-----------
+
+scripts: mail program, (without mutt-pine)
+  
+
