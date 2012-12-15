@@ -1,0 +1,111 @@
+\documentclass{beamer}
+\usetheme{Madrid} % My favorite!
+\setbeamercolor{normal text}{fg=black}
+\setbeamercolor{structure}{fg=blue} 
+%\usetheme{Amsterdam} % My favorite!
+%\usetheme{Boadilla} % Pretty neat, soft color.
+%\usetheme{default}
+%\usetheme{Warsaw}
+%\usetheme{Bergen} % This template has nagivation on the left
+%\usetheme{Frankfurt} % Similar to the default 
+%with an extra region at the top.
+%\usecolortheme{seahorse} % Simple and clean template
+%\usetheme{Darmstadt} % not so good
+% Uncomment the following line if you want %
+% page numbers and using Warsaw theme%
+%\setbeamertemplate{footline}[page number]
+%\setbeamertemplate{}[frame number]
+\setbeamercovered{transparent}
+%\setbeamercovered{invisible}
+% To remove the navigation symbols from 
+% the bottom of slides%
+%\setbeamertemplate{navigation symbols}{} 
+%
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{pxfonts}
+\usepackage{listings}
+%\usepackage{bm}         % For typesetting bold math (not \mathbold)
+\logo{\includegraphics[height=1.6cm]{aakash-logo.png}}
+%
+\title[Aakash - tablet for every Indian]{Aakash 2}
+%\titlegraphic{\includegraphics[width=3cm]{logo.png}}
+\author{}
+%\logo{\includegraphics[height=0.6cm]{logo.png}\vspace{210pt}}
+%% 
+\institute[MHRD]
+{NME-ICT(MHRD), \\
+Aakash Project\\
+\medskip
+%isachin@iitb.ac.in
+%{\emph{isachin@iitb.ac.in}}
+}
+%% \date{\today}
+\date{December 12, 2012}
+% \today will show current date. 
+% Alternatively, you can specify a date.
+%
+\begin{document}
+
+%% config for listing
+\lstset{language=bash,
+        numbers=left,
+        numbersep=6pt,
+        numberstyle=\tiny,
+        showstringspaces=false,
+        aboveskip=-50pt,
+        frame=leftline,
+        keywordstyle=\color{black},
+        commentstyle=\color{blue},
+        stringstyle=\color{black},
+        }
+
+%% 
+%% slide 0
+\begin{frame}
+\titlepage
+\end{frame}
+%% 
+%% slide 1
+\begin{frame}
+\frametitle{Aakash specifications}
+\begin{columns}
+\begin{column}{.48\textwidth}
+Aakash
+\color{red}\rule{\linewidth}{2pt}
+\begin{itemize}
+  \item 366 Mhz Processor
+  \item 256 MB RAM
+  \item 2 GB ROM
+  \item 2100 mAh battery
+  \item Resistive touch 
+  \item Android Froyo (2.2) 
+  \item Wifi connectivity
+  \item No camera
+  \item No Accelerometer
+\end{itemize}
+\end{column}%
+\hfill%
+\begin{column}{.48\textwidth}
+Aakash 2
+\color{blue}\rule{\linewidth}{2pt}
+\begin{itemize}
+  \item 1 Ghz Processor
+  \item 512 MB RAM
+  \item 4 GB ROM
+  \item 3000 mAh battery
+  \item Multi-touch, Capacitive
+  \item Android ICS (4.0.4) 
+  \item Wifi connectivity
+  \item Front camera
+  \item Accelerometer
+\end{itemize}
+\end{column}%
+\end{columns}
+\end{frame}
+%% 
+%% End of slides
+
+\end{document} 
+
