@@ -1,0 +1,180 @@
+\documentclass{beamer}
+%
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+%% themes .sty files download
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/beamer/base/themes/theme
+%% 
+\mode<presentation>
+{
+  \usetheme{Frankfurt}      % or try Darmstadt, Madrid, Warsaw, ...
+  %% \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usecolortheme[RGB={0,104,139}]{structure}%deepskyblue
+  \usefonttheme{serif}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+  \useinnertheme{rounded}
+  %% \useoutertheme{shadow}
+  %% \useoutertheme{infolines}
+} 
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\logo{\includegraphics[height=1.2cm]{scipyshiny_small.png}}
+\setbeamercovered{transparent}
+
+% On writeLaTeX, these lines give you sharper preview images.
+% You might want to comment them out before you export, though.
+\usepackage{pgfpages}
+\pgfpagesuselayout{resize to}[%
+  physical paper width=8in, physical paper height=6in]
+
+\title[Python on Aakash]{Python on Aakash}
+\author{www.github.com/androportal}
+\institute{Indian Institute of Technology, Bombay}
+\date{December 29,2012}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% Uncomment these lines for an automatically generated outline.
+\begin{frame}{Outline}
+ \tableofcontents
+\end{frame}
+
+\section{Introduction}
+\subsection{About Aakash}
+\begin{frame}{Introduction}
+\begin{itemize}
+  \item {\tt Aakash} - a low cost access device
+  \item Specially for student to help them learn
+\end{itemize}
+\vskip 1cm
+\begin{block}{motive}
+  Should provide more than any portable device. Students can explore
+  it and add their own features 
+\end{block}
+\end{frame}
+
+\subsection{demo}
+\begin{frame}{Demo}
+\begin{itemize}
+  \item aakash pic
+  \item demo - \{android version\}
+\end{itemize}
+\end{frame}
+
+\section{Hardware interfacing}
+
+\subsection{GNU/linux on Aakash}
+\begin{frame}{Linux}
+  \begin{block}{}
+    \begin{itemize}
+    \item {\tt GNU/linux} and alternate OS for students and teachers
+      on Aakash
+    \item runs from {\tt SDcard}
+    \end{itemize}
+  \end{block}
+  \vskip 1cm
+  \centerline {\bf demo}
+\end{frame}
+
+\subsection{Arduino}
+\begin{frame}{Arduino}
+  \begin{block}{}
+    {\tt arduino} an open-source electronics
+    prototyping platform
+    \end{block}
+  \vskip 1cm
+  \centerline {\bf demo}
+\end{frame}
+
+\subsection{expEyes}
+\begin{frame}{expEyes}
+  \begin{block}{}
+    {\tt expEyes} A tool for learning science by exploring and experimenting
+  \end{block}
+  \vskip 1cm
+  \centerline {\bf demo}
+\end{frame}
+
+\section{Applications on Aakash}
+  \subsection{APL}
+  \begin{frame}{Aakash Programming Lab}
+    \begin{itemize}
+      \item easy to use programming enviroment
+      \item can code in {\tt Python}, {\tt C}, {\tt C++}, and {\tt Scilab}
+    \end{itemize}
+  \end{frame}
+
+  \subsection{demo of APL}
+  \begin{frame}{Demo}
+    \begin{block}{}
+      \center {\bf demo}
+    \end{block}
+  \end{frame}
+
+  \subsection{Accouting on Aakash}
+  \begin{frame}{Accouting on Aakash}
+    \begin{itemize}
+      \item An easy to use and portable Accouting software for the
+        first time on Aakash
+      \item robust {\tt Python} backend
+    \end{itemize}
+  \end{frame}
+
+  \subsection{demo of Accouting on Aakash}
+  \begin{frame}{Demo}
+    \begin{block}{}
+      \center {\bf demo}
+    \end{block}
+  \end{frame}
+
+  
+
+
+%% \section{Some \LaTeX{} Examples}
+%% \subsection{Tables and Figures}
+%% \begin{frame}{Tables and Figures}
+%%   \begin{itemize}
+%%   \item Use \texttt{tabular} for basic tables --- see Table~\ref{tab:widgets}, for example.
+%%   \item You can upload a figure (JPEG, PNG or PDF) using the files menu. 
+%%   \item To include it in your document, use the \texttt{includegraphics} command (see the comment below in the source code).
+%%   \end{itemize}
+%% \end{frame}
+
+% Commands to include a figure:
+%\begin{figure}
+%\includegraphics[width=\textwidth]{your-figure's-file-name}
+%\caption{\label{fig:your-figure}Caption goes here.}
+%\end{figure}
+
+%% \begin{table}
+%% \centering
+%% \begin{tabular}{l|r}
+%% Item & Quantity \\\hline
+%% Widgets & 42 \\
+%% Gadgets & 13
+%% \end{tabular}
+%% \caption{\label{tab:widgets}An example table.}
+%% \end{table}
+
+
+%% \subsection{Mathematics}
+
+%% \begin{frame}{Readable Mathematics}
+
+%% Let $X_1, X_2, \ldots, X_n$ be a sequence of independent and identically distributed random variables with $\text{E}[X_i] = \mu$ and $\text{Var}[X_i] = \sigma^2 < \infty$, and let
+%% $$S_n = \frac{X_1 + X_2 + \cdots + X_n}{n}
+%%       = \frac{1}{n}\sum_{i}^{n} X_i$$
+%% denote their mean. Then as $n$ approaches infinity, the random variables $\sqrt{n}(S_n - \mu)$ converge in distribution to a normal $\mathcal{N}(0, \sigma^2)$.
+
+%% \end{frame}
+
+\end{document}
