@@ -1,0 +1,5 @@
+* Slides made in org-mode
+
+http://orgmode.org/worg/org-tutorials/org-beamer/tutorial.html
+
+http://orgmode.org/manual/LaTeX_002fPDF-export-commands.html#LaTeX_002fPDF-export-commands
