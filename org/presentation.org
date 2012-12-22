@@ -4,8 +4,8 @@
 #+BEAMER_FRAME_LEVEL: 2
 
 #+LANGUAGE:  en
-#+OPTIONS:   H:3 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
-#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:t d:nil todo:t pri:nil tags:not-in-toc
 #+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
 #+EXPORT_SELECT_TAGS: export
 #+EXPORT_EXCLUDE_TAGS: noexport
@@ -14,29 +14,43 @@
 #+XSLT:
 #+COLUMNS: %40ITEM %10BEAMER_env(Env) %9BEAMER_envargs(Env Args) %4BEAMER_col(Col) %10BEAMER_extra(Extra)
 
-#+BEAMER_HEADER_EXTRA: \usetheme{Warsaw}\usecolortheme{default}\useoutertheme{infolines}\setbeamercovered{transparent}
-#+PROPERTY: BEAMER_col_ALL 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0 :ETC
+# +PROPERTY: BEAMER_col_ALL 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0 :ETC
 
-#+LaTeX_HEADER: \usepackage[english]{babel} \usepackage{ae,aecompl}
-#+LaTeX_HEADER: \usepackage{mathpazo,courier,euler} \usepackage[scaled=.95]{helvet}
+#+LaTeX_HEADER:  \usetheme{Frankfurt}   
+#+LaTeX_HEADER:  \usecolortheme[RGB={0,104,139}]{structure}%deepskyblue
+#+LaTeX_HEADER:  \usefonttheme{serif}  % or try serif, structurebold, ...
+#+LaTeX_HEADER:  \setbeamertemplate{navigation symbols}[horizontal]
+#+LaTeX_HEADER:  \setbeamertemplate{caption}[numbered]
+#+LaTeX_HEADER:  \useinnertheme{rounded}
+
+#+LaTeX_HEADER: \setbeamercovered{transparent}
+#+LaTeX_HEADER: \usepackage{pgfpages}
+#+LaTeX_HEADER: \pgfpagesuselayout{resize to}[physical paper width=8in, physical paper height=6in]
+
+#+LaTeX_HEADER: \logo{\includegraphics[height=1cm,width=1cm]{scipyshiny_small.png}}
+#+LaTeX_HEADER: \usepackage{array}
+#+LaTeX_HEADER: \usepackage{graphicx}
+#+LaTeX_HEADER: \usepackage{hyperref}
+#+LaTeX_HEADER:  \usepackage[english]{babel}
+#+LaTeX_HEADER: \usepackage{pxfonts}
 #+LaTeX_HEADER: \usepackage{listings}
+#+LaTex_HEADER: \lstset{numbers=left,numbersep=6pt,numberstyle=\tiny,showstringspaces=false,aboveskip=-50pt,frame=leftline,keywordstyle=\color{black},commentstyle=\color{orange},stringstyle=\color{black},}
 
-#+LaTeX_HEADER:\lstset{language=Python, basicstyle=\ttfamily\bfseries,
-#+LaTeX_HEADER:  commentstyle=\color{red}\itshape, stringstyle=\color{darkgreen},
-#+LaTeX_HEADER:  showstringspaces=false, keywordstyle=\color{blue}\bfseries}
-
-#+LaTeX_HEADER: \subtitle{A DSL for Declarative UIs}
-#+LaTeX_HEADER: \institute{Indian Institute of Technology, Bombay}
 
 #+TITLE:     presentation.org
 #+AUTHOR:    sachin
 #+EMAIL:     iclcoolster@gmail.com
-#+DATE:      December 20, 2012
+#+LATEX_HEADER: \date{today}
+##+DATE:      December 20, 2012
+
+#+LaTeX_HEADER: \subtitle{writing beamer presentation in org-mode}
+#+LaTeX_HEADER: \institute{Indian Institute of Technology, Bombay}
 
 #+DESCRIPTION: my first presentation made in org mode
 #+KEYWORDS: org mode, emacs, latex, beamer, pdf
 
 * Introduction
+
 ** A simple slide
 This slide consist of some text with a number of bullets points
 
@@ -44,5 +58,205 @@ This slide consist of some text with a number of bullets points
 - some more text to go here. THis is really a crap. more goes
   here. and this is really a BUllshit
 
-
 and the slide ends here
+
+* summary
+  
+** Second slide
+   texts in various formats
+
+   - this is in *bold*
+   - this is _underline_
+   - this is /emphasis/
+   - and this is the [[www.google.ru][link]]
+
+** quote
+#+begin_quote
+Emacs org-mode is a 
+great presentation tool 
+- Fast to beautiful slides
+- Arne Babenhauserheide
+#+end_quote
+     
+* tables
+
+** simple table
+
+   #+CAPTION: A long table
+#   #+ATTR_LaTeX: longtable align=c|c|c
+   #+LABEL: tab:long   
+
+|-------+-------+-----|
+| Name  | Phone | Age |
+|-------+-------+-----|
+| Peter |  1234 |  17 |
+| Anna  |  4321 |  25 |
+|-------+-------+-----|
+| sds   |    ds |  sd |
+|-------+-------+-----|
+
+
+   #+CAPTION: A second table
+   #+ATTR_LaTeX: table align=c|c|c
+#   #+LABEL: tab:long   
+|-------+-------+-----|
+| Name  | Phone | Age |
+|-------+-------+-----|
+| Peter |  1234 |  17 |
+| Anna  |  4321 |  25 |
+|-------+-------+-----|
+| sds   |    ds |  sd |
+|-------+-------+-----|
+
+* images
+
+** simple image
+
+  #+CAPTION:    Scipy logo
+  #+LABEL:      fig:SED-HR4049
+  #+ATTR_LaTeX: width=5cm,angle=0
+
+  [[/home/sachin/github/slides/org/scipyshiny_small.png]]
+
+** second image (resized & rotated)
+
+  #+CAPTION:    Scipy logo
+  #+LABEL:      fig:SED-HR4049
+  #+ATTR_LaTeX: width=2cm,angle=50
+  [[/home/sachin/github/slides/org/scipyshiny_small.png]]
+
+* blocks
+
+** I love Python
+***   Why? 	                                                  :B_block:							    
+      :PROPERTIES:
+      :BEAMER_env: block
+      :END:
+      - Lets me focus on the Problem
+      - Interactive
+      - Readable
+
+** A more complex slide
+   This slide illustrates the use of Beamer blocks.  The following text,
+   with its own headline, is displayed in a *block*
+*** Org mode increases productivity                               :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+    - org mode means not having to remember LaTeX commands.
+    - it is based on ascii text which is inherently portable.
+    - Emacs!
+
+***   Why? 	                                                  :B_block:							    
+      :PROPERTIES:
+      :BEAMER_env: block
+      :END:
+      - Lets me focus on the Problem
+
+* columns
+** single column
+   
+*** Code :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.3
+    :END:
+    - one
+    - two
+    - three
+
+** two columns
+
+*** Code :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.3
+    :END:
+    - one
+    - two
+    - three
+
+
+*** Code :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.3
+    :END:
+    - four
+    - five
+    - six
+
+** two columns with block
+
+*** Simple block  :BMCOL:B_block:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :BEAMER_env: block
+    :END:
+    - one
+    - two
+    - three
+
+*** second block 					      :BMCOL:B_block:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :BEAMER_env: block
+    :END:
+    - four
+    - five
+    - six
+
+* code
+** handling code with bable 
+*** for loop 							      :BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :END:
+#+begin_src bash
+#!/bin/bash
+for file in $(ls)
+do
+    echo $file
+done
+exit 0
+#+end_src
+
+*** code in a block                                                   :BMCOL:B_block:
+    :PROPERTIES:
+    :BEAMER_env: example
+    :BEAMER_col: 0.5
+    :END:
+#+begin_src bash
+#!/bin/bash
+for file in $(ls)
+do
+    echo $file
+done
+exit 0
+#+end_src
+
+
+
+
+** listing - c
+#+begin_LaTeX
+\begin{lstlisting}[language=c]
+/* a comment */
+for (int i = 1; i != 10; ++i)
+    std::cout << i << ": hello, world!"
+              << std::endl;
+\end{lstlisting}
+#+end_LaTeX
+
+** listing - bash
+#+begin_LaTeX
+\begin{lstlisting}[language=bash]
+#!/bin/bash
+# a comment
+for file in $(ls)
+do
+    echo $file
+done
+exit 0
+\end{lstlisting}
+#+end_LaTeX
+
+* reference
+** all ref goes here
