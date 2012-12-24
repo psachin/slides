@@ -26,15 +26,16 @@
 \usepackage{pxfonts}
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
-\titlegraphic{\includegraphics[width=4.6cm,height=3cm]{aakash-logo.png}}
+\titlegraphic{\includegraphics[width=4.7cm,height=3cm]{aakash-logo.png}}
 \logo{\includegraphics[height=1.2cm]{scipyshiny_small.png}}
 \setbeamercovered{transparent}
 
+%% if enable below line, will \href{} or \url will not work
 % On writeLaTeX, these lines give you sharper preview images.
 % You might want to comment them out before you export, though.
-\usepackage{pgfpages}
-\pgfpagesuselayout{resize to}[%
-  physical paper width=8in, physical paper height=6in]
+%% \usepackage{pgfpages}
+%% \pgfpagesuselayout{resize to}[%
+%%   physical paper width=8in, physical paper height=6in]
 
 \title[Python on Aakash]{Python on Aakash}
 \author{Srikant \& Sachin}
@@ -57,12 +58,12 @@
 \begin{frame}{Introduction}
 \begin{itemize}
   \item {\tt Aakash} - a low cost access device
-  \item Available for student at less than \$22
+  \item Available for student at less than {\bf \$22}
 \end{itemize}
 \begin{columns}
 \begin{column}{.48\textwidth}
 %\color{red}\rule{\linewidth}{2pt}
-\begin{block}{Aakash specifications}
+\begin{block}{Aakash-2 specifications}
 \begin{itemize}
   \item 1 Ghz Processor
   \item 512 MB RAM
@@ -76,48 +77,40 @@
 \end{itemize}
 \end{block}
 \end{column}%
-\begin{column}{.48\textwidth}
-% \begin{block}{}
+\begin{column}{.20\textwidth}
+ \begin{block}{}
   \centerline{\href{file:///home/sachin/Videos/fossin/final.AVI}{Demo}}
-%   \centerline{\bf{video}}
-% \end{block}
+ \end{block}
 \end{column}%
 \end{columns}
 \end{frame}
-
-%\subsection{demo}
-%% \begin{frame}{Demo}
-%% \begin{itemize}
-%%   \item aakash pic
-%%   \item demo - \{android version\}
-%% \end{itemize}
-%% \end{frame}
 
 \section{Applications on Aakash(Android)}
   \subsection{IPython notebook}
   \begin{frame}{IPython notebook}
     \begin{itemize}
-      \item Ipython notebook with {\tt Matplotlib} works on android with
-        firefox or chrome web-browser
-        \pause
+    \item Ipython notebook with {\tt Matplotlib} works on android
+      with firefox or chrome web-browser 
+      \pause
     \end{itemize}
     \begin{block}{}
-      \center {\bf demo}
+      \centerline{\href{file:///home/sachin/Videos/fossin/final.AVI}{Demo}}
     \end{block}
   \end{frame}
-
+  
   \subsection{Aakash Programming Lab}
   \begin{frame}{Aakash Programming Lab}
     \begin{itemize}
-      \item Full fledged programming environment for {\tt Python-2.7.2} and other
-        languages
-      \item {\tt Scilab-5.4} - Open source software for numerical computation
-      \item Was extended to {\tt C} and {\tt C++} with {\tt GCC 4.6.3}
-      \item Offline docs and reference manual
+      \item Full fledged programming environment for {\tt
+        Python-2.7.2} and other languages
+      \item {\tt Scilab-5.4}, an Open source software for numerical
+        computation
+      \item Was extended to {\tt C} and {\tt C++} with {\tt GCC-4.6.3}
+      \item Offline docs and reference manual 
         \pause
     \end{itemize}
     \begin{block}{}
-      \center {\bf demo}
+      \centerline{\href{file:///home/sachin/Videos/fossin/final.AVI}{Demo}}
     \end{block}
   \end{frame}
 
@@ -130,13 +123,13 @@
       \item Easy to use UI
         \pause
         \begin{itemize}
-          \item Android-xmlrcp client side (java)library
-          \item pysqlite2 binding
+          \item {\tt Android-xmlrcp} client side ({\tt java)})library
+          \item {\tt pysqlite2} binding
         \end{itemize}
         \pause
     \end{itemize}
     \begin{block}{}
-      \center {\bf demo}
+      \centerline{\href{file:///home/sachin/Videos/fossin/final.AVI}{Demo}}
     \end{block}
   \end{frame}
 
@@ -152,7 +145,7 @@
     \end{block}
     \end{frame}
 
-  \subsection{Challenges contd..}
+%  \subsection{Challenges contd..}
   \begin{frame}{Challenges in Android}
     \begin{block}{IPython}
       \begin{itemize}
@@ -174,13 +167,16 @@
 \begin{frame}{Linux}
   \begin{block}{}
     \begin{itemize}
-    \item {\tt linux} and alternate OS for students and teachers
-      on Aakash
+    \item {\tt linux} and alternate OS for students and teachers on
+      Aakash
     \item runs entirely from {\tt SDcard}
+      \pause
     \end{itemize}
   \end{block}
-  \vskip 1cm
-  \centerline {\bf demo}
+%  \vskip 1cm
+  \begin{block}{}
+    \centerline{\href{file:///home/sachin/Videos/fossin/final.AVI}{Demo}}
+  \end{block}
 \end{frame}
 
 \subsection{Arduino}
@@ -189,7 +185,9 @@
     An open-source electronics prototyping platform
   \end{block}
 %  \vskip 1cm
-  \centerline {\bf demo}
+  \begin{block}{}
+    \centerline{\href{file:///home/sachin/Videos/fossin/final.AVI}{Demo}}
+  \end{block}
 \end{frame}
 
 \subsection{expEyes}
@@ -197,8 +195,10 @@
   \begin{block}{expEyes}
     A tool for learning science by exploring and experimenting
   \end{block}
-  \vskip 1cm
-  \centerline {\bf demo}
+%  \vskip 1cm
+ \begin{block}{}
+    \centerline{\href{file:///home/sachin/Videos/fossin/final.AVI}{Demo}}
+  \end{block}
 \end{frame}
 
  \subsection{Challenges}
@@ -231,13 +231,19 @@
     \end{block}
   \end{frame}
 
- \subsection{Linux on Aakash}
+  \subsection{Linux on Aakash}
   \begin{frame}{linux on Aakash}
     \begin{block}{}
-      \centerline {\url{http://androportal.github.com/linux-on-aakash}}
+      \centerline
+          {\url{http://androportal.github.com/linux-on-aakash}}
     \end{block}
   \end{frame}
 
+%  \subsection{Questions}
+  \begin{frame}{}
+      \centerline{\bf Questions?}
+  \end{frame}
+  
 
 %% \section{Some \LaTeX{} Examples}
 %% \subsection{Tables and Figures}
