@@ -20,9 +20,13 @@
   %% \useoutertheme{shadow}
   %% \useoutertheme{infolines}
 } 
-
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{pxfonts}
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
+\titlegraphic{\includegraphics[width=4.6cm,height=3cm]{aakash-logo.png}}
 \logo{\includegraphics[height=1.2cm]{scipyshiny_small.png}}
 \setbeamercovered{transparent}
 
@@ -33,9 +37,9 @@
   physical paper width=8in, physical paper height=6in]
 
 \title[Python on Aakash]{Python on Aakash}
-\author{www.github.com/androportal}
+\author{Srikant \& Sachin}
 \institute{Indian Institute of Technology, Bombay}
-\date{December 29,2012}
+\date{December 28, 2012}
 
 \begin{document}
 
@@ -53,32 +57,126 @@
 \begin{frame}{Introduction}
 \begin{itemize}
   \item {\tt Aakash} - a low cost access device
-  \item Specially for student to help them learn
+  \item Available for student at less than \$22
 \end{itemize}
-\vskip 1cm
-\begin{block}{motive}
-  Should provide more than any portable device. Students can explore
-  it and add their own features 
-\end{block}
-\end{frame}
-
-\subsection{demo}
-\begin{frame}{Demo}
+\begin{columns}
+\begin{column}{.48\textwidth}
+%\color{red}\rule{\linewidth}{2pt}
+\begin{block}{Aakash specifications}
 \begin{itemize}
-  \item aakash pic
-  \item demo - \{android version\}
+  \item 1 Ghz Processor
+  \item 512 MB RAM
+  \item 4 GB ROM
+  \item 3000 mAh battery
+  \item Multi-touch, Capacitive
+  \item Android ICS (4.0.4) 
+  \item Wifi connectivity
+  \item Front camera
+  \item Accelerometer
 \end{itemize}
+\end{block}
+\end{column}%
+\begin{column}{.48\textwidth}
+% \begin{block}{}
+  \centerline{\href{file:///home/sachin/Videos/fossin/final.AVI}{Demo}}
+%   \centerline{\bf{video}}
+% \end{block}
+\end{column}%
+\end{columns}
 \end{frame}
 
-\section{Hardware interfacing}
+%\subsection{demo}
+%% \begin{frame}{Demo}
+%% \begin{itemize}
+%%   \item aakash pic
+%%   \item demo - \{android version\}
+%% \end{itemize}
+%% \end{frame}
 
-\subsection{GNU/linux on Aakash}
+\section{Applications on Aakash(Android)}
+  \subsection{IPython notebook}
+  \begin{frame}{IPython notebook}
+    \begin{itemize}
+      \item Ipython notebook with {\tt Matplotlib} works on android with
+        firefox or chrome web-browser
+        \pause
+    \end{itemize}
+    \begin{block}{}
+      \center {\bf demo}
+    \end{block}
+  \end{frame}
+
+  \subsection{Aakash Programming Lab}
+  \begin{frame}{Aakash Programming Lab}
+    \begin{itemize}
+      \item Full fledged programming environment for {\tt Python-2.7.2} and other
+        languages
+      \item {\tt Scilab-5.4} - Open source software for numerical computation
+      \item Was extended to {\tt C} and {\tt C++} with {\tt GCC 4.6.3}
+      \item Offline docs and reference manual
+        \pause
+    \end{itemize}
+    \begin{block}{}
+      \center {\bf demo}
+    \end{block}
+  \end{frame}
+
+  \subsection{Accounting on Aakash}
+  \begin{frame}{Accounting on Aakash}
+    \begin{itemize}
+      \item Derived from {\tt GNUkhata}
+      \item Portable accounting platform on Android intended for
+        Accountants and Students.
+      \item Easy to use UI
+        \pause
+        \begin{itemize}
+          \item Android-xmlrcp client side (java)library
+          \item pysqlite2 binding
+        \end{itemize}
+        \pause
+    \end{itemize}
+    \begin{block}{}
+      \center {\bf demo}
+    \end{block}
+  \end{frame}
+
+  \subsection{Challenges}
+  \begin{frame}{Challenges in Android}
+    \begin{block}{Aakash Programming lab}
+      \begin{itemize}
+        \item CPU and memory optimization
+        \item Unable to compile {\tt scilab} using Android NDK
+        \item Plots in {\tt Scilab}
+        \item Integrating {\tt shellinabox} server
+      \end{itemize}
+    \end{block}
+    \end{frame}
+
+  \subsection{Challenges contd..}
+  \begin{frame}{Challenges in Android}
+    \begin{block}{IPython}
+      \begin{itemize}
+        \item Unavailability of web-sockets in default Android webkit
+          browser
+        \item IPython-kernel random shutdown
+      \end{itemize}
+    \end{block}
+    \begin{block}{Accounting software on Aakash}
+      \begin{itemize}
+        \item {\tt sqlite} - as a database in GNUkhata
+        \item client({\tt java})-server({\tt xmlrpc}) interaction
+      \end{itemize}
+    \end{block}
+  \end{frame}
+
+\section{Applications on Aakash(linux)}
+%\subsection{linux on Aakash}
 \begin{frame}{Linux}
   \begin{block}{}
     \begin{itemize}
-    \item {\tt GNU/linux} and alternate OS for students and teachers
+    \item {\tt linux} and alternate OS for students and teachers
       on Aakash
-    \item runs from {\tt SDcard}
+    \item runs entirely from {\tt SDcard}
     \end{itemize}
   \end{block}
   \vskip 1cm
@@ -86,57 +184,59 @@
 \end{frame}
 
 \subsection{Arduino}
-\begin{frame}{Arduino}
-  \begin{block}{}
-    {\tt arduino} an open-source electronics
-    prototyping platform
-    \end{block}
-  \vskip 1cm
+\begin{frame}{Arduino on Aakash}
+  \begin{block}{Arduino}
+    An open-source electronics prototyping platform
+  \end{block}
+%  \vskip 1cm
   \centerline {\bf demo}
 \end{frame}
 
 \subsection{expEyes}
-\begin{frame}{expEyes}
-  \begin{block}{}
-    {\tt expEyes} A tool for learning science by exploring and experimenting
+\begin{frame}{expEyes on Aakash}
+  \begin{block}{expEyes}
+    A tool for learning science by exploring and experimenting
   \end{block}
   \vskip 1cm
   \centerline {\bf demo}
 \end{frame}
 
-\section{Applications on Aakash}
-  \subsection{APL}
-  \begin{frame}{Aakash Programming Lab}
-    \begin{itemize}
-      \item easy to use programming enviroment
-      \item can code in {\tt Python}, {\tt C}, {\tt C++}, and {\tt Scilab}
-    \end{itemize}
-  \end{frame}
-
-  \subsection{demo of APL}
-  \begin{frame}{Demo}
+ \subsection{Challenges}
+  \begin{frame}{Challenges in linux}
     \begin{block}{}
-      \center {\bf demo}
+      \begin{itemize}
+        \item touch screen drivers
+        \item USB-to-serial, cdc drivers
+        \item Desktop environment
+        \item GPU drivers
+        \item kernel level hacks, module loading, wifi etc.
+        \item file-system
+%        \item {\tt script.bin}
+      \end{itemize}
     \end{block}
-  \end{frame}
-
-  \subsection{Accouting on Aakash}
-  \begin{frame}{Accouting on Aakash}
-    \begin{itemize}
-      \item An easy to use and portable Accouting software for the
-        first time on Aakash
-      \item robust {\tt Python} backend
-    \end{itemize}
-  \end{frame}
-
-  \subsection{demo of Accouting on Aakash}
-  \begin{frame}{Demo}
-    \begin{block}{}
-      \center {\bf demo}
-    \end{block}
-  \end{frame}
-
+    \end{frame}
   
+  \section{links and downloads}
+  \subsection{Android apps on Aakash}
+  \begin{frame}{Android apps on Aakash}
+    \begin{block}{\url{https://github.com/androportal}}
+      \begin{itemize}
+      \item IPython notebook \hfill \url{/apk-ipython}
+      \item Aakash Programming Lab \hfill \url{/APL-apk}
+        \begin{itemize}
+        \item docs \hfill \url{/docs}
+        \end{itemize}
+      \item Accounting on Aakash \hfill \url{/gkAakash}
+      \end{itemize}
+    \end{block}
+  \end{frame}
+
+ \subsection{Linux on Aakash}
+  \begin{frame}{linux on Aakash}
+    \begin{block}{}
+      \centerline {\url{http://androportal.github.com/linux-on-aakash}}
+    \end{block}
+  \end{frame}
 
 
 %% \section{Some \LaTeX{} Examples}
