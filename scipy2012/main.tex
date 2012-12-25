@@ -1,5 +1,6 @@
+%% scipy2012, 27-29 December
 \documentclass{beamer}
-%
+%% 
 % Choose how your presentation looks.
 %
 % For more themes, color themes and font themes, see:
@@ -17,8 +18,6 @@
   \setbeamertemplate{navigation symbols}{}
   \setbeamertemplate{caption}[numbered]
   \useinnertheme{rounded}
-  %% \useoutertheme{shadow}
-  %% \useoutertheme{infolines}
 } 
 \usepackage{array}
 \usepackage{graphicx}
@@ -27,32 +26,27 @@
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
 \titlegraphic{\includegraphics[width=4.7cm,height=3cm]{aakash-logo.png}}
-\logo{\includegraphics[height=1.2cm]{scipyshiny_small.png}}
+\logo{\href{http://scipy.in/scipyin/2012/}{\includegraphics[height=1.2cm]{scipyshiny_small.png}}}
 \setbeamercovered{transparent}
-
-%% if enable below line, will \href{} or \url will not work
-% On writeLaTeX, these lines give you sharper preview images.
-% You might want to comment them out before you export, though.
-%% \usepackage{pgfpages}
-%% \pgfpagesuselayout{resize to}[%
-%%   physical paper width=8in, physical paper height=6in]
-
+%% 
 \title[Python on Aakash]{Python on Aakash}
 \author{Srikant \& Sachin}
 \institute{Indian Institute of Technology, Bombay}
 \date{December 28, 2012}
-
+%% 
+%% 
 \begin{document}
-
+%% 
 \begin{frame}
   \titlepage
 \end{frame}
-
-% Uncomment these lines for an automatically generated outline.
+%% 
+%% Uncomment these lines for an automatically generated outline.
 \begin{frame}{Outline}
  \tableofcontents
 \end{frame}
-
+%% 
+%% 
 \section{Introduction}
 \subsection{About Aakash}
 \begin{frame}{Introduction}
@@ -62,8 +56,7 @@
 \end{itemize}
 \begin{columns}
 \begin{column}{.48\textwidth}
-%\color{red}\rule{\linewidth}{2pt}
-\begin{block}{Aakash-2 specifications}
+\begin{block}{Aakash-2 specs}
 \begin{itemize}
   \item 1 Ghz Processor
   \item 512 MB RAM
@@ -78,24 +71,20 @@
 \end{block}
 \end{column}%
 \begin{column}{.20\textwidth}
- \begin{block}{}
-  \centerline{\href{file:///home/sachin/Videos/fossin/final.AVI}{Demo}}
- \end{block}
+  \centerline{\href{file:///home/sachin/Videos/fossin/final.AVI}{\includegraphics[height=0.8cm,width=0.8cm]{play.jpg}}}
 \end{column}%
 \end{columns}
 \end{frame}
-
+%% 
+%% 
 \section{Applications on Aakash(Android)}
   \subsection{IPython notebook}
   \begin{frame}{IPython notebook}
     \begin{itemize}
     \item Ipython notebook with {\tt Matplotlib} works on android
       with firefox or chrome web-browser 
-      \pause
     \end{itemize}
-    \begin{block}{}
-      \centerline{\href{file:///home/sachin/Videos/fossin/final.AVI}{Demo}}
-    \end{block}
+      \centerline{\href{file:///home/sachin/Videos/fossin/final.AVI}{\includegraphics[height=0.8cm,width=0.8cm]{play.jpg}}}
   \end{frame}
   
   \subsection{Aakash Programming Lab}
@@ -107,11 +96,8 @@
         computation
       \item Was extended to {\tt C} and {\tt C++} with {\tt GCC-4.6.3}
       \item Offline docs and reference manual 
-        \pause
     \end{itemize}
-    \begin{block}{}
-      \centerline{\href{file:///home/sachin/Videos/fossin/final.AVI}{Demo}}
-    \end{block}
+      \centerline{\href{file:///home/sachin/Videos/fossin/final.AVI}{\includegraphics[height=0.8cm,width=0.8cm]{play.jpg}}}
   \end{frame}
 
   \subsection{Accounting on Aakash}
@@ -126,11 +112,8 @@
           \item {\tt Android-xmlrcp} client side ({\tt java)})library
           \item {\tt pysqlite2} binding
         \end{itemize}
-        \pause
     \end{itemize}
-    \begin{block}{}
-      \centerline{\href{file:///home/sachin/Videos/fossin/final.AVI}{Demo}}
-    \end{block}
+      \centerline{\href{file:///home/sachin/Videos/fossin/final.AVI}{\includegraphics[height=0.8cm,width=0.8cm]{play.jpg}}}
   \end{frame}
 
   \subsection{Challenges}
@@ -156,12 +139,13 @@
     \end{block}
     \begin{block}{Accounting software on Aakash}
       \begin{itemize}
-        \item {\tt sqlite} - as a database in GNUkhata
+        \item {\tt sqlite} - as a database 
         \item client({\tt java})-server({\tt xmlrpc}) interaction
       \end{itemize}
     \end{block}
   \end{frame}
-
+%% 
+%% 
 \section{Applications on Aakash(linux)}
 %\subsection{linux on Aakash}
 \begin{frame}{Linux}
@@ -170,13 +154,9 @@
     \item {\tt linux} and alternate OS for students and teachers on
       Aakash
     \item runs entirely from {\tt SDcard}
-      \pause
     \end{itemize}
   \end{block}
-%  \vskip 1cm
-  \begin{block}{}
-    \centerline{\href{file:///home/sachin/Videos/fossin/final.AVI}{Demo}}
-  \end{block}
+  \centerline{\href{file:///home/sachin/Videos/fossin/final.AVI}{\includegraphics[height=0.8cm,width=0.8cm]{play.jpg}}}
 \end{frame}
 
 \subsection{Arduino}
@@ -184,10 +164,7 @@
   \begin{block}{Arduino}
     An open-source electronics prototyping platform
   \end{block}
-%  \vskip 1cm
-  \begin{block}{}
-    \centerline{\href{file:///home/sachin/Videos/fossin/final.AVI}{Demo}}
-  \end{block}
+  \centerline{\href{file:///home/sachin/Videos/fossin/final.AVI}{\includegraphics[height=0.8cm,width=0.8cm]{play.jpg}}}
 \end{frame}
 
 \subsection{expEyes}
@@ -195,92 +172,50 @@
   \begin{block}{expEyes}
     A tool for learning science by exploring and experimenting
   \end{block}
-%  \vskip 1cm
- \begin{block}{}
-    \centerline{\href{file:///home/sachin/Videos/fossin/final.AVI}{Demo}}
-  \end{block}
+   \centerline{\href{file:///home/sachin/Videos/fossin/final.AVI}{\includegraphics[height=0.8cm,width=0.8cm]{play.jpg}}}
 \end{frame}
 
- \subsection{Challenges}
-  \begin{frame}{Challenges in linux}
-    \begin{block}{}
-      \begin{itemize}
+\subsection{Challenges}
+\begin{frame}{Challenges in linux}
+  \begin{block}{}
+    \begin{itemize}
         \item touch screen drivers
         \item USB-to-serial, cdc drivers
         \item Desktop environment
         \item GPU drivers
         \item kernel level hacks, module loading, wifi etc.
         \item file-system
-%        \item {\tt script.bin}
-      \end{itemize}
-    \end{block}
-    \end{frame}
-  
-  \section{links and downloads}
-  \subsection{Android apps on Aakash}
-  \begin{frame}{Android apps on Aakash}
-    \begin{block}{\url{https://github.com/androportal}}
-      \begin{itemize}
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\section{links and downloads}
+\subsection{Android apps on Aakash}
+\begin{frame}{Android apps on Aakash}
+  \begin{block}{\url{https://github.com/androportal}}
+    \begin{itemize}
       \item IPython notebook \hfill \url{/apk-ipython}
       \item Aakash Programming Lab \hfill \url{/APL-apk}
         \begin{itemize}
         \item docs \hfill \url{/docs}
         \end{itemize}
       \item Accounting on Aakash \hfill \url{/gkAakash}
-      \end{itemize}
-    \end{block}
-  \end{frame}
+    \end{itemize}
+  \end{block}
+\end{frame}
 
-  \subsection{Linux on Aakash}
-  \begin{frame}{linux on Aakash}
-    \begin{block}{}
-      \centerline
-          {\url{http://androportal.github.com/linux-on-aakash}}
-    \end{block}
-  \end{frame}
+\subsection{Linux on Aakash}
+\begin{frame}{linux on Aakash}
+  \begin{block}{}
+    \centerline
+        {\url{http://androportal.github.com/linux-on-aakash}}
+  \end{block}
+\end{frame}
 
 %  \subsection{Questions}
-  \begin{frame}{}
-      \centerline{\bf Questions?}
-  \end{frame}
-  
-
-%% \section{Some \LaTeX{} Examples}
-%% \subsection{Tables and Figures}
-%% \begin{frame}{Tables and Figures}
-%%   \begin{itemize}
-%%   \item Use \texttt{tabular} for basic tables --- see Table~\ref{tab:widgets}, for example.
-%%   \item You can upload a figure (JPEG, PNG or PDF) using the files menu. 
-%%   \item To include it in your document, use the \texttt{includegraphics} command (see the comment below in the source code).
-%%   \end{itemize}
-%% \end{frame}
-
-% Commands to include a figure:
-%\begin{figure}
-%\includegraphics[width=\textwidth]{your-figure's-file-name}
-%\caption{\label{fig:your-figure}Caption goes here.}
-%\end{figure}
-
-%% \begin{table}
-%% \centering
-%% \begin{tabular}{l|r}
-%% Item & Quantity \\\hline
-%% Widgets & 42 \\
-%% Gadgets & 13
-%% \end{tabular}
-%% \caption{\label{tab:widgets}An example table.}
-%% \end{table}
-
-
-%% \subsection{Mathematics}
-
-%% \begin{frame}{Readable Mathematics}
-
-%% Let $X_1, X_2, \ldots, X_n$ be a sequence of independent and identically distributed random variables with $\text{E}[X_i] = \mu$ and $\text{Var}[X_i] = \sigma^2 < \infty$, and let
-%% $$S_n = \frac{X_1 + X_2 + \cdots + X_n}{n}
-%%       = \frac{1}{n}\sum_{i}^{n} X_i$$
-%% denote their mean. Then as $n$ approaches infinity, the random variables $\sqrt{n}(S_n - \mu)$ converge in distribution to a normal $\mathcal{N}(0, \sigma^2)$.
-
-%% \end{frame}
-
+\begin{frame}{}
+  \centerline{\bf Questions?}
+\end{frame}
+%% 
 \end{document}
+
