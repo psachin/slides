@@ -25,6 +25,11 @@
 \usepackage{pxfonts}
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
+
+\usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes}
+
 \titlegraphic{\includegraphics[width=4.7cm,height=3cm]{aakash-logo.png}}
 \logo{\href{http://scipy.in/scipyin/2012/}{\includegraphics[height=1.2cm]{scipyshiny_small.png}}}
 \setbeamercovered{transparent}
@@ -114,6 +119,16 @@
         \end{itemize}
     \end{itemize}
       \centerline{\href{file:///home/sachin/Videos/fossin/final.AVI}{\includegraphics[height=0.8cm,width=0.8cm]{play.jpg}}}
+  \end{frame}
+
+  \subsection{How it works}
+  \begin{frame}{How it works}
+    \begin{equation*}
+      Booting \xrightarrow[\text{}]{} 
+      preinstall.sh \xrightarrow[\text{}]{}
+      aakash.sh\xrightarrow[\text{\bf{gkstart.py, ipython.py}}]{\bf{sb\_manage.py}}
+       %\xrightarrow{} 0
+    \end{equation*}
   \end{frame}
 
   \subsection{Challenges}
@@ -207,10 +222,14 @@
 \subsection{Linux on Aakash}
 \begin{frame}{linux on Aakash}
   \begin{block}{}
-    \centerline
-        {\url{http://androportal.github.com/linux-on-aakash}}
+    \begin{itemize}
+    \item \url{http://androportal.github.com/linux-on-aakash}
+    \item \url{http://www.youtube.com/users/TheAakashTablet}
+    \end{itemize}
   \end{block}
 \end{frame}
+
+
 
 %  \subsection{Questions}
 \begin{frame}{}
