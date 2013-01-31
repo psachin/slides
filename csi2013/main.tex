@@ -1,0 +1,237 @@
+%% CSI mumbai 2013, 1st February
+\documentclass{beamer}
+%% 
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+%% themes .sty files download
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/beamer/base/themes/theme
+%% 
+\mode<presentation>
+{
+  \usetheme{Frankfurt}      % or try Darmstadt, Madrid, Warsaw, ...
+  %% \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usecolortheme[RGB={0,104,139}]{structure}%deepskyblue
+  \usefonttheme{serif}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+  \useinnertheme{rounded}
+} 
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{pxfonts}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+
+\usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes}
+
+\titlegraphic{\includegraphics[width=4.7cm,height=3cm]{aakash-logo.png}}
+\logo{\href{http://csimumbai.org/IT2020/}{\includegraphics[height=1cm]{csi-logo.jpeg}}}
+\setbeamercovered{transparent}
+%% 
+\title[Aakash]{Aakash}
+\subtitle{Aakash Programming Lab, IPython and GNU/linux}
+\author{}
+\institute{Indian Institute of Technology, Bombay}
+\date{Febuary 1, 2013}
+%% 
+%% 
+\begin{document}
+%% 
+\begin{frame}
+  \titlepage
+\end{frame}
+%% 
+%% Uncomment these lines for an automatically generated outline.
+\begin{frame}{Outline}
+ \tableofcontents
+\end{frame}
+%% 
+%% 
+\section{Introduction}
+\subsection{About Aakash}
+\begin{frame}{Introduction}
+\begin{itemize}
+  \item {\tt Aakash} - a low cost access device
+  \item Available for student at less than {\bf \$22}
+\end{itemize}
+\begin{columns}
+\begin{column}{.48\textwidth}
+\begin{block}{Aakash-2 specs}
+\begin{itemize}
+  \item 1 Ghz Processor
+  \item 512 MB RAM
+  \item 4 GB ROM
+  \item 3000 mAh battery
+  \item Multi-touch, Capacitive
+  \item Android ICS (4.0.4) 
+  \item Wifi connectivity
+  \item Front camera
+  \item Accelerometer
+\end{itemize}
+\end{block}
+\end{column}%
+\begin{column}{.20\textwidth}
+  \centerline{\href{file:///opt/csi2013/android_app.3gp}{\includegraphics[height=0.8cm,width=0.8cm]{play.jpg}}}
+\end{column}%
+\end{columns}
+\end{frame}
+%% 
+%% 
+\section{Applications on Aakash(Android)}
+
+  \subsection{Aakash Programming Lab}
+  \begin{frame}{Aakash Programming Lab}
+    \begin{itemize}
+      \item Full fledged programming environment for {\tt
+        Python-2.7.2} and other languages
+      \item {\tt Scilab-5.4}, an Open source software for numerical
+        computation
+      \item Was extended to {\tt C} and {\tt C++} with {\tt GCC-4.6.3}
+      \item Offline docs and reference manual 
+    \end{itemize}
+      \centerline{\href{file:///opt/csi2013/apl.3gp}{\includegraphics[height=0.8cm,width=0.8cm]{play.jpg}}}
+  \end{frame}
+
+  \subsection{IPython notebook}
+  \begin{frame}{IPython notebook}
+    \begin{itemize}
+    \item Ipython notebook with {\tt Matplotlib} works on android
+      with firefox or chrome web-browser 
+    \end{itemize}
+      \centerline{\href{file:///opt/csi2013/ipython.3gp}{\includegraphics[height=0.8cm,width=0.8cm]{play.jpg}}}
+  \end{frame}
+
+  \subsection{How it works}
+  \begin{frame}{How it works}
+    \begin{equation*}
+      Booting \xrightarrow[\text{}]{} 
+      preinstall.sh \xrightarrow[\text{}]{}
+      aakash.sh\xrightarrow[\text{\bf{gkstart.py, ipython.py}}]{\bf{sb\_manage.py}}
+       %\xrightarrow{} 0
+    \end{equation*}
+  \end{frame}
+
+  \subsection{Challenges}
+  \begin{frame}{Challenges on Android}
+    \begin{block}{Aakash Programming lab}
+      \begin{itemize}
+        \item CPU and memory optimization
+        \item Unable to compile {\tt scilab} using Android NDK
+        \item Plots in {\tt Scilab}
+        \item Integrating {\tt shellinabox} server
+      \end{itemize}
+    \end{block}
+    \end{frame}
+
+%  \subsection{Challenges contd..}
+  \begin{frame}{Challenges on Android}
+    \begin{block}{IPython}
+      \begin{itemize}
+        \item Unavailability of web-sockets in default Android webkit
+          browser
+        \item IPython-kernel random shutdown
+      \end{itemize}
+    \end{block}
+    \begin{block}{Aakash Business Tool}
+      \begin{itemize}
+        \item {\tt sqlite} - as a database 
+        \item client({\tt java})-server({\tt xmlrpc}) interaction
+      \end{itemize}
+    \end{block}
+  \end{frame}
+%% 
+%% 
+\section{Applications on Aakash(linux)}
+%\subsection{linux on Aakash}
+\begin{frame}{Linux}
+  \begin{block}{}
+    \begin{itemize}
+    \item {\tt linux} and alternate OS for students and teachers on
+      Aakash
+    \item runs entirely from {\tt SDcard}
+    \end{itemize}
+  \end{block}
+  \centerline{\href{file:///opt/csi2013/linux.3gp}{\includegraphics[height=0.8cm,width=0.8cm]{play.jpg}}}
+\end{frame}
+
+\subsection{Arduino}
+\begin{frame}{Arduino on Aakash}
+  \begin{block}{Arduino}
+    An open-source electronics prototyping platform
+  \end{block}
+  \centerline{\href{file:///opt/csi2013/arduino.3gp}{\includegraphics[height=0.8cm,width=0.8cm]{play.jpg}}}
+\end{frame}
+
+\subsection{expEyes}
+\begin{frame}{expEyes on Aakash}
+  \begin{block}{expEyes}
+    A tool for learning science by exploring and experimenting
+  \end{block}
+   \centerline{\href{file:///opt/csi2013/expEyes.3gp}{\includegraphics[height=0.8cm,width=0.8cm]{play.jpg}}}
+\end{frame}
+
+\subsection{Challenges}
+\begin{frame}{Challenges in linux}
+  \begin{block}{}
+    \begin{itemize}
+        \item touch screen drivers
+        \item USB-to-serial, cdc drivers
+        \item Desktop environment
+        \item GPU drivers
+        \item kernel level hacks, module loading, wifi etc.
+        \item file-system
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\section{links and downloads}
+\subsection{Android apps on Aakash}
+\begin{frame}{Android apps on Aakash}
+  \begin{block}{\url{https://github.com/androportal}}
+    \begin{itemize}
+      \item IPython notebook \hfill \url{/apk-ipython}
+      \item Aakash Programming Lab \hfill \url{/APL-apk}
+        \begin{itemize}
+        \item docs \hfill \url{/docs}
+        \end{itemize}
+      \item Aakash Business Tool \hfill \url{/ABT}
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\subsection{Linux on Aakash}
+\begin{frame}{linux on Aakash}
+  \begin{block}{}
+    \begin{itemize}
+    \item \url{http://aakashlabs.org}
+    \item \url{http://androportal.github.com/linux-on-aakash}
+    \item \url{http://www.youtube.com/user/TheAakashTablet}
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+%  compete
+\begin{frame}{Competition}
+  \begin{block}{\bf Competition on Aakash app development}
+    \begin{enumerate}
+      \item 50,000
+      \item 25,000
+      \item 10,000  
+    \end{enumerate}
+  \end{block}
+  \centerline {\url{http://aakashlabs.org/compete}}
+\end{frame}
+%% 
+%  \subsection{Questions}
+\begin{frame}{}
+  \centerline{\bf Questions?}
+\end{frame}
+%% 
+\end{document}
+
