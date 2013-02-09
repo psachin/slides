@@ -1,0 +1,438 @@
+%% workshop @t icfoss, 16 and 17th Feb 2013
+\documentclass{beamer}
+%% 
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+%% themes .sty files download
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/beamer/base/themes/theme
+%% 
+\mode<presentation>
+{
+  \usetheme{Frankfurt}      % Frankfurt, Darmstadt, Madrid, Warsaw
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  %% \setbeamercolor{}{fg=, bg=black}
+  %% \setbeamercolor{frametitle}{fg=default, bg=black}
+  \setbeamercolor{upper separation line head}{bg=r}
+
+  \usecolortheme[RGB={0,104,139}]{structure}%deepskyblue
+%  \usecolortheme[RGB={59,89,152}]{structure}%facebook
+  \usefonttheme{serif}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+  \useinnertheme{rounded}
+}
+%% import packages
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{pxfonts}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+
+\usepackage{amsmath}
+%\usepackage{SIunits}
+\usepackage[sc]{mathpazo}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes}
+
+\titlegraphic{\includegraphics[width=4.7cm,height=3cm]{aakash-logo.png}}
+\logo{\href{http://icfoss.in/}{\includegraphics[height=0.5cm, width=1cm]{icfoss_logo.jpg}}}
+\setbeamercovered{transparent}
+%% 
+\title[Aakash application development]{Aakash application development}
+\author{\url{http://aakashlabs.org}}
+\institute{Indian Institute of Technology, Bombay}
+\date{February 16 \& 17, 2013}
+%% 
+%% 
+\begin{document}
+%% 
+\begin{frame}
+  \titlepage
+\end{frame}
+%% 
+%% Uncomment these lines for an automatically generated outline.
+\begin{frame}{Outline}
+ \tableofcontents
+\end{frame}
+%% 
+%% 
+\section{Introduction}
+\subsection{About Aakash}
+\begin{frame}{Introduction}
+\begin{itemize}
+  \item {\tt Aakash} - a low cost access device
+  \item Available for student at less than {\bf \$22}
+\end{itemize}
+\begin{columns}
+\begin{column}{.48\textwidth}
+\begin{block}{Aakash-2 specs}
+\begin{itemize}
+  \item 1 Ghz Processor
+  \item 512 MB RAM
+  \item 4 GB ROM
+  \item 3000 mAh battery
+  \item Multi-touch, Capacitive
+  \item Android ICS (4.0.4) 
+  \item Wifi connectivity
+  \item Front camera
+  \item Accelerometer
+\end{itemize}
+\end{block}
+\end{column}%
+\begin{column}{.20\textwidth}
+  \centerline{\href{file:///home/sachin/github/slides/scipy2012/android_app.3gp}{\includegraphics[height=0.8cm,width=0.8cm]{play.jpg}}}
+\end{column}%
+\end{columns}
+\end{frame}
+%% 
+%% 
+\section{Applications on Aakash(Android)}
+  %% \subsection{IPython notebook}
+  %% \begin{frame}{IPython notebook}
+  %%   \begin{itemize}
+  %%   \item Ipython notebook with {\tt Matplotlib} works on android
+  %%     with firefox or chrome web-browser 
+  %%   \end{itemize}
+  %%     \centerline{\href{file:///home/sachin/github/slides/scipy2012/ipython.3gp}{\includegraphics[height=0.8cm,width=0.8cm]{play.jpg}}}
+  %% \end{frame}
+  
+  \subsection{Aakash Programming Lab}
+  \begin{frame}{Aakash Programming Lab}
+    \begin{itemize}
+      \item Full fledged programming environment for {\tt
+        Python-2.7.2} and other languages
+      \item {\tt Scilab-5.4}, an Open source software for numerical
+        computation
+      \item Was extended to {\tt C} and {\tt C++} with {\tt GCC-4.6.3}
+      \item Offline docs and reference manual 
+    \end{itemize}
+      \centerline{\href{file:///home/sachin/github/slides/scipy2012/apl.3gp}{\includegraphics[height=0.8cm,width=0.8cm]{play.jpg}}}
+  \end{frame}
+
+  \subsection{Aakash Business Tool}
+  \begin{frame}{Aakash Business Tool}
+    \begin{itemize}
+      \item It was from {\tt GNUkhata}
+      \item Portable accounting platform on Android intended for
+        Accountants and Students.
+      \item Easy to use UI
+        \pause
+        \begin{itemize}
+          \item {\tt Android-xmlrcp} client side ({\tt java)})library
+          \item {\tt pysqlite2} binding
+        \end{itemize}
+    \end{itemize}
+      \centerline{\href{file:///home/sachin/github/slides/scipy2012/account.3gp}{\includegraphics[height=0.8cm,width=0.8cm]{play.jpg}}}
+  \end{frame}
+
+%%   \subsection{How it works}
+%%   \begin{frame}{How it works}
+%%     \begin{equation*}
+%%       Booting \xrightarrow[\text{}]{} 
+%%       preinstall.sh \xrightarrow[\text{}]{}
+%%       aakash.sh\xrightarrow[\text{\bf{gkstart.py, ipython.py}}]{\bf{sb\_manage.py}}
+%%        %\xrightarrow{} 0
+%%     \end{equation*}
+%%   \end{frame}
+
+%%   \subsection{Challenges}
+%%   \begin{frame}{Challenges in Android}
+%%     \begin{block}{Aakash Programming lab}
+%%       \begin{itemize}
+%%         \item CPU and memory optimization
+%%         \item Unable to compile {\tt scilab} using Android NDK
+%%         \item Plots in {\tt Scilab}
+%%         \item Integrating {\tt shellinabox} server
+%%       \end{itemize}
+%%     \end{block}
+%%     \end{frame}
+
+%% %  \subsection{Challenges contd..}
+%%   \begin{frame}{Challenges in Android}
+%%     \begin{block}{IPython}
+%%       \begin{itemize}
+%%         \item Unavailability of web-sockets in default Android webkit
+%%           browser
+%%         \item IPython-kernel random shutdown
+%%       \end{itemize}
+%%     \end{block}
+%%     \begin{block}{Accounting software on Aakash}
+%%       \begin{itemize}
+%%         \item {\tt sqlite} - as a database 
+%%         \item client({\tt java})-server({\tt xmlrpc}) interaction
+%%       \end{itemize}
+%%     \end{block}
+%%   \end{frame}
+%% 
+%% 
+\section{Applications on Aakash(GNU/linux)}
+%\subsection{linux on Aakash}
+\begin{frame}{GNU/inux}
+  \begin{block}{}
+    \begin{itemize}
+    \item {\bf GNU/linux} an alternate OS for students and teachers on
+      Aakash
+    \item runs entirely from external {\tt SDcard}
+    \end{itemize}
+  \end{block}
+  \centerline{\href{file:///home/sachin/github/slides/scipy2012/linux.3gp}{\includegraphics[height=0.8cm,width=0.8cm]{play.jpg}}}
+\end{frame}
+
+\subsection{Arduino}
+\begin{frame}{Arduino on Aakash}
+  \begin{block}{Arduino Uno  {\tt (http://arduino.cc)} }
+    \begin{itemize}
+    \item An open-source electronics prototyping platform
+    \item {\tt ATmega328} microcontroller
+    \item {\tt 16 MHz}
+    \item {\tt 32 KB} flash memory
+    \end{itemize}
+  \end{block}
+  \centerline{\href{file:///home/sachin/github/slides/scipy2012/arduino.3gp}{\includegraphics[height=0.8cm,width=0.8cm]{play.jpg}}}
+\end{frame}
+
+\subsection{expEyes}
+\begin{frame}{expEyes on Aakash}
+  \begin{block}{expEyes}
+    \begin{itemize}
+    \item A tool for learning science by exploring and experimenting
+    \end{itemize}
+  \end{block}
+  \centerline{\href{file:///home/sachin/github/slides/scipy2012/expEyes.3gp}{\includegraphics[height=0.8cm,width=0.8cm]{play.jpg}}}
+\end{frame}
+
+%% \subsection{Challenges}
+%% \begin{frame}{Challenges in linux}
+%%   \begin{block}{}
+%%     \begin{itemize}
+%%         \item touch screen drivers
+%%         \item USB-to-serial, cdc drivers
+%%         \item Desktop environment
+%%         \item GPU drivers
+%%         \item kernel level hacks, module loading, wifi etc.
+%%         \item file-system
+%%     \end{itemize}
+%%   \end{block}
+%% \end{frame}
+
+\section{links and downloads}
+\subsection{Android apps on Aakash}
+\begin{frame}{Android apps on Aakash}
+  \begin{block}{\url{https://github.com/androportal}}
+    \begin{itemize}
+      \item Aakash Programming Lab \hfill \url{/APL-apk}
+      \item Aakash Business Tool\hfill \url{/ABT}
+    \end{itemize}
+  \end{block}
+  \begin{block}{Documentation}
+      \centerline{\url {http://aakashlabs.org/docs}}
+  \end{block}
+\end{frame}
+
+\subsection{GNU/linux on Aakash}
+\begin{frame}{GNU/linux on Aakash}
+  \begin{block}{}
+    \begin{itemize}
+    \item \url{http://androportal.github.com/linux-on-aakash}
+    \item \url{http://www.youtube.com/user/TheAakashTablet}
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+%% \subsection{Questions}
+\begin{frame}{}
+  \centerline{\bf Questions?}
+\end{frame}
+%% 
+
+\section{Android development}
+
+\begin{frame}
+\begin{center}
+  \centerline{\href{file:///home/sachin/github/slides/icfoss2013/test.svg}{\bf
+  Developing overview}}
+%{\includegraphics[height=0.8cm,width=0.8cm]{play.jpg}}}
+%  \includegraphics[width=4.8cm, height=9cm]{developing_overview.png}
+\end{center}  
+\end{frame}
+
+\subsection{Prerequisite}
+\begin{frame}{Preparing your development system}
+  \begin{block}{}
+    \begin{itemize}
+      \item Android SDK
+      \item IDE
+      \item adding {\tt ADT} plugin to your IDE
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{dependencies (on Ubuntu 12.04 or later)}
+    \begin{itemize}
+    \item {\bf jdk6} {\tt sudo apt-get install openjdk-6-jdk} \pause
+    \item {\tt sudo apt-get install ia32-libs-multiarch libc6}
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\subsection{Android debugging}
+\begin{frame}{Android debugging}
+  
+  \begin{block}{{\tt adb} - {\em android debug bridge}}
+    \begin{itemize}
+      
+      \item lists all the devices attached to my system\pause
+      \item drop to android's {\em shell} \pause
+      \item install/uninstall {\tt apk}'s \pause
+      \item copying files to/from an emulator/device \pause
+      \item issue {\em shell} commands \pause
+        \begin{itemize}
+        \item {\tt pm} - package manager 
+        \item {\tt am} - activity manager
+        \end{itemize} \pause
+      \item specify device with {\tt -d,-e,-s} \pause
+      \item adb server
+    \end{itemize}
+  \end{block}
+  \pause
+  *enable {\em USB debugging}
+\end{frame}
+
+\begin{frame}{Android debugging cntd..}
+  \begin{block}{}
+    \begin{itemize}
+      \item Android Virtual Device {\tt (avd)}
+      \item Software Development Kit {\tt (sdk)}
+      \item logcat
+      \item dmesg
+      \item monitor
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\section{GNU/linux on Aakash}
+\begin{frame}{GNU/linux as an alternate OS on Aakash}
+  \begin{block}{}
+    \begin{itemize}
+      \item runs entirely from {\tt SDcard} in native mode
+      \item not all FOSS applications can be ported {\em as it is}
+      \item Android is not the only OS on phones/tablets \pause
+        \begin{itemize}
+        \item Ubuntu on phones
+        \item Firefox OS
+        \end{itemize}
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Preparing your GNU/linux build}
+  \begin{block}{}
+    \begin{itemize}
+      \item cross compiler toolchain
+      \item kernel
+      \item rootfs
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Preparing your SDcard}
+    \begin{itemize}
+      \item partioning
+      \item uboot
+      \item copying kernel
+      \item releasing your GNU/linux image
+    \end{itemize}
+  \end{block}
+
+\end{frame}
+
+\subsection{GNU/linux application}
+\begin{frame}{GNU/linux application development}
+  \begin{block}{}
+    \begin{itemize}
+    \item point1 
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\subsection{debug GNU/linux application}
+\begin{frame}{GNU/linux application debugging}
+  \begin{block}{}
+    \begin{itemize}
+    \item debug GNU/linux app
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\section{Version control}
+\begin{frame}{Managing your application using version control}
+  \begin{itemize}
+  \item why version control ??
+  \item types of version control 
+  \end{itemize}
+
+  \begin{block}{{\tt git}}
+    \begin{itemize}
+    \item entirely written in {\tt C}
+    \item recommended for large projects, Ex. {\tt linux kernel}
+    \item the way {\tt git} handles {\tt branches}, and {\tt
+      conflicts} is {\em owesome!!}
+    \item {\url{github.com}}, {\url{gitorious.org}}, etc
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\subsection{hands-on {\tt git}}
+\begin{frame}{using {\tt git}}
+    \begin{itemize}
+    \item initializing you project
+    \item adding files 
+    \item commit your changes
+    \item pushing it to remote host
+    \item revert
+    \item branching and merge
+    \item handling conflicts
+    \item pull requests
+    \item tags
+    \end{itemize}
+    %    *share .gitconfig, .gitignore_global and .gitmessage\.txt file
+\end{frame}
+
+\section{Documentation}
+\subsection{why do we need Documentation ??}
+\begin{frame}{why document our project?}
+    \begin{itemize}
+    \item no documentation, NO project!
+    \item how to use the software?
+    \item contributing 
+    \end{itemize}
+\end{frame}
+
+\subsection{Documentation using {\tt sphinx}}
+\begin{frame}{why {\tt sphinx}}
+    \begin{itemize}
+    \item easy usage
+    \item plain text
+    \item even Documentation can be version controlled
+    \end{itemize}
+\end{frame}
+
+\section{App release mechanism}
+\subsection{how to release apps}
+\begin{frame}{app release}
+    \begin{itemize}
+    \item host it on github or your custom page
+    \item play.google.com
+    \item releasing versions
+    \end{itemize}
+\end{frame}
+
+%% \subsection{Questions}
+\begin{frame}{}
+  \centerline{\bf Questions?}
+\end{frame}
+
+\end{document}
+
