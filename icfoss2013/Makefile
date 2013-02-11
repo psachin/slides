@@ -13,10 +13,15 @@ help:
 	@echo ""
 
 # talk at icofss/2013, Feb 16 and 17
-icfoss:	main.pdf
-main.pdf:	main.tex beamerthemeFrankfurt.sty 
-	pdflatex main.tex
-	pdflatex main.tex	#second one for slide numbering: n/N
+icfoss:	day1.pdf day2.pdf
+
+day1.pdf: day1.tex beamerthemeFrankfurt.sty 
+	pdflatex day1.tex       #second one for slide numbering: n/N	
+	pdflatex day1.tex 
+
+day2.pdf: day2.tex beamerthemeFrankfurt.sty 
+	pdflatex day2.tex	
+	pdflatex day2.tex	#second one for slide numbering: n/N
 
 clean:	
 	@echo "removing all tmp+pdf files"
