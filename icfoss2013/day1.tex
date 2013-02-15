@@ -31,12 +31,61 @@
 \usepackage{pxfonts}
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
-
+\usepackage{listings}
 \usepackage{amsmath}
- %\usepackage{SIunits}
- \usepackage[sc]{mathpazo}
- \usepackage{tikz}
- \usetikzlibrary{arrows,shapes}
+\usepackage{color}
+\usepackage[sc]{mathpazo}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{sky}{rgb}{0,104,139}
+
+\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
+\definecolor{cyan}{rgb}{0.0,0.6,0.6}
+\definecolor{pk}{rgb}{199,21,133}
+
+\lstset{ %
+  backgroundcolor=\color{white},  % choose the background color; you
+  basicstyle=\footnotesize,       % the size of the fonts that are
+  breakatwhitespace=false,        % sets if automatic breaks should
+  breaklines=true,                % sets automatic line breaking
+  captionpos=b,                   % sets the caption-position to
+  commentstyle=\color{dkgreen},   % comment style
+  deletekeywords={...},           % if you want to delete keywords
+  escapeinside={\%*}{*)},         % if you want to add LaTeX within
+  extendedchar=true,              % lets you use non-ASCII characters;
+%  frame=single,                   % adds a frame around the code
+  keywordstyle=\color{red},      % keyword style
+%  language=xml,                % the language of the code
+  morekeywords={android,intent,application,activity,intent,filter,action,category},           % if you want to add more keywords
+  numbers=left,                   % where to put the line-numbers;
+  numbersep=1pt,                  % how far the line-numbers are from
+  numberstyle=\tiny\color{gray},  % the style that is used for the
+%  rulecolor=\color{black},        % if not set, the frame-color may be
+  showspaces=false,               % show spaces everywhere adding
+  showstringspaces=false,         % underline spaces within strings
+  showtabs=false,                 % show tabs within strings adding
+  stepnumber=1,                   % the step between two
+  stringstyle=\color{blue},      % string literal style
+  tabsize=1,                      % sets default tabsize to 2 spaces
+%  title=\lstname                  % show the filename of files
+}
+
+\lstdefinelanguage{XML}
+{
+  morestring=[b]'',
+  morestring=[s]{>}{<},
+  morecomment=[s]{<?}{?>},
+  stringstyle=\color{black},
+%  identifierstyle=\color{darkblue},
+  keywordstyle=\color{red},
+  morekeywords={android,intent,application,activity,intent,filter,action,category},           % if you want to add more keywords
+}
+
+
 
  \titlegraphic{\includegraphics[width=4.7cm,height=3cm]{aakash-logo.png}}
  \logo{\href{http://icfoss.in/}{\includegraphics[height=0.5cm, width=1cm]{icfoss_logo.jpg}}}
@@ -84,7 +133,7 @@
  \end{block}
  \end{column}%
  \begin{column}{.20\textwidth}
-   \centerline{\href{file:///home/sachin/github/slides/scipy2012/android_app.3gp}{\includegraphics[height=0.8cm,width=0.8cm]{play.jpg}}}
+   \centerline{\href{file:///opt/aakashdemo/android_app.3gp}{\includegraphics[height=0.8cm,width=0.8cm]{play.jpg}}}
  \end{column}%
  \end{columns}
  \end{frame}
@@ -110,7 +159,7 @@
        \item Was extended to {\tt C} and {\tt C++} with {\tt GCC-4.6.3}
        \item Offline docs and reference manual 
      \end{itemize}
-       \centerline{\href{file:///home/sachin/github/slides/scipy2012/apl.3gp}{\includegraphics[height=0.8cm,width=0.8cm]{play.jpg}}}
+       \centerline{\href{file:///opt/aakashdemo/apl.3gp}{\includegraphics[height=0.8cm,width=0.8cm]{play.jpg}}}
    \end{frame}
 
    \subsection{Aakash Business Tool}
@@ -126,7 +175,7 @@
            \item {\tt pysqlite2} binding
          \end{itemize}
      \end{itemize}
-       \centerline{\href{file:///home/sachin/github/slides/scipy2012/account.3gp}{\includegraphics[height=0.8cm,width=0.8cm]{play.jpg}}}
+       \centerline{\href{file:///opt/aakashdemo/abt.avi}{\includegraphics[height=0.8cm,width=0.8cm]{play.jpg}}}
    \end{frame}
 
  %%   \subsection{How it works}
@@ -179,7 +228,7 @@
      \item runs entirely from external {\tt SDcard}
      \end{itemize}
    \end{block}
-   \centerline{\href{file:///home/sachin/github/slides/scipy2012/linux.3gp}{\includegraphics[height=0.8cm,width=0.8cm]{play.jpg}}}
+   \centerline{\href{file:///opt/aakashdemo/linux.3gp}{\includegraphics[height=0.8cm,width=0.8cm]{play.jpg}}}
  \end{frame}
 
  \subsection{Arduino}
@@ -192,7 +241,7 @@
      \item {\tt 32 KB} flash memory
      \end{itemize}
    \end{block}
-   \centerline{\href{file:///home/sachin/github/slides/scipy2012/arduino.3gp}{\includegraphics[height=0.8cm,width=0.8cm]{play.jpg}}}
+   \centerline{\href{file:///opt/aakashdemo/arduino.3gp}{\includegraphics[height=0.8cm,width=0.8cm]{play.jpg}}}
  \end{frame}
 
  \subsection{expEyes}
@@ -202,7 +251,7 @@
      \item A tool for learning science by exploring and experimenting
      \end{itemize}
    \end{block}
-   \centerline{\href{file:///home/sachin/github/slides/scipy2012/expEyes.3gp}{\includegraphics[height=0.8cm,width=0.8cm]{play.jpg}}}
+   \centerline{\href{file:///opt/aakashdemo/expEyes.3gp}{\includegraphics[height=0.8cm,width=0.8cm]{play.jpg}}}
  \end{frame}
 
  %% \subsection{Challenges}
@@ -252,7 +301,7 @@
 
  \begin{frame}
  \begin{center}
-   \centerline{\href{file:///home/sachin/github/slides/icfoss2013/developing_overview.svg}{\bf
+   \centerline{\href{file:///opt/aakashdemo/developing_overview.svg}{\bf
    Developing overview}}
  \end{center}  
  \end{frame}
@@ -275,8 +324,29 @@
    \end{block}
  \end{frame}
 
-\begin{frame}
-   \centerline{Android application development}
+ \subsection{App development}
+ \begin{frame}
+   \centerline{\href{file:///opt/aakashdemo/android.svg}{\bf
+       Android application development}}
+ \end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{\texttt{AndroidManifest.xml}}
+    \lstinputlisting[language=XML,firstline=1, lastline=15]{AndroidManifest.xml}
+    %% \pause
+    %% \begin{lstlisting}[firstnumber=last]
+    %%   `boot.img/ramdisk/init.rc'
+    %% \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{\texttt{/src/com/icfoss/events/MainActivity.java}}
+    \lstinputlisting[language=java,firstline=20, lastline=26]{MainActivity.java}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{\texttt{/res/layout/activity\_main.xml}}
+    \lstinputlisting[language=java,firstline=1, lastline=14]{activity_main.xml}
 \end{frame}
 
  \subsection{Android debugging}
