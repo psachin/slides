@@ -1,4 +1,4 @@
-﻿* GNU/Linux on Aakash(appeared in CSI Communications, June 2013)
+﻿* GNU/Linux on Aakash
 ** Introduction
    - In the January 2013 issue of Communications of CSI, the article
      ``Genesis of Aakash`` had explained the events leading to the
@@ -313,3 +313,4 @@
 #  LocalWords:  Aakash's WiFi NAND Bootloader dmesg multi ExpEYES USB
 #  LocalWords:  Arduino ACM linux github pre onboard LibreOffice
 #  LocalWords:  AbiWord Scilab
+   
