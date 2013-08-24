@@ -1,0 +1,203 @@
+%% UNIX tools, Sat Aug 24 2013
+\documentclass{beamer}
+%% 
+% Choose how your presentation looks.
+%
+% For more themes, color themes and font themes, see:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%
+%% themes .sty files download
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/beamer/base/themes/theme
+%% 
+\mode<presentation>
+{
+  \usetheme{Frankfurt}      % or try Darmstadt, Madrid, Warsaw, ...
+  %% \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usecolortheme[RGB={0,104,139}]{structure}%deepskyblue
+  \usefonttheme{serif}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+  \useinnertheme{rounded}
+} 
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{pxfonts}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+
+\usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes}
+
+\titlegraphic{\includegraphics[width=3cm,height=3cm]{logo.jpeg}}
+\logo{\href{http://www.iitb.ac.in/}{\includegraphics[height=1.5cm]{logo.jpeg}}}
+\setbeamercovered{transparent}
+%% 
+\title[tools]{GNU/Linux, Ubuntu, ...}
+\author{Manas, Rahul, Swapnil \& Sachin}
+\institute{Indian Institute of Technology, Bombay}
+\date{\today}
+%% 
+%% 
+\begin{document}
+%% 
+\begin{frame}
+  \titlepage
+\end{frame}
+%% 
+%% Uncomment these lines for an automatically generated outline.
+\begin{frame}{Outline}
+ \tableofcontents
+\end{frame}
+%% 
+%% 
+\section{Introduction}
+\subsection{What is GNU/linux?}
+\begin{frame}{What is GNU/linux?}
+\begin{itemize}
+  \item {\bf GNU} - Open source license, all free tools
+  \item {\bf Linux} - A part which handles hardware
+\end{itemize}
+\end{frame}
+\subsection{BASH, shell, terminal}
+\begin{frame}{BASH, shell, terminal}
+  \begin{itemize}
+  \item {\tt bash/sh, shell, terminal}
+    \pause
+  \item BASH commands
+    \pause
+  \item Moving around
+    \pause
+  \item The GNU/Linux file-system
+  \end{itemize}
+\end{frame}
+
+%% 
+%% 
+\section{BASH}
+  \subsection{BASH commands}
+  \begin{frame}{BASH commands}
+    \begin{itemize}
+    \item {\tt ls, cd, ..}
+      \pause
+    \item {\tt HOME, root, /}
+    \end{itemize}
+  \end{frame}
+  
+  \subsection{File operations}
+  \begin{frame}{File operations}
+    \begin{itemize}
+      \item create a file
+        \pause
+      \item open/close a file
+        \pause
+      \item write to a file
+        \pause
+    \end{itemize}
+  \end{frame}
+
+  \subsection{Other tools}
+  \begin{frame}{Other tools}
+      \begin{itemize}
+        \item {\tt echo}
+          \pause
+        \item {\tt cat}
+          \pause
+        \item {\tt grep}
+          \pause
+        \item {\tt sed}
+          \pause
+        \item {\tt alias} 
+      \end{itemize}
+  \end{frame}
+
+  \section{Packages management}
+  \subsection{GNU/linux packages}
+  \begin{frame}{GNU/Linux packages}
+    \begin{block}{}
+      \begin{itemize}
+        \item {\tt apt-get, yum, rpm, pacman ...}
+          \pause
+        \item {Manual install}
+          \pause
+                \begin{itemize}
+                \item {\tt configure}
+                \item {\tt make}
+                \item {\tt make install}
+                \end{itemize}
+      \end{itemize}
+    \end{block}
+    \end{frame}
+
+%% 
+%% 
+\section{Text editors}
+\subsection{editors}
+\begin{frame}{editors}
+  \begin{block}{}
+    \begin{itemize}
+    \item {\tt gedit}
+      \pause
+    \item {\tt nano}
+      \pause
+    \item {\tt vim}
+      \pause
+    \item {\tt GNU Emacs}
+    \end{itemize}
+  \end{block}
+\end{frame}
+\subsection{GNU Emacs}
+\begin{frame}{GNU Emacs}
+  \begin{block}{}
+    \begin{itemize}
+    \item {\tt open/close a file}
+      \pause
+    \item {\tt Capitalize}
+      \pause
+    \item {\tt lower}
+      \pause
+    \item {\tt UPPER}
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\section{Aakash}
+\subsection{Aakash}
+\begin{frame}{Aakash}
+  \begin{center}
+      {\includegraphics[width=4cm,height=3cm]{aakash-logo.png}}
+      \center{Aakash - a low cost access device}
+      \center{{\href{http://aakashlabs.org/}{\tt{http://aakashlabs.org}}}}
+  \end{center}
+\end{frame}
+
+\section{Scientific computation}
+\subsection{Scientific computation}
+\begin{frame}{Scilab}
+  \begin{block}{}
+    \center{Scilab}
+  \end{block}
+\end{frame}
+\begin{frame}{OpenFOAM}
+  \begin{block}{}
+    \center{OpenFOAM}
+  \end{block}
+\end{frame}
+
+\section{Questions}
+\begin{frame}{}
+  \centerline{\bf Questions?}
+\end{frame}
+%% 
+\begin{frame}{Contact}
+  \begin{itemize}
+  \item {\tt isachin@iitb.ac.in}
+  \item {\tt manas@fossee.in}
+  \item {\tt joshirahul2589@gmail.com}
+  \item {\tt moreswapnil66@gmail.com}
+  \end{itemize}
+\end{frame}
+
+\end{document}
+
