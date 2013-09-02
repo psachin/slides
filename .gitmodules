@@ -1,0 +1,3 @@
+[submodule "pydown"]
+	path = pydown
+	url = https://github.com/isnowfy/pydown.git
