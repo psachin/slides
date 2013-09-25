@@ -1,7 +1,22 @@
-﻿* GNU/Linux on Aakash
+﻿#+TITLE:     GNU/Linux on Aakash
+#+AUTHOR:    Sachin Patil and Srikant Patnaik
+#+EMAIL:     isachin@iitb.ac.in
+#+DATE:      July 2013
+#+DESCRIPTION: Porting GNU/Linux on Aakash
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:   
+#+LINK_HOME: 
+#+XSLT:
+
 ** Introduction
    - In the January 2013 issue of Communications of CSI, the article
-     ``Genesis of Aakash`` had explained the events leading to the
+     "Genesis of Aakash" had explained the events leading to the
      creation of Aakash have been explained by Moudgalya, Phatak,
      Sinha and Varma. In this article, we will explain the work that
      we undertook to port GNU/Linux in native mode on Aakash.
@@ -124,13 +139,13 @@
       binary. After downloading, it has to be installed and a custom
       path to the tool chain has to be set in order to compile the
       kernel. We first used the Debian root file-system which we got
-      online. The script.bin file was not fully compatible with
-      Aakash. It took us some time to extract Aakash's own script.bin
+      online. The =script.bin= file was not fully compatible with
+      Aakash. It took us some time to extract Aakash's own =script.bin=
       file and to change its default parameters to make a running
-      kernel and root file-system. Merely modifying script.bin file
+      kernel and root file-system. Merely modifying =script.bin= file
       was not enough, some kernel modules like WiFi and touch have to
       be auto-loaded while booting. These changes have to be made in
-      the file-system path /etc/modules to make them work. With all
+      the file-system path =/etc/modules= to make them work. With all
       those changes, we had basic version running in a week.
 
     - On Aakash, GNU/Linux boots from micro SD-card and the
@@ -143,7 +158,7 @@
       touch before. Initially when tried to interact with the tablet
       using touch on Debian, it didn't respond. We had to go through
       Android's log-cat and dmesg to identify the touch screen driver,
-      which we found out was focal-touch(ft5x_ts). When it was enabled
+      which we found out was focal-touch(=ft5x_ts=). When it was enabled
       as a module, it worked but we had to disable the multi-touch
       feature in the file. Currently Aakash has three touch
       screen drivers, of which two work.
@@ -153,16 +168,16 @@
       hardware, we had to enable kernel support for Communication
       Device Class(CDC) ExpEYES as ACM device. On the device level, it
       is detected as Abstract Control Model(ACM) drivers. The Linux
-      kernel detects /dev/ttyACM0. Also for ACM to work, generic USB
+      kernel detects =/dev/ttyACM0=. Also for ACM to work, generic USB
       support should be enabled in the kernel.
 
     - On the desktop, we can pass arguments to the kernel, ask
       kernel to load some modules, disable misbehaving modules
       and so on. Similarly we can pass arguments to kernel on an
-      embedded device using script.bin file. On Aakash,
+      embedded device using =script.bin= file. On Aakash,
       pre-customization, module loading for wireless networks, setting
       display resolution, loading touch drivers, etc., can be done using
-      script.bin.  Although Script.bin is a binary file, actual
+      =script.bin=.  Although =script.bin= is a binary file, actual
       editing can be done by converting it to fex format.
 
 ** Ubuntu as GNU/Linux distribution
@@ -184,8 +199,8 @@
       environment.
 
     - Before putting the file-system to actual use, the compiled
-      kernel and its modules were placed in /lib/modules directory of
-      the file-system, where all kernel modules reside.
+      kernel and its modules were placed in =/lib/modules= directory
+      of the file-system, where all kernel modules reside.
 
     - The next challenge was the Desktop environment. We tried Unity,
       KDE Plasma, XFCE, MATE, enlightenment(e17), and Gnome-3, all of
@@ -216,13 +231,12 @@
      pack. Although it’s a bit heavier than AbiWord, its features make
      it worth installing. Scilab-5.3.3 was also installed and
      tested. Both numerical and graphical calculations are executed
-     much faster than on
-     Android(https://github.com/androportal/APL-apk). More than 150
-     Scilab textbook companions (http://scilab.in) are now available
-     in our latest builds. A Scilab textbook companion is a listing of
-     code that implements worked out examples in standard textbooks.
-     Arduino, an open source hardware with Gnoduino IDE, has also been
-     tested and included.
+     much faster than on Android([[https://github.com/androportal/APL-apk][APL]]). More than 150 Scilab textbook
+     companions ([[http://scilab.in][scilab.in]]) are now available in our latest builds. A
+     Scilab textbook companion is a listing of code that implements
+     worked out examples in standard textbooks.  Arduino, an open
+     source hardware with Gnoduino IDE, has also been tested and
+     included.
 
    - ExpEYES is a hardware and software tool for learning and
      exploring science experiments. It supports 50 experiments for
@@ -233,7 +247,7 @@
    - OSCAD is another open source EDA tool, acronym as Open Source
      Computer Aided Design. It has been developed using several open
      source tools like KiCad, Ngspice, and Scilab at IIT
-     Bombay. Python-TKinter is used to program its front-end. Since
+     Bombay. =Python-TKinter= is used to program its front-end. Since
      tools such as KiCad, Ngspice and Scilab already run on Aakash,
      OSCAD's installation procedure was similar to any other desktop
      running GNU/linux. Aakash's capability to run Electronic design
@@ -256,7 +270,7 @@
      GHz processor and 512MB memory, it has the potential to run any
      other GNU applications. Currently we have image targeted for 8GB
      SD-card of which first 16M FAT partition is dedicated to
-     bootloader(uboot.bin) and script.bin file. 1GB is used as swap
+     bootloader(uboot.bin) and =script.bin= file. 1GB is used as swap
      file-system in case if the actual RAM gets used up. The entire
      file-system along with install applications and other utilities
      consumes around 3GB space. Approximately 3.5 GB is left free for
@@ -270,7 +284,7 @@
      documentation on porting of Aakash. There are many open issues,
      such as, brightness control, sleep mode, touch drivers, etc. We
      have documented our work at
-     http://androportal.github.com/linux-on-aakash/.
+     [[http://androportal.github.com/linux-on-aakash/]].
 
 ** Aakash application development competition
 
@@ -291,7 +305,7 @@
      people, and re-submit their project proposal. On the basis of
      project description, we have shortlisted 140 teams, whose work
      will be developed further. Any updates related to competition
-     will be posted on http://aakashlabs.org/compete.
+     will be posted on [[http://aakashlabs.org/compete]].
 
    - Traditionally all applications running on GNU/linux desktop
      should also run on GNU/linux on Aakash. But one must ensure that
@@ -303,7 +317,7 @@
    - We still have many open issues on GNU/linux port.  Before
      contributing, we expect the participants of the competition to go
      through our GNU/linux porting documentation on github page
-     http://androportal.github.io/linux-on-aakash/.
+     [[http://androportal.github.io/linux-on-aakash/]].
 
    - We are in need of developers who are interested in GNU/Linux
      system. They must have sound knowledge of Linux kernel and
