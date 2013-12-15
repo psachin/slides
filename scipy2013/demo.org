@@ -1,0 +1,178 @@
+#+TITLE:     Python + Emacs in Scientific computing
+#+AUTHOR:    Scipy 2013
+#+EMAIL:     isachin@iitb.ac.in
+#+DATE:      2013-12-14 Sat
+#+DESCRIPTION: Scipy 2013 notes.
+#+KEYWORDS: scipy 2013
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:   
+#+LINK_HOME: 
+#+XSLT:
+#+Latex_header: \makeindex
+
+
+** Mathematical operations in Python
+*** Square root
+
+     #+BEGIN_SRC python -n :results output
+       # ---------------------
+       import numpy as np
+       print np.sqrt(2)
+       # ---------------------
+     #+END_SRC
+
+     #+RESULTS:
+     : 1.41421356237
+
+     1.41421356237
+
+*** Logarithm
+
+     #+BEGIN_SRC python -n :results output
+       # ---------------------------------
+       import numpy as np
+       print np.log(10)
+       print np.log10(10)  # base10
+       # ---------------------------------
+     #+END_SRC
+
+     #+RESULTS:
+     : 2.30258509299
+     : 1.0
+
+     2.30258509299
+     1.0
+
+*** Plots
+
+    - Example-1
+    
+     #+BEGIN_SRC python -n :var fname="plotdemo.png" :results file
+       # ------------------------------------------------------------
+       import matplotlib.pyplot as plt
+       plt.plot([1,2,3,40])
+       plt.ylabel('Y axis')
+       plt.xlabel('X axis')
+       plt.savefig(fname)
+         
+       return fname                    # return filename to org-mode
+       # ------------------------------------------------------------
+     #+END_SRC python
+
+     #+RESULTS:
+     [[file:plotdemo.png]]
+
+     [[./plotdemo.png]]
+
+
+    - Example-2
+
+     #+BEGIN_SRC python -n :results file
+       # ------------------------------------------------------------
+       import matplotlib, numpy
+       matplotlib.use('Agg')
+       import matplotlib.pyplot as plt
+       fig=plt.figure(figsize=(4,2))
+       x=numpy.linspace(-15,15)
+       plt.plot(numpy.sin(x)/x)
+       fig.tight_layout()
+       plt.savefig('images/python-matplot-fig.png')
+       return 'images/python-matplot-fig.png' # return filename to org-mode
+       # ------------------------------------------------------------
+     #+END_SRC
+
+     #+RESULTS:
+     [[file:images/python-matplot-fig.png]]
+
+     [[./images/python-matplot-fig.png]]
+
+
+** Data
+*** Table: Student marks
+
+#+tblname: marks
+| Student  | Maths | Physics | Mean |
+|----------+-------+---------+------|
+| Bertrand |    13 |      09 |      |
+| Henri    |    15 |      14 |      |
+| Arnold   |    17 |      13 |      |
+| Sam      |    15 |      12 |      |
+| Emmy     |    20 |      11 |      |
+| Roy      |    23 |      15 |      |
+| Victor   |    11 |      15 |      |
+| Robert   |    12 |      17 |      |
+| Harper   |    16 |      10 |      |
+|----------+-------+---------+------|
+| Mean     |       |         |    0 |
+#+TBLFM: $4=vmean($2..$3)::@11$2=vmean(@2$2..@10$2)::@11$3=vmean(@2$3..@10$3)::@11$4=0
+
+
+#+BEGIN_SRC python -n :var marks=marks :results file
+  # ------------------------------------------------------------
+  maths=[]
+  physics=[]
+  mean=[]
+  for i in marks[1:-1]:
+      maths.append(i[1])
+      physics.append(i[2])
+      mean.append(i[3])
+  
+  import matplotlib.pyplot as plot
+  plot.plot(physics,maths)
+  plot.ylabel('Physics')
+  plot.xlabel('Maths')
+  plot.savefig('marks.png')
+  
+  return 'marks.png'
+  # ------------------------------------------------------------
+#+END_SRC python 
+
+#+RESULTS:
+[[file:marks.png]]
+
+
+[[./marks.png]]
+
+*** Table: VI characteristics of diode marks
+#+tblname: readings
+| V(volts) | I(mA) | V/I |
+|----------+-------+-----|
+|     0.21 |  0.21 | .   |
+|     0.41 |  0.41 | .   |
+|     0.61 |  0.61 | .   |
+|     0.81 |  0.81 | .   |
+|     1.09 |  1.09 | .   |
+|     1.20 |  1.20 | .   |
+|----------+-------+-----|
+#+TBLFM: $3=(($1/$2)*1000)
+
+
+#+BEGIN_SRC python -n :var readings=readings :results file
+  # ------------------------------------------------------------
+  v=[]
+  i=[]
+  for reading in readings[1:]:
+      v.append(reading[1])
+      i.append(reading[2])
+  
+  import matplotlib.pyplot as plt
+  plt.plot(i,v)
+  plt.ylabel('I')
+  plt.xlabel('V')
+  plt.savefig('iv.png')
+  
+  return 'iv.png'
+  # ------------------------------------------------------------
+#+END_SRC python 
+
+#+RESULTS:
+[[file:iv.png]]
+
+[[./iv.png]]
+
+

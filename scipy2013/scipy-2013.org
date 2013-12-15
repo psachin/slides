@@ -1,0 +1,38 @@
+#+Title: Python + Emacs
+#+Author: in Scientific Computing
+#+Email: Sachin Patil
+
+#+OPTIONS: reveal_center:t reveal_progress:t reveal_history:nil reveal_control:t
+#+OPTIONS: reveal_mathjax:t reveal_rolling_links:t reveal_keyboard:t reveal_overview:t num:nil
+#+REVEAL_ROOT: file:///home/sachin/Downloads/reveal.js-2.5.0
+#+OPTIONS: toc:nil reveal_mathjax:t
+#+REVEAL_TRANS: default
+#+REVEAL_THEME: night
+
+# show the PDF 
+* Problems
+  #+ATTR_REVEAL: :frag roll-in
+  - So many files to manage.
+  - Integation of code snippets with text.
+  - I often forget to change the respective output.
+  - Code
+  - Data
+  - Plots(images)
+
+* Solution ??
+* Editor
+* Emacs + org-mode + Python
+  # show ipython and org-file
+* Emacs
+    - Extensible
+    - OS friendly
+    - Excellent support for Python
+    - org-mode -> LaTeX -> PDF
+    - org-mode -> HTML
+
+* Questions?
+    [[./images/questions.png]]
+
+* Thanks
+  [[http://github.com/psachin/slides/scipy2013][http://github.com/psachin/slides/scipy2013]] |
+  isachin@iitb.ac.in

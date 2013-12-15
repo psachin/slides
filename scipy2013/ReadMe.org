@@ -1,0 +1,9 @@
+* Scipy 2013
+  Python + Emacs in Scientific Computing.
+
+** Usage
+   - Download and extract *RevealJS* from [[http://revealjs.com/]]
+   - Copy =scipy-2013.html= to extracted revealjs directory.
+
+   - Open the html file from web-browser.
+   
