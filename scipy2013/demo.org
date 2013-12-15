@@ -19,43 +19,78 @@
 ** Mathematical operations in Python
 *** Square root
 
+    In mathematics, a square root of a number a is a number y such
+    that y2 = a, in other words, a number y whose square (the result
+    of multiplying the number by itself, or y × y) is a.[1] For
+    example, 4 and −4 are square roots of 16 because 42 = (−4)2 = 16.
+
+    Every non-negative real number a has a unique non-negative square
+    root, called the principal square root, which is denoted by √a,
+    where √ is called the radical sign or radix. For example, the
+    principal square root of 9 is 3, denoted √9 = 3, because 32 = 3 ×
+    3 = 9 and 3 is non-negative. The term whose root is being
+    considered is known as the radicand. The radicand is the number or
+    expression underneath the radical sign, in this example 9.
+
      #+BEGIN_SRC python -n :results output
        # ---------------------
        import numpy as np
-       print np.sqrt(2)
+       print np.sqrt(4)
        # ---------------------
      #+END_SRC
 
      #+RESULTS:
-     : 1.41421356237
+     : 2.0
 
-     1.41421356237
+    1.41421356237
 
 *** Logarithm
+
+    The logarithm of a number is the exponent to which another fixed
+    value, the base, must be raised to produce that number. For
+    example, the logarithm of 1000 to base 10 is 3, because 1000 is 10
+    to the power 3: 1000 = 10 × 10 × 10 = 103. More generally, if x =
+    by, then y is the logarithm of x to base b, and is written y =
+    logb(x), so log10(1000) = 3.
+
+    The logarithm to base 10 (b = 10) is called the common logarithm
+    and has many applications in science and engineering. The natural
+    logarithm has the constant e (≈ 2.718) as its base; its use is
+    widespread in pure mathematics, especially calculus. The binary
+    logarithm uses base 2 (b = 2) and is prominent in computer
+    science.
 
      #+BEGIN_SRC python -n :results output
        # ---------------------------------
        import numpy as np
        print np.log(10)
-       print np.log10(10)  # base10
+       print np.log10(1)  # base10
        # ---------------------------------
      #+END_SRC
 
      #+RESULTS:
      : 2.30258509299
-     : 1.0
+     : 0.0
 
      2.30258509299
+
      1.0
 
 *** Plots
+
+    *matplotlib* is a python 2D plotting library which produces
+    publication quality figures in a variety of hardcopy formats and
+    interactive environments across platforms. matplotlib can be used
+    in python scripts, the python and ipython shell (ala MATLAB®* or
+    Mathematica®†), web application servers, and six graphical user
+    interface toolkits.
 
     - Example-1
     
      #+BEGIN_SRC python -n :var fname="plotdemo.png" :results file
        # ------------------------------------------------------------
        import matplotlib.pyplot as plt
-       plt.plot([1,2,3,40])
+       plt.plot([1,2,3,4])
        plt.ylabel('Y axis')
        plt.xlabel('X axis')
        plt.savefig(fname)
@@ -90,7 +125,6 @@
      [[file:images/python-matplot-fig.png]]
 
      [[./images/python-matplot-fig.png]]
-
 
 ** Data
 *** Table: Student marks
