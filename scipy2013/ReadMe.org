@@ -2,8 +2,13 @@
   Python + Emacs in Scientific Computing.
 
 ** Usage
-   - Download and extract *RevealJS* from [[http://revealjs.com/]]
-   - Copy =scipy-2013.html= to extracted revealjs directory.
+   - Clone dependency.
+     
+   #+BEGIN_SRC sh
+     git clone https://github.com/psachin/slides.git
+     git submodule init
+     git submodule update
+   #+END_SRC sh
 
-   - Open the html file from web-browser.
+   - Open =/path/to/scipy-2013.html= in web browser.
    

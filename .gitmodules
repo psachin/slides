@@ -1,0 +1,3 @@
+[submodule "scipy2013/reveal.js"]
+	path = scipy2013/reveal.js
+	url = https://github.com/hakimel/reveal.js.git
