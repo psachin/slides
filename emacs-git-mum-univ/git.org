@@ -91,7 +91,7 @@
 
 * Hands on
 ** Make a project
-   /Make a directory/folder to handle your file(s)/
+   /Make a directory/folder to store your file(s)/
      
      #+BEGIN_SRC sh
        mkdir octo
@@ -99,11 +99,14 @@
 
 ** Tell git to manage it
 
+   /Initialize git/
+
    #+BEGIN_SRC sh
      git init
    #+END_SRC sh
 
-   /at time I want to know the status of my project/
+   
+   /at this time I want to know the status of my project/
 
    #+BEGIN_SRC sh
      git status

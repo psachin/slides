@@ -63,7 +63,7 @@
 
    #+CAPTION:    Wordpad
    #+LABEL:      fig:wordpad
-   #+ATTR_LaTeX: width=5cm,angle=0
+   #+ATTR_LaTeX: width=7cm,angle=0
 
   [[./wordpad.png]]
 
@@ -71,7 +71,7 @@
    
    #+CAPTION:    Notepad++
    #+LABEL:      fig:notepad-pp
-   #+ATTR_LaTeX: width=5cm,angle=0
+   #+ATTR_LaTeX: width=7cm,angle=0
 
   [[./notepad-pp.jpeg]]
    
@@ -79,7 +79,7 @@
 
    #+CAPTION:    Vim
    #+LABEL:      fig:vim
-   #+ATTR_LaTeX: width=5cm,angle=0
+   #+ATTR_LaTeX: width=8cm,angle=0
 
   [[./vim.png]]
 
@@ -87,7 +87,7 @@
 
    #+CAPTION:    GNU Emacs
    #+LABEL:      fig:emacs
-   #+ATTR_LaTeX: width=5cm,angle=0
+   #+ATTR_LaTeX: width=7cm,angle=0
 
   [[./emacs.png]]
 
@@ -129,7 +129,7 @@
    - Make presentations
    - Make tea ;)
 
-* summary
+* Summary
   
 ** About GNU Emacs
 
@@ -138,16 +138,23 @@
    - It's core is written in *C*
    - with /elisp/ wrapper
 
-* start
+* Getting started
 ** Lets start
-   
-   - Application menu -> Emacs
+*** GNU/Linux 							    :B_block:
+      :PROPERTIES:
+      :BEAMER_env: block
+      :END:
+      - Application menu -> Editors -> Emacs
+      - Using terminal:
+        #+BEGIN_SRC sh
+          emacs
+        #+END_SRC sh
 
-   - Terminal:
-     
-      #+BEGIN_SRC sh
-        emacs
-      #+END_SRC sh
+*** Windows 							    :B_block:
+      :PROPERTIES:
+      :BEAMER_env: block
+      :END:
+      - Click on Emacs binary file
 
 
 * Moving around
@@ -206,7 +213,7 @@
    - again F4 -> /use macro/
 
 
-** hands on
+** Hands on(using macros)
 
   [[./get-go.jpeg]]
 
@@ -226,7 +233,7 @@
 
    - paste *C-y*
 
-   - Spell check *ispell*
+   - Spell check *M-x ispell*
 
      (demo)
      (assignment)
