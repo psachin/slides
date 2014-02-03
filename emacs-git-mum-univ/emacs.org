@@ -1,0 +1,271 @@
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [bigger, presentation]
+#+BEAMER_FRAME_LEVEL: 2
+
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:t d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:   
+#+LINK_HOME: 
+#+XSLT:
+#+COLUMNS: %40ITEM %10BEAMER_env(Env) %9BEAMER_envargs(Env Args) %4BEAMER_col(Col) %10BEAMER_extra(Extra)
+
+# +PROPERTY: BEAMER_col_ALL 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0 :ETC
+
+#+LaTeX_HEADER:  \usetheme{Frankfurt}   
+#+LaTeX_HEADER:  \usecolortheme[RGB={0,104,139}]{structure}%deepskyblue
+#+LaTeX_HEADER:  \usefonttheme{serif}  % or try serif, structurebold, ...
+#+LaTeX_HEADER:  \setbeamertemplate{navigation symbols}[horizontal]
+#+LaTeX_HEADER:  \setbeamertemplate{caption}[numbered]
+#+LaTeX_HEADER:  \useinnertheme{rounded}
+
+#+LaTeX_HEADER: \setbeamercovered{transparent}
+#+LaTeX_HEADER: \usepackage{pgfpages}
+#+LaTeX_HEADER: \pgfpagesuselayout{resize to}[physical paper width=8in, physical paper height=6in]
+
+#+LaTeX_HEADER: \logo{\includegraphics[height=1cm,width=2.5cm]{mu-logo.png}}
+#+LaTeX_HEADER: \usepackage{array}
+#+LaTeX_HEADER: \usepackage{graphicx}
+#+LaTeX_HEADER: \usepackage{hyperref}
+#+LaTeX_HEADER:  \usepackage[english]{babel}
+#+LaTeX_HEADER: \usepackage{pxfonts}
+#+LaTeX_HEADER: \usepackage{listings}
+#+LaTex_HEADER: \lstset{numbers=left,numbersep=6pt,numberstyle=\tiny,showstringspaces=false,aboveskip=-50pt,frame=leftline,keywordstyle=\color{black},commentstyle=\color{orange},stringstyle=\color{black},}
+
+
+#+TITLE:     GNU Emacs
+#+AUTHOR:    Sachin
+#+EMAIL:     isachin@iitb.ac.in
+%#+LATEX_HEADER: \date{today}
+#+DATE:      February 4, 2014
+
+#+LaTeX_HEADER: \subtitle{Universal editor}
+#+LaTeX_HEADER: \institute{Indian Institute of Technology, Bombay}
+
+#+DESCRIPTION: General introduction to GNU Emacs
+#+KEYWORDS: org mode, emacs, latex, beamer, pdf, editor
+
+
+* Text Editors
+** Notepad
+
+   #+CAPTION:    Notepad
+   #+LABEL:      fig:notepad
+   #+ATTR_LaTeX: width=5cm,angle=0
+
+  [[./notepad.png]]
+
+** Wordpad
+
+   #+CAPTION:    Wordpad
+   #+LABEL:      fig:wordpad
+   #+ATTR_LaTeX: width=5cm,angle=0
+
+  [[./wordpad.png]]
+
+** Notepad++
+   
+   #+CAPTION:    Notepad++
+   #+LABEL:      fig:notepad-pp
+   #+ATTR_LaTeX: width=5cm,angle=0
+
+  [[./notepad-pp.jpeg]]
+   
+** Vim
+
+   #+CAPTION:    Vim
+   #+LABEL:      fig:vim
+   #+ATTR_LaTeX: width=5cm,angle=0
+
+  [[./vim.png]]
+
+** Emacs
+
+   #+CAPTION:    GNU Emacs
+   #+LABEL:      fig:emacs
+   #+ATTR_LaTeX: width=5cm,angle=0
+
+  [[./emacs.png]]
+
+* Introduction
+** What is it?
+
+   #+begin_quote
+   GNU Emacs is like having a dragon's cave of treasures
+
+   *Robert Chassel*
+   #+end_quote
+
+
+** Is it really universal?
+***   Yes, you can: 						    :B_block:
+      :PROPERTIES:
+      :BEAMER_env: block
+      :END:
+      - edit text
+      - edit a binary file
+      - edit complex code
+
+** I'm no coder!
+***   You can still: 						    :B_block:
+      :PROPERTIES:
+      :BEAMER_env: block
+      :END:
+      - Take notes
+      - Use it as a word processor
+      - Write manuscripts, CFP's
+      - PDF, HTML etc.
+
+** What I do with Emacs
+   
+   - Manage notes
+   - Manage agenda
+   - Coding
+   - Remote text editing
+   - Make presentations
+   - Make tea ;)
+
+* summary
+  
+** About GNU Emacs
+
+   - Emacs has been around since 1970's
+   - Originally written by [[http://www.stallman.org/][Richard Stallman]] & [[http://en.wikipedia.org/wiki/Guy_L._Steele,_Jr.][Guy L. Steele, Jr.]]
+   - It's core is written in *C*
+   - with /elisp/ wrapper
+
+* start
+** Lets start
+   
+   - Application menu -> Emacs
+
+   - Terminal:
+     
+      #+BEGIN_SRC sh
+        emacs
+      #+END_SRC sh
+
+
+* Moving around
+** Keys
+*** Conventions 						    :B_block:
+      :PROPERTIES:
+      :BEAMER_env: block
+      :END:
+      - Control key -> *C*
+      - Alt key = Meta key -> *M*
+
+** Keyboard shortcuts
+
+   #+CAPTION:    Moving around
+   #+LABEL:      fig:moving
+   #+ATTR_LaTeX: width=5cm,angle=0
+
+  [[./moving.png]]
+   
+   - You can use arrow keys & mouse just like another editor
+   
+** Move it!
+
+   #+CAPTION:    Get set go
+   #+LABEL:      fig:get-go
+   #+ATTR_LaTeX: width=5cm,angle=0
+
+  [[./get-go.jpeg]]
+
+
+  *Emacs tutorial*
+  
+  or
+  
+  #+BEGIN_SRC sh
+    C-h t
+  #+END_SRC sh
+
+
+* Macros
+  
+** Emacs Macros
+
+  - Record key binding
+
+    (demo)
+    (assignment)
+
+** Using macros in Emacs
+   
+   - F3 -> /to start recording/
+
+   - F4 -> /to stop recording/
+
+   
+   - again F4 -> /use macro/
+
+
+** hands on
+
+  [[./get-go.jpeg]]
+
+
+** Indenting
+
+   (demo)
+   (assignment)
+   
+** Basic editing
+
+   - Beginning of file *M-<*
+   - End of file *M->*
+     
+   - Cut *C-w*
+   - Copy *M-w*
+
+   - paste *C-y*
+
+   - Spell check *ispell*
+
+     (demo)
+     (assignment)
+
+** Org mode
+
+   #+begin_quote
+     Welcome the Beast!
+   #+end_quote
+   
+
+* Question
+** 
+   #+ATTR_LaTeX: width=5cm,angle=0
+   [[./questions.png]]
+   
+   #+BEGIN_SRC sh
+     isachin@iitb.ac.in
+   #+END_SRC sh
+
+
+* Reference & links
+** 
+*** Reference				    :B_block:
+      :PROPERTIES:
+      :BEAMER_env: block
+      :END:
+      - C-h t /tutorial/
+      - C-h r /documentation/
+
+*** Links 							    :B_block:
+      :PROPERTIES:
+      :BEAMER_env: block
+      :END:
+      - [[http://www.emacswiki.org/emacs/][emacswiki.org]]
+      - [[http://planet.emacsen.org/][planet.emacsen.org]]
+      - [[http://haqiba.org/][haqiba.org]]
+
+
+
+
+
