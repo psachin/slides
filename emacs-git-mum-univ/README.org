@@ -1,10 +1,11 @@
 * Refresher course - University of Mumbai(Vidyanagri Campus, Kalina, Kurla)
   4th Feb, 2014
 
-** Session on GNU/Emacs(Universal editor) [10.00 AM - 11:30 AM]
-** Session on Git(Version control) [11:40 AM - 1:10 PM]
+** Session on GNU/Emacs(Universal editor) 
+** Session on Git(Version control)
 ** key bindings
-   - create template : C-c C-e t
+   Open =emacs.org= or =git.org= in GNU Emacs and
+   - Create template : C-c C-e t
    - To generate .tex file : C-c C-e l
    - To generate .pdf file : C-c C-e p
 
