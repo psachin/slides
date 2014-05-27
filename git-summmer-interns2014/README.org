@@ -1,0 +1,11 @@
+* Session on GIT
+  Summer Internship 2014, IITB
+  May 27, 2014
+
+** Session on Git(Version control)
+** key bindings
+   Open =emacs.org= or =git.org= in GNU Emacs and
+   - Create template : C-c C-e t
+   - To generate .tex file : C-c C-e l
+   - To generate .pdf file : C-c C-e p
+

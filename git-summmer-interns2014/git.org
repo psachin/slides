@@ -1,0 +1,253 @@
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [bigger, presentation]
+#+BEAMER_FRAME_LEVEL: 2
+
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:t d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:   
+#+LINK_HOME: 
+#+XSLT:
+#+COLUMNS: %40ITEM %10BEAMER_env(Env) %9BEAMER_envargs(Env Args) %4BEAMER_col(Col) %10BEAMER_extra(Extra)
+
+# +PROPERTY: BEAMER_col_ALL 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0 :ETC
+
+#+LaTeX_HEADER:  \usetheme{Frankfurt}   
+#+LaTeX_HEADER:  \usecolortheme[RGB={0,104,139}]{structure}%deepskyblue
+#+LaTeX_HEADER:  \usefonttheme{serif}  % or try serif, structurebold, ...
+#+LaTeX_HEADER:  \setbeamertemplate{navigation symbols}[horizontal]
+#+LaTeX_HEADER:  \setbeamertemplate{caption}[numbered]
+#+LaTeX_HEADER:  \useinnertheme{rounded}
+
+#+LaTeX_HEADER: \setbeamercovered{transparent}
+#+LaTeX_HEADER: \usepackage{pgfpages}
+#+LaTeX_HEADER: \pgfpagesuselayout{resize to}[physical paper width=8in, physical paper height=6in]
+
+#+LaTeX_HEADER: \logo{\includegraphics[height=1cm,width=1cm]{iitb-logo.jpeg}}
+#+LaTeX_HEADER: \usepackage{array}
+#+LaTeX_HEADER: \usepackage{graphicx}
+#+LaTeX_HEADER: \usepackage{hyperref}
+#+LaTeX_HEADER:  \usepackage[english]{babel}
+#+LaTeX_HEADER: \usepackage{pxfonts}
+#+LaTeX_HEADER: \usepackage{listings}
+#+LaTex_HEADER: \lstset{numbers=left,numbersep=6pt,numberstyle=\tiny,showstringspaces=false,aboveskip=-50pt,frame=leftline,keywordstyle=\color{black},commentstyle=\color{orange},stringstyle=\color{black},}
+
+
+#+TITLE:     git
+#+AUTHOR:    Sachin
+#+EMAIL:     isachin@iitb.ac.in
+#+LATEX_HEADER: \date{today}
+
+#+LaTeX_HEADER: \subtitle{because we like silly names}
+#+LaTeX_HEADER: \institute{Indian Institute of Technology, Bombay}
+
+#+DESCRIPTION: my first presentation made in org mode
+#+KEYWORDS: git, version control
+
+* Introduction
+** What is git?
+   #+begin_quote
+     A programs that remembers the changes in your file(s)
+   #+end_quote
+
+** Other version control systems
+   - Mercurial(=hg=)
+   - Subversion Control(=svn=)
+   - bazaar(=bzr=)
+
+* Summary
+** Why should I use git?
+   - Once you get familiar it will be a part of you life.
+   - Cleaner approach to file management
+
+** Usefulness
+   #+begin_quote
+     I'm no coder or a developer, can I use *git*?
+   #+end_quote
+     
+** Basic concept
+   #+CAPTION:    life of a file
+   #+LABEL:      fig:life-of-file
+   #+ATTR_LaTeX: width=9cm,angle=0
+   [[./concept.png]]
+
+* Install
+** Installing =git=
+
+   /Ubuntu(or Debian)/
+   #+BEGIN_SRC sh
+     sudo apt-get install git  
+   #+END_SRC sh
+
+   /From source - Download and compile/install/
+   #+BEGIN_SRC html
+     http://git-scm.com/downloads
+   #+END_SRC html
+
+* Setup
+** Basic setup
+   
+   /Your name/
+   #+BEGIN_SRC sh
+     git config --global user.name "Sachin"
+   #+END_SRC sh
+
+   /Your Email/
+   #+BEGIN_SRC sh
+     git config --global user.email "isachin@iitb.ac.in"
+   #+END_SRC sh
+
+* Hands on
+** Make a project
+   /Make a directory/folder to store your file(s)/
+     
+     #+BEGIN_SRC sh
+       mkdir octo
+     #+END_SRC sh
+
+** Tell git to manage it
+
+   /Initialize git/
+
+   #+BEGIN_SRC sh
+     git init
+   #+END_SRC sh
+
+   
+   /at this time I want to know the status of my project/
+
+   #+BEGIN_SRC sh
+     git status
+   #+END_SRC sh
+
+** Add file to your project
+   #+BEGIN_SRC sh
+     git add <FILE NAME>
+   #+END_SRC sh
+
+   /for files with similar extensions/
+   #+BEGIN_SRC sh
+     git add *.txt
+   #+END_SRC sh
+
+   /to add everything/
+   #+BEGIN_SRC sh
+     git add .
+   #+END_SRC sh
+
+** Check status of your project
+
+   #+BEGIN_SRC sh
+     git status
+   #+END_SRC sh
+
+** Commit it if your are happy :D
+
+   #+BEGIN_SRC sh
+     git commit -m "My message"
+   #+END_SRC sh
+
+* diff
+** See changes w.r.t last commit
+   
+   #+BEGIN_SRC sh
+     git diff
+   #+END_SRC sh
+
+   /Difference w.r.t file/
+   #+BEGIN_SRC sh
+     git diff <FILENAME>
+   #+END_SRC sh
+
+
+* Update
+** Update modified file(s)
+   
+   /to update already committed file/
+   #+BEGIN_SRC sh
+     git add -u
+   #+END_SRC sh
+
+   (/do some more commits/)
+
+* Log
+** View commits
+   #+BEGIN_SRC sh
+     git log
+   #+END_SRC sh
+
+   #+BEGIN_SRC sh
+     git log --oneline
+   #+END_SRC sh
+
+   #+BEGIN_SRC sh
+     git log --graph --decorate --oneline
+   #+END_SRC sh
+
+
+* Reset/Reflog/Revert
+** Get back to old commit
+*** With no history
+
+   #+BEGIN_SRC sh
+     git reset --hard <COMMIT HASH>
+   #+END_SRC sh
+
+* GitHub
+** Hosting your code
+
+   #+CAPTION:    GitHub
+   #+LABEL:      fig:GitHub
+   #+ATTR_LaTeX: width=10cm,angle=0
+
+  [[./github.png]]
+
+* Branch
+** Git branch: What is that?
+
+   #+CAPTION:    Git branches
+   #+LABEL:      fig:branch
+   #+ATTR_LaTeX: width=10cm,angle=0
+
+  [[./branch.png]]
+
+* Hosting
+** 
+
+*** Hosting sites 						    :B_block:
+      :PROPERTIES:
+      :BEAMER_env: block
+      :END:
+      - github.com
+      - gitlab.com
+      - bitbucket.org
+     
+* Question
+** 
+   #+ATTR_LaTeX: width=5cm,angle=0
+   [[./questions.png]]
+   
+   #+BEGIN_SRC sh
+     isachin@iitb.ac.in
+   #+END_SRC sh
+
+
+* Reference & links
+** 
+*** Reference				    :B_block:
+      :PROPERTIES:
+      :BEAMER_env: block
+      :END:
+      - /Pro Git/
+
+
+*** Links 							    :B_block:
+      :PROPERTIES:
+      :BEAMER_env: block
+      :END:
+      - [[http://www.emacswiki.org/emacs/][http://git-scm.com/]]
+
