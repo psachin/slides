@@ -1,0 +1,85 @@
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [bigger, presentation]
+#+BEAMER_FRAME_LEVEL: 2
+
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:t d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:   
+#+LINK_HOME: 
+#+XSLT:
+#+COLUMNS: %40ITEM %10BEAMER_env(Env) %9BEAMER_envargs(Env Args) %4BEAMER_col(Col) %10BEAMER_extra(Extra)
+
+# +PROPERTY: BEAMER_col_ALL 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0 :ETC
+
+#+LaTeX_HEADER:  \usetheme{Frankfurt}   
+#+LaTeX_HEADER:  \usecolortheme[RGB={0,104,139}]{structure}%deepskyblue
+#+LaTeX_HEADER:  \usefonttheme{serif}  % or try serif, structurebold, ...
+#+LaTeX_HEADER:  \setbeamertemplate{navigation symbols}[horizontal]
+#+LaTeX_HEADER:  \setbeamertemplate{caption}[numbered]
+#+LaTeX_HEADER:  \useinnertheme{rounded}
+
+#+LaTeX_HEADER: \setbeamercovered{transparent}
+#+LaTeX_HEADER: \usepackage{pgfpages}
+#+LaTeX_HEADER: \pgfpagesuselayout{resize to}[physical paper width=8in, physical paper height=6in]
+
+#+LaTeX_HEADER: \logo{\includegraphics[height=0.9cm,width=2cm]{django-logo.png}}
+#+LaTeX_HEADER: \usepackage{array}
+#+LaTeX_HEADER: \usepackage{graphicx}
+#+LaTeX_HEADER: \usepackage{hyperref}
+#+LaTeX_HEADER:  \usepackage[english]{babel}
+#+LaTeX_HEADER: \usepackage{pxfonts}
+#+LaTeX_HEADER: \usepackage{listings}
+#+LaTex_HEADER: \lstset{numbers=left,numbersep=6pt,numberstyle=\tiny,showstringspaces=false,aboveskip=-50pt,frame=leftline,keywordstyle=\color{black},commentstyle=\color{orange},stringstyle=\color{black},}
+
+
+#+TITLE:     Django
+#+AUTHOR:    
+#+EMAIL:     iclcoolster@gmail.com
+#+LATEX_HEADER: \date{today}
+##+DATE:      December 20, 2012
+
+#+LaTeX_HEADER: \subtitle{Python web framework | Session 2}
+#+LaTeX_HEADER: \institute{Indian Institute of Technology Bombay}
+
+#+DESCRIPTION: my first presentation made in org mode
+#+KEYWORDS: org mode, emacs, latex, beamer, pdf
+
+* Session 1
+** Session 1
+   We covered
+   
+   - Why Python-django
+   - Django framework
+   - Introduction to =virtualenv=
+   - Install/Configure Django
+   - Django views(=views.py=)
+
+* Django admin
+** Django admin
+   - Why?
+     - Basic(and powerful) admin panel
+     - Built-in
+     - Testing & Back-end tasks
+
+* URLs
+** =urls.py=
+   - =urls.py= specific to app
+     
+* Databases
+** Databases
+   - /ORM/ (Object relational mapping)
+   - No /SQL/ queries to be written
+
+* Forms
+** Forms in Django
+   - ??
+
+
+* Reference
+** References
+   - https://docs.djangoproject.com/
