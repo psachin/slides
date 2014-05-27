@@ -43,12 +43,12 @@
 #+LATEX_HEADER: \date{today}
 
 #+LaTeX_HEADER: \subtitle{because we like silly names}
-#+LaTeX_HEADER: \institute{Indian Institute of Technology, Bombay}
+#+LaTeX_HEADER: \institute{Indian Institute of Technology Bombay}
 
 #+DESCRIPTION: my first presentation made in org mode
 #+KEYWORDS: git, version control
 
-* Introduction
+* Intro
 ** What is git?
    #+begin_quote
      A programs that remembers the changes in your file(s)
@@ -101,7 +101,7 @@
      git config --global user.email "isachin@iitb.ac.in"
    #+END_SRC sh
 
-* Hands on
+* HandsOn
 ** Make a project
    /Make a directory/folder to store your file(s)/
      
@@ -189,7 +189,14 @@
    #+END_SRC sh
 
 
-* Reset/Reflog/Revert
+* 3 R's
+
+** Reset/Reflog/Revert
+ 
+  - Reset
+  - Reflog
+  - Revert
+
 ** Get back to old commit
 *** With no history
 
@@ -215,7 +222,7 @@
 
   [[./branch.png]]
 
-* Hosting
+* Host
 ** 
 
 *** Hosting sites 						    :B_block:
@@ -225,6 +232,7 @@
       - github.com
       - gitlab.com
       - bitbucket.org
+      - sourceforge.net
      
 * Question
 ** 
@@ -236,7 +244,7 @@
    #+END_SRC sh
 
 
-* Reference & links
+* Refs/links
 ** 
 *** Reference				    :B_block:
       :PROPERTIES:

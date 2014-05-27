@@ -1,4 +1,4 @@
-% Created 2014-05-27 Tue 09:33
+% Created 2014-05-27 Tue 13:17
 \documentclass[bigger, presentation]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -35,7 +35,7 @@
 \lstset{numbers=left,numbersep=6pt,numberstyle=\tiny,showstringspaces=false,aboveskip=-50pt,frame=leftline,keywordstyle=\color{black},commentstyle=\color{orange},stringstyle=\color{black},}
 \date{today}
 \subtitle{because we like silly names}
-\institute{Indian Institute of Technology, Bombay}
+\institute{Indian Institute of Technology Bombay}
 \providecommand{\alert}[1]{\textbf{#1}}
 
 \title{git}
@@ -50,7 +50,7 @@
 
 \maketitle
 
-\section{Introduction}
+\section{Intro}
 \label{sec-1}
 \begin{frame}
 \frametitle{What is git?}
@@ -139,7 +139,7 @@ git config --global user.name "Sachin"
 git config --global user.email "isachin@iitb.ac.in"
 \end{minted}
 \end{frame}
-\section{Hands on}
+\section{HandsOn}
 \label{sec-5}
 \begin{frame}[fragile]
 \frametitle{Make a project}
@@ -267,15 +267,26 @@ git log --oneline
 git log --graph --decorate --oneline
 \end{minted}
 \end{frame}
-\section{Reset/Reflog/Revert}
+\section{3 R's}
 \label{sec-9}
+\begin{frame}
+\frametitle{Reset/Reflog/Revert}
+\label{sec-9-1}
+
+ 
+\begin{itemize}
+\item Reset
+\item Reflog
+\item Revert
+\end{itemize}
+\end{frame}
 \begin{frame}[fragile]
 \frametitle{Get back to old commit}
-\label{sec-9-1}
+\label{sec-9-2}
 \begin{itemize}
 
 \item With no history\\
-\label{sec-9-1-1}%
+\label{sec-9-2-1}%
 \begin{minted}[]{sh}
 git reset --hard <COMMIT HASH>
 \end{minted}
@@ -310,7 +321,7 @@ git reset --hard <COMMIT HASH>
   \caption{\label{fig:branch}Git branches}
   \end{figure}
 \end{frame}
-\section{Hosting}
+\section{Host}
 \label{sec-12}
 \begin{frame}
 \begin{block}{Hosting sites}
@@ -320,6 +331,7 @@ git reset --hard <COMMIT HASH>
 \item github.com
 \item gitlab.com
 \item bitbucket.org
+\item sourceforge.net
 \end{itemize}
      
 \end{block}
@@ -335,7 +347,7 @@ git reset --hard <COMMIT HASH>
 isachin@iitb.ac.in
 \end{minted}
 \end{frame}
-\section{Reference \& links}
+\section{Refs/links}
 \label{sec-14}
 \begin{frame}
 \begin{block}{Reference}
