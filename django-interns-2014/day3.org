@@ -1,0 +1,211 @@
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [bigger, presentation]
+#+BEAMER_FRAME_LEVEL: 2
+
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:t d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:   
+#+LINK_HOME: 
+#+XSLT:
+#+COLUMNS: %40ITEM %10BEAMER_env(Env) %9BEAMER_envargs(Env Args) %4BEAMER_col(Col) %10BEAMER_extra(Extra)
+
+# +PROPERTY: BEAMER_col_ALL 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0 :ETC
+
+#+LaTeX_HEADER:  \usetheme{Frankfurt}   
+#+LaTeX_HEADER:  \usecolortheme[RGB={0,104,139}]{structure}%deepskyblue
+#+LaTeX_HEADER:  \usefonttheme{serif}  % or try serif, structurebold, ...
+#+LaTeX_HEADER:  \setbeamertemplate{navigation symbols}[horizontal]
+#+LaTeX_HEADER:  \setbeamertemplate{caption}[numbered]
+#+LaTeX_HEADER:  \useinnertheme{rounded}
+
+#+LaTeX_HEADER: \setbeamercovered{transparent}
+#+LaTeX_HEADER: \usepackage{pgfpages}
+#+LaTeX_HEADER: \pgfpagesuselayout{resize to}[physical paper width=8in, physical paper height=6in]
+
+#+LaTeX_HEADER: \logo{\includegraphics[height=0.9cm,width=2cm]{django-logo.png}}
+#+LaTeX_HEADER: \usepackage{array}
+#+LaTeX_HEADER: \usepackage{graphicx}
+#+LaTeX_HEADER: \usepackage{hyperref}
+#+LaTeX_HEADER:  \usepackage[english]{babel}
+#+LaTeX_HEADER: \usepackage{pxfonts}
+#+LaTeX_HEADER: \usepackage{listings}
+#+LaTex_HEADER: \lstset{numbers=left,numbersep=6pt,numberstyle=\tiny,showstringspaces=false,aboveskip=-50pt,frame=leftline,keywordstyle=\color{black},commentstyle=\color{orange},stringstyle=\color{black},}
+
+
+#+TITLE:     Django
+#+AUTHOR:    
+#+EMAIL:     iclcoolster@gmail.com
+#+LATEX_HEADER: \date{today}
+##+DATE:      December 20, 2012
+
+#+LaTeX_HEADER: \subtitle{Python web framework | Session 3}
+#+LaTeX_HEADER: \institute{Indian Institute of Technology Bombay}
+
+#+DESCRIPTION: my first presentation made in org mode
+#+KEYWORDS: org mode, emacs, latex, beamer, pdf
+
+* pre-sessions
+** Session 1
+   We covered
+   
+   - Why Python-django
+   - Django framework
+   - Introduction to =virtualenv=
+   - Install/Configure Django
+   - Django views(=views.py=)
+
+** Session 2
+   
+   We covered
+
+   - Django admin
+   - Models(Databases)
+     - =octo/settings.py=
+   - URLs redirection
+   - Templates
+
+* url
+** URL redirection
+
+   #+CAPTION:    =octo/urls.py=
+   #+LABEL:      fig:octo/urls.py
+   #+ATTR_LaTeX: width=6cm,angle=0
+
+  [[./project-urls.png]]
+
+   #+CAPTION:    =app/urls.py=
+   #+LABEL:      fig:app/urls.py
+   #+ATTR_LaTeX: width=6cm,angle=0
+
+  [[./apps-urls.png]]
+
+
+* templates
+** app/views.py
+
+   #+BEGIN_SRC python
+     def blog(request):
+         context = RequestContext(request)
+         blogs = Blog.objects.all()
+     
+         context_dict = {
+             'blogs': blogs,
+         }
+         
+         return render_to_response("app/blog.html",
+                                   context_dict, context)
+   #+END_SRC python
+
+** List in Python
+   
+   #+BEGIN_SRC python -n
+     blogs = ['My first post',
+             'Started with a BANG!',
+             'Deep blue Sea',
+             'Revenge of the fallen']
+     
+     print blogs
+     
+     for blog in blogs:
+         print blog
+   #+END_SRC python
+   
+** Dictionary in Python
+   
+   #+BEGIN_SRC python -n
+     context_dict = {
+         'blogs': blogs,
+     }
+     
+     print context_dict['blogs']
+   #+END_SRC python
+
+** octo/templates/app/blog.html
+
+   #+BEGIN_SRC html
+     {% for blog in blogs %}
+     <h2>{{blog.title}}</h2>
+     <p>{{blog.body}}</p>
+     {% endfor %}  
+   #+END_SRC html
+
+   
+
+* Forms
+** Forms in Django
+   
+   #+begin_quote
+     For lazy nerds
+   #+end_quote
+
+** Forms: Decide the url
+
+   #+BEGIN_SRC sh
+     localhost:8000/app/blog/submit
+   #+END_SRC sh
+
+** Forms: =app/urls.py=
+
+   #+BEGIN_SRC python
+     from django.conf.urls import patterns, include, url
+     
+     urlpatterns = patterns('',
+         # ...
+         # ...
+         url(r'^blog/submit/$', 'app.views.submit_post'),
+     )
+     
+   #+END_SRC python
+
+** Forms: =app/views.py=
+
+   #+BEGIN_SRC python
+     def submit_post(request):
+         """Create a form to submit post.
+         """
+         # ..
+         return render_to_response()
+   #+END_SRC python
+
+** Forms: =app/forms.py=
+
+   #+BEGIN_SRC python
+     from django import forms
+     from models import Blog
+     
+     # begin forms
+     class PostForm(forms.ModelForm):
+         title = forms.CharField()
+         body = forms.TextInput()
+     
+         class Meta:
+             model = Blog
+             fields = ['title', 'body']  
+   #+END_SRC python
+
+** Forms: =app/views.py=
+
+   #+BEGIN_SRC python
+     def submit_post(request):
+         """Create a form to submit post.
+         """
+         # context
+     
+         # If user clicked 'Submit' button(POST request)
+           # Validate form
+             # Save form
+             # Show all posts
+           # Throw errors(if any)
+         # Else show empty form
+         return render_to_response()
+   #+END_SRC python
+
+* Reference
+** References
+   - https://docs.djangoproject.com/
+   - http://www.tangowithdjango.com/book/
