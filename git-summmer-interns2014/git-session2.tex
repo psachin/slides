@@ -1,4 +1,4 @@
-% Created 2014-05-29 Thu 11:05
+% Created 2014-06-02 Mon 15:17
 \documentclass[bigger, presentation]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -78,6 +78,7 @@
 \item git init
 \item git add <FILENAME>
 \item git commit -m ``MESSAGE''
+\item git diff <FILENAME>
 \item git add -u
 \item git status
 \item git log
@@ -98,6 +99,7 @@
 \item git push -u origin master
 \item git push
 \end{itemize}
+        
 \end{block}
 \end{frame}
 \section{clone/pull/fetch}
@@ -241,17 +243,24 @@ git push origin devel
 \end{itemize}
 \end{frame}
 \begin{frame}[fragile]
-\frametitle{Get back to old commit}
+\frametitle{Get back to old commit hash}
 \label{sec-5-2}
-\begin{itemize}
+\begin{block}{With no history}
+\label{sec-5-2-1}
 
-\item With no history\\
-\label{sec-5-2-1}%
+
 \begin{minted}[]{sh}
 git reset --hard <COMMIT HASH>
 \end{minted}
+\end{block}
+\begin{block}{With history}
+\label{sec-5-2-2}
 
-\end{itemize} % ends low level
+
+\begin{minted}[]{sh}
+git revert <COMMIT HASH>
+\end{minted}
+\end{block}
 \end{frame}
 \section{Host}
 \label{sec-6}

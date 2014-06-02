@@ -68,6 +68,7 @@
       - git init
       - git add <FILENAME>
       - git commit -m "MESSAGE"
+      - git diff <FILENAME>
       - git add -u
       - git status
       - git log
@@ -83,7 +84,7 @@
       - git remote -v
       - git push -u origin master
       - git push
-
+	
 * clone/pull/fetch
 ** =clone, pull=
    
@@ -178,12 +179,24 @@
   - Reflog
   - Revert
 
-** Get back to old commit
-*** With no history
+** Get back to old commit hash
 
-   #+BEGIN_SRC sh
-     git reset --hard <COMMIT HASH>
-   #+END_SRC sh
+*** With no history 					    :B_block:
+      :PROPERTIES:
+      :BEAMER_env: block
+      :END:
+       #+BEGIN_SRC sh
+         git reset --hard <COMMIT HASH>
+       #+END_SRC sh
+
+
+*** With history
+      :PROPERTIES:
+      :BEAMER_env: block
+      :END:
+       #+BEGIN_SRC sh
+         git revert <COMMIT HASH>
+       #+END_SRC sh
 
 * Host
 ** 
