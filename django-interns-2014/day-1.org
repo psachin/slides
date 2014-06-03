@@ -1,0 +1,178 @@
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [bigger, presentation]
+#+BEAMER_FRAME_LEVEL: 2
+
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:t d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:   
+#+LINK_HOME: 
+#+XSLT:
+#+COLUMNS: %40ITEM %10BEAMER_env(Env) %9BEAMER_envargs(Env Args) %4BEAMER_col(Col) %10BEAMER_extra(Extra)
+
+# +PROPERTY: BEAMER_col_ALL 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0 :ETC
+
+#+LaTeX_HEADER:  \usetheme{Frankfurt}   
+#+LaTeX_HEADER:  \usecolortheme[RGB={0,104,139}]{structure}%deepskyblue
+#+LaTeX_HEADER:  \usefonttheme{serif}  % or try serif, structurebold, ...
+#+LaTeX_HEADER:  \setbeamertemplate{navigation symbols}[horizontal]
+#+LaTeX_HEADER:  \setbeamertemplate{caption}[numbered]
+#+LaTeX_HEADER:  \useinnertheme{rounded}
+
+#+LaTeX_HEADER: \setbeamercovered{transparent}
+#+LaTeX_HEADER: \usepackage{pgfpages}
+#+LaTeX_HEADER: \pgfpagesuselayout{resize to}[physical paper width=8in, physical paper height=6in]
+
+#+LaTeX_HEADER: \logo{\includegraphics[height=0.9cm,width=2cm]{django-logo.png}}
+#+LaTeX_HEADER: \usepackage{array}
+#+LaTeX_HEADER: \usepackage{graphicx}
+#+LaTeX_HEADER: \usepackage{hyperref}
+#+LaTeX_HEADER:  \usepackage[english]{babel}
+#+LaTeX_HEADER: \usepackage{pxfonts}
+#+LaTeX_HEADER: \usepackage{listings}
+#+LaTex_HEADER: \lstset{numbers=left,numbersep=6pt,numberstyle=\tiny,showstringspaces=false,aboveskip=-50pt,frame=leftline,keywordstyle=\color{black},commentstyle=\color{orange},stringstyle=\color{black},}
+
+
+#+TITLE:     Django
+#+AUTHOR:    Sachin
+#+EMAIL:     iclcoolster@gmail.com
+#+LATEX_HEADER: \date{today}
+##+DATE:      December 20, 2012
+
+#+LaTeX_HEADER: \subtitle{Python web framework | Session 1}
+#+LaTeX_HEADER: \institute{Indian Institute of Technology Bombay}
+
+#+DESCRIPTION: my first presentation made in org mode
+#+KEYWORDS: org mode, emacs, latex, beamer, pdf
+
+* Intro
+** Django
+
+   - Python based web framework
+   - M(models)-V(views)-T(templates)
+   - ORM - Object Relational Mapper
+
+** Why Python-django
+
+   - Python
+   - No need to write even a single SQL query
+   - Modular approach(M-V-T)
+
+* virtualenv
+** Virtualenv
+
+   - Written in python
+
+   /Install using/
+
+   #+BEGIN_SRC sh
+     sudo apt-get install python-virtualenv
+   #+END_SRC sh
+
+** Create a virtual environment
+
+*** Create 							    :B_block:
+      :PROPERTIES:
+      :BEAMER_env: block
+      :END:
+       #+BEGIN_SRC sh
+         virtualenv ~/interns2014
+       #+END_SRC sh   
+
+    
+*** --no-site-packages 						    :B_block:
+      :PROPERTIES:
+      :BEAMER_env: block
+      :END:
+    /Don't give access to global package directory to virtual
+    environment/
+       #+BEGIN_SRC sh
+        virtualenv --no-site-packages ~/interns2014
+       #+END_SRC sh   
+
+
+** Activate/Deactivate
+
+*** Activate 							    :B_block:
+      :PROPERTIES:
+      :BEAMER_env: block
+      :END:
+       #+BEGIN_SRC sh
+         source ~/interns2014/bin/activate
+       #+END_SRC sh   
+
+*** Deactivate 							    :B_block:
+      :PROPERTIES:
+      :BEAMER_env: block
+      :END:
+       #+BEGIN_SRC sh
+         deactivate
+       #+END_SRC sh   
+
+** pip
+
+*** Install packages 						    :B_block:
+      :PROPERTIES:
+      :BEAMER_env: block
+      :END:
+       #+BEGIN_SRC sh
+         pip install django==1.5
+       #+END_SRC sh
+
+*** List packages 						    :B_block:
+      :PROPERTIES:
+      :BEAMER_env: block
+      :END:
+       #+BEGIN_SRC sh
+         pip list
+         pip freeze
+       #+END_SRC sh
+
+* Django project
+** Django project
+
+*** Create a project 						    :B_block:
+      :PROPERTIES:
+      :BEAMER_env: block
+      :END:
+       #+BEGIN_SRC sh
+         django-admin startproject <PROJECT_NAME>
+       #+END_SRC sh
+
+** Django app
+
+*** Create an app
+      :PROPERTIES:
+      :BEAMER_env: block
+      :END:
+       #+BEGIN_SRC sh
+         cd <PROJECT DIR>
+         python manage.py startapp <APP_NAME>
+       #+END_SRC sh
+
+
+** Django server (localhost:8000)
+
+*** Run development server					    :B_block:
+      :PROPERTIES:
+      :BEAMER_env: block
+      :END:
+       #+BEGIN_SRC sh
+	 cd <PROJECT DIR>
+	 python manage.py runserver
+       #+END_SRC sh
+
+** urls/views.py
+
+   #+BEGIN_SRC sh
+     project/urls.py
+     project/app/views.py
+   #+END_SRC sh
+
+* Reference
+** References
+   - https://docs.djangoproject.com/
