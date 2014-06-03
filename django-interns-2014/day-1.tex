@@ -1,0 +1,221 @@
+% Created 2014-06-03 Tue 10:44
+\documentclass[bigger, presentation]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{soul}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\tolerance=1000
+\usepackage{minted}
+\usetheme{Frankfurt}   
+\usecolortheme[RGB={0,104,139}]{structure}%deepskyblue
+\usefonttheme{serif}  % or try serif, structurebold, ...
+\setbeamertemplate{navigation symbols}[horizontal]
+\setbeamertemplate{caption}[numbered]
+\useinnertheme{rounded}
+\setbeamercovered{transparent}
+\usepackage{pgfpages}
+\pgfpagesuselayout{resize to}[physical paper width=8in, physical paper height=6in]
+\logo{\includegraphics[height=0.9cm,width=2cm]{django-logo.png}}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[english]{babel}
+\usepackage{pxfonts}
+\usepackage{listings}
+\lstset{numbers=left,numbersep=6pt,numberstyle=\tiny,showstringspaces=false,aboveskip=-50pt,frame=leftline,keywordstyle=\color{black},commentstyle=\color{orange},stringstyle=\color{black},}
+\date{today}
+\subtitle{Python web framework | Session 1}
+\institute{Indian Institute of Technology Bombay}
+\providecommand{\alert}[1]{\textbf{#1}}
+
+\title{Django}
+\author{Sachin}
+\date{\today}
+\hypersetup{
+  pdfkeywords={org mode, emacs, latex, beamer, pdf},
+  pdfsubject={my first presentation made in org mode},
+  pdfcreator={Emacs Org-mode version 7.9.3f}}
+
+\begin{document}
+
+\maketitle
+
+\section{Intro}
+\label{sec-1}
+\begin{frame}
+\frametitle{Django}
+\label{sec-1-1}
+
+
+\begin{itemize}
+\item Python based web framework
+\item M(models)-V(views)-T(templates)
+\item ORM - Object Relational Mapper
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Why Python-django}
+\label{sec-1-2}
+
+
+\begin{itemize}
+\item Python
+\item No need to write even a single SQL query
+\item Modular approach(M-V-T)
+\end{itemize}
+\end{frame}
+\section{virtualenv}
+\label{sec-2}
+\begin{frame}[fragile]
+\frametitle{Virtualenv}
+\label{sec-2-1}
+
+
+\begin{itemize}
+\item Written in python
+\end{itemize}
+
+   \emph{Install using}
+
+
+\begin{minted}[]{sh}
+sudo apt-get install python-virtualenv
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Create a virtual environment}
+\label{sec-2-2}
+\begin{block}{Create}
+\label{sec-2-2-1}
+
+
+\begin{minted}[]{sh}
+virtualenv ~/interns2014
+\end{minted}
+
+    
+\end{block}
+\begin{block}{--no-site-packages}
+\label{sec-2-2-2}
+
+    \emph{Don't give access to global package directory to virtual     environment}
+
+\begin{minted}[]{sh}
+virtualenv --no-site-packages ~/interns2014
+\end{minted}
+\end{block}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Activate/Deactivate}
+\label{sec-2-3}
+\begin{block}{Activate}
+\label{sec-2-3-1}
+
+
+\begin{minted}[]{sh}
+source ~/interns2014/bin/activate
+\end{minted}
+\end{block}
+\begin{block}{Deactivate}
+\label{sec-2-3-2}
+
+
+\begin{minted}[]{sh}
+deactivate
+\end{minted}
+\end{block}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{pip}
+\label{sec-2-4}
+\begin{block}{Install packages}
+\label{sec-2-4-1}
+
+
+\begin{minted}[]{sh}
+pip install django==1.5
+\end{minted}
+\end{block}
+\begin{block}{List packages}
+\label{sec-2-4-2}
+
+
+\begin{minted}[]{sh}
+pip list
+pip freeze
+\end{minted}
+\end{block}
+\end{frame}
+\section{Django project}
+\label{sec-3}
+\begin{frame}[fragile]
+\frametitle{Django project}
+\label{sec-3-1}
+\begin{block}{Create a project}
+\label{sec-3-1-1}
+
+
+\begin{minted}[]{sh}
+django-admin startproject <PROJECT_NAME>
+\end{minted}
+\end{block}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Django app}
+\label{sec-3-2}
+\begin{block}{Create an app}
+\label{sec-3-2-1}
+
+
+\begin{minted}[]{sh}
+cd <PROJECT DIR>
+python manage.py startapp <APP_NAME>
+\end{minted}
+\end{block}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Django server (localhost:8000)}
+\label{sec-3-3}
+\begin{block}{Run development server}
+\label{sec-3-3-1}
+
+
+\begin{minted}[]{sh}
+cd <PROJECT DIR>
+python manage.py runserver
+\end{minted}
+\end{block}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{urls/views.py}
+\label{sec-3-4}
+
+
+
+\begin{minted}[]{sh}
+project/urls.py
+project/app/views.py
+\end{minted}
+\end{frame}
+\section{Reference}
+\label{sec-4}
+\begin{frame}
+\frametitle{References}
+\label{sec-4-1}
+
+\begin{itemize}
+\item \href{https://docs.djangoproject.com/}{https://docs.djangoproject.com/}
+\end{itemize}
+\end{frame}
+
+\end{document}

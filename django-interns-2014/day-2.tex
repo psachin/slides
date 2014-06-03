@@ -1,0 +1,129 @@
+% Created 2014-06-03 Tue 10:49
+\documentclass[bigger, presentation]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{soul}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\tolerance=1000
+\usepackage{minted}
+\usetheme{Frankfurt}   
+\usecolortheme[RGB={0,104,139}]{structure}%deepskyblue
+\usefonttheme{serif}  % or try serif, structurebold, ...
+\setbeamertemplate{navigation symbols}[horizontal]
+\setbeamertemplate{caption}[numbered]
+\useinnertheme{rounded}
+\setbeamercovered{transparent}
+\usepackage{pgfpages}
+\pgfpagesuselayout{resize to}[physical paper width=8in, physical paper height=6in]
+\logo{\includegraphics[height=0.9cm,width=2cm]{django-logo.png}}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[english]{babel}
+\usepackage{pxfonts}
+\usepackage{listings}
+\lstset{numbers=left,numbersep=6pt,numberstyle=\tiny,showstringspaces=false,aboveskip=-50pt,frame=leftline,keywordstyle=\color{black},commentstyle=\color{orange},stringstyle=\color{black},}
+\date{today}
+\subtitle{Python web framework | Session 2}
+\institute{Indian Institute of Technology Bombay}
+\providecommand{\alert}[1]{\textbf{#1}}
+
+\title{Django}
+\author{Sachin}
+\date{\today}
+\hypersetup{
+  pdfkeywords={org mode, emacs, latex, beamer, pdf},
+  pdfsubject={my first presentation made in org mode},
+  pdfcreator={Emacs Org-mode version 7.9.3f}}
+
+\begin{document}
+
+\maketitle
+
+\section{Session 1}
+\label{sec-1}
+\begin{frame}
+\frametitle{Session 1}
+\label{sec-1-1}
+
+   We covered
+   
+\begin{itemize}
+\item Why Python-django
+\item Django framework
+\item Introduction to \texttt{virtualenv}
+\item Install/Configure Django
+\item Django views(\texttt{views.py})
+\end{itemize}
+\end{frame}
+\section{Django admin}
+\label{sec-2}
+\begin{frame}
+\frametitle{Django admin}
+\label{sec-2-1}
+
+\begin{itemize}
+\item Why?
+\begin{itemize}
+\item Basic(and powerful) admin panel
+\item Built-in
+\item Testing \& Back-end tasks
+\end{itemize}
+\end{itemize}
+\end{frame}
+\section{URLs}
+\label{sec-3}
+\begin{frame}
+\frametitle{\texttt{urls.py}}
+\label{sec-3-1}
+
+\begin{itemize}
+\item \texttt{urls.py} specific to app
+\end{itemize}
+\end{frame}
+\section{Views}
+\label{sec-4}
+\begin{frame}
+\frametitle{Render an HTML page}
+\label{sec-4-1}
+
+
+\begin{quote}
+Render an HTML page
+\end{quote}
+
+  
+\end{frame}
+\section{Databases}
+\label{sec-5}
+\begin{frame}
+\frametitle{Databases}
+\label{sec-5-1}
+
+\begin{itemize}
+\item \emph{ORM} (Object relational mapping)
+\item No \emph{SQL} queries to be written
+\end{itemize}
+\end{frame}
+\section{Reference}
+\label{sec-6}
+\begin{frame}
+\frametitle{References}
+\label{sec-6-1}
+
+\begin{itemize}
+\item \href{https://docs.djangoproject.com/}{https://docs.djangoproject.com/}
+\end{itemize}
+\end{frame}
+
+\end{document}

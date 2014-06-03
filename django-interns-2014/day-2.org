@@ -38,7 +38,7 @@
 
 
 #+TITLE:     Django
-#+AUTHOR:    
+#+AUTHOR:    Sachin
 #+EMAIL:     iclcoolster@gmail.com
 #+LATEX_HEADER: \date{today}
 ##+DATE:      December 20, 2012
@@ -69,16 +69,19 @@
 * URLs
 ** =urls.py=
    - =urls.py= specific to app
-     
+
+* Views
+** Render an HTML page
+
+   #+begin_quote
+     Render an HTML page
+   #+end_quote
+
+  
 * Databases
 ** Databases
    - /ORM/ (Object relational mapping)
    - No /SQL/ queries to be written
-
-* Forms
-** Forms in Django
-   - ??
-
 
 * Reference
 ** References
