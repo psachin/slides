@@ -38,7 +38,7 @@
 
 
 #+TITLE:     Django
-#+AUTHOR:    
+#+AUTHOR:    Sachin
 #+EMAIL:     iclcoolster@gmail.com
 #+LATEX_HEADER: \date{today}
 ##+DATE:      December 20, 2012
@@ -65,7 +65,7 @@
 
    - Django admin
    - Models(Databases)
-     - =octo/settings.py=
+     - =project/settings.py=
    - URLs redirection
    - Templates
 
@@ -125,7 +125,7 @@
      print context_dict['blogs']
    #+END_SRC python
 
-** octo/templates/app/blog.html
+** project/templates/app/blog.html
 
    #+BEGIN_SRC html
      {% for blog in blogs %}
