@@ -6,47 +6,48 @@
 ####_Sachin_
 
 
-!SLIDE center
+!SLIDE
 
 ##History
 ### RMS
 ![rms](img/rms.jpg)
 
 
-!SLIDE center
+!SLIDE
 
 ##History
 ### GNU
 ![gnu](img/gnu.svg)
 
 
-!SLIDE center
+!SLIDE
 
 ## Richard M. Stallman
     * GNU Hurd
     * GNU Emacs
 
 
-!SLIDE center
+!SLIDE
 ##History
 ### UNIX [(www.unix.org)](http://www.unix.org/)
 ![unix](img/unix.png)
 
 
-!SLIDE center
+!SLIDE
 
 ##History
 ### Andrew Tanenbaum
 ![andrew](img/andrew-t.jpg)
 
 
-!SLIDE center
+!SLIDE
 
 ##History
 # MINIX
 ###### [http://www.minix3.org](http://www.minix3.org/)
 
-!SLIDE center
+
+!SLIDE
 
 ##History
 ### Linus Torvalds
@@ -58,7 +59,8 @@
     * linux kernel
     * git
 
-!SLIDE center
+
+!SLIDE
 
 ## Other UNIX's
     - BSD
@@ -76,6 +78,28 @@
     * ~/.bashrc
     * /etc/bash.bashrc
 	* /etc/profile
+
+
+
+!SLIDE left
+
+##Beautifying BASH
+#####Bash Prompt
+Download file from:
+
+[https://raw.githubusercontent.com/psachin/bash_scripts/master/bashPrompt.sh](https://raw.githubusercontent.com/psachin/bash_scripts/master/bashPrompt.sh
+)
+
+Save it as `~/bashPrompt.sh`
+
+`~/.bashrc`
+~~~~{bash}
+source ${HOME}/bashPrompt.sh
+PS1=
+~~~~
+
+[https://gist.github.com/psachin/8171015](https://gist.github.com/psachin/8171015)
+
 
 !SLIDE left
 
@@ -158,6 +182,7 @@ function mcd()
 Ctrl + r
 ~~~~
 
+
 !SLIDE
 
 ## File system
@@ -185,7 +210,7 @@ Ctrl + r
 ~~~~
 
 
-!SLIDE center
+!SLIDE
 
 ## File system
 ###_Everything is a file_
@@ -217,7 +242,7 @@ Ctrl + r
 
 ## Mount
 ~~~~{bash}
-sudo mount -t -o <Options> <device file> <destination directory>
+sudo mount -t <fs> -o <options> <device_file> <destination_directory>
 ~~~~
 
 ~~~~
@@ -239,7 +264,7 @@ sudo mount -t vfat -o rw /dev/sdb1 /mnt/sworm
 ~~~~
 
 
-!SLIDE left
+!SLIDE
 
 ## Remote login
 ~~~~{bash}
@@ -269,7 +294,8 @@ rsync username@hostname:~/file.txt
 rsync -r username@hostname:~/super-duper-directory
 ~~~~
 
-!SLIDE left
+
+!SLIDE
 
 ## Download file
 ##### Using `wget`
@@ -285,43 +311,177 @@ wget -rd http://www.tangowithdjango.com/book/
 ~~~~
 
 
+!SLIDE
+
+## Install software/package
+##### Using package manager
+       * apt-get(Ubuntu)
+	   * aptitude(Debian)
+	   * dpkg
+	   * yum(RedHat)
+	   * rpm
+	   * pacman(Arch Linux)
+	   * emerge(Gentoo)
+	   * slapt-get(Slackware)
+	   * pkgtool(Slackware)
+
+
+!SLIDE
+
+## Install software/package
+##### Using `apt-get`
+~~~~{bash}
+sudo apt-get install <PACKAGE-NAME>
+~~~~
+
+Example:
+~~~~{bash}
+sudo apt-get install wget
+~~~~
+
+
+!SLIDE left
+
+## Install software/package
+### from source
+~~~~{bash}
+wget http://www.ee.surrey.ac.uk/Teaching/Unix/units-1.74.tar.gz
+~~~~
+
+~~~~{bash}
+tar -xvzf units-1.74.tar.gz
+cd units-1.74
+~~~~
+
+~~~~{bash}
+mkdir ~/units
+./configure --prefix=$HOME/units
+make
+make check
+make install
+~~~~
+
+
+!SLIDE left
+
+## Install software/package
+### From source & configure
+~~~~{bash}
+cd ~/units/bin
+~~~~
+
+~~~~{bash}
+./units
+~~~~
+
+`~/.bashrc`
+~~~~{bash}
+export PATH=$HOME/units/bin:$PATH
+~~~~
+
+
+!SLIDE left
+
+## Media tweaks
+#### Convert FLV to MP4
+~~~~{bash}
+ffmpeg -i input.flv -sameq -ar 22050 output.mp4
+~~~~
+
+~~~~
+-i: Input file
+-sameq: Use same quantizer as source.
+-ar: Sampling frequency
+~~~~
+
+
+!SLIDE left
+
+## Media tweaks
+#### Extract mp3 audio from MP4
+~~~~{bash}
+ffmpeg -i video.mp4 -f mp3 -ab 192000 -vn music.mp3
+~~~~
+
+~~~~
+-i: Input file
+-f: Output format
+-ab: Encoding rate
+-vn: No video
+~~~~
+
+
+!SLIDE left
+
+## Media tweaks
+#### Cut video file at time interval
+~~~~{bash}
+ffmpeg -y -i Video.mp4 -sameq -ss 00:19:49.0 -t 00:04:18.0 -acodec copy -vcodec copy output.mp4
+~~~~
+
+~~~~
+man ffmpeg
+~~~~
+
+
+!SLIDE left
+
+## Media tweaks
+#### Resize an image
+~~~~{bash}
+convert input.png -quality 75 output.jpg
+~~~~
+
+
+!SLIDE left
+
+## Chat
+#### using terminal: `ytalk`
+
+~~~~{bash}
+ytalk -h <IP-address> <your-friends-username>
+~~~~
+
+~~~~{bash}
+talk your-friends-username@IP-address
+~~~~
+
+
+!SLIDE
+
+## Security
+#### local
+
+     * /etc/hosts.allow
+     * /etc/hosts.deny
+
+
+!SLIDE
+
+## Security
+#### firewall
+
+![fw](img/fw.png)
 
 
 
 !SLIDE left
 
-##You can customize with css
-###like dropping the centering
+## Security
+#### firewall: `iptables`
 
-!SLIDE left
-
-##Easy to use
-
-1. write your slides markdown file
-2. python main.py md diretory
-
-!SLIDE
-
-##The previous slide just looks like this
-
-~~~~
- !SLIDE left
- 
- ##Easy to use
- 
- 1. write your slides markdown file
- 2. python main.py md diretory
+~~~~{bash}
+iptables -A <CHAIN> -p <PROTOCOL> --dport <PORT> -j <WHAT-TO-DO?>
 ~~~~
 
+~~~~{bash}
+iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+~~~~
 
-!SLIDE
-
-##Just simple
-##and enjoy yourself
 
 !SLIDE
 
 #Thanks
-##[isnowfy](http://www.isnowfy.com)|[isnowfy](https://github.com/isnowfy) on Github
-###Made by [pydown](https://github.com/isnowfy/pydown)
-###Inspired by [keydown](https://github.com/infews/keydown)
+##Sachin | [isachin@iitb.ac.in](#)
+####GitHub|[https://github.com/psachin/slides/tree/master/pydown/refresher](https://github.com/psachin/slides/tree/master/pydown/refresher)
+####Made by [pydown](https://github.com/isnowfy/pydown)

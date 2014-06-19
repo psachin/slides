@@ -35,17 +35,32 @@
 <section class='slide '><div class='content'><h1>GNU Emacs</h1>
 <p><img alt="GNU Emacs logo" src="images/Emacs-logo.svg" /></p>
 <h5>Universal text editor</h5>
-<h6><em>Sachin Patil</em></h6></div></section>
+<h6><em>Sachin</em></h6></div></section>
 <section class='slide '><div class='content'><h2></h2>
 <h2></h2>
 <h3>GNU Emacs is like having a dragon's cave of treasures</h3>
 <h6>Robert Chassel</h6>
 <h6><em>An Introduction to Programming in Emacs Lisp</em></h6></div></section>
 <section class='slide left'><div class='content'><h2>Features</h2>
-<div class="codehilite"><pre><span class="o">*</span> <span class="n">Simple</span> <span class="n">to</span> <span class="n">use</span>
-<span class="o">*</span> <span class="n">Easily</span> <span class="n">customizable</span>
-</pre></div></div></section>
+<h5>Simple to use</h5>
+<h5>Easily customizable</h5>
+<h5>Take notes</h5>
+<h5>Use it as a word processor</h5>
+<h5>Write thesis, reports</h5>
+<h5>Coding</h5></div></section>
+<section class='slide left'><div class='content'><h2>What I do with Emacs?</h2>
+<h5>Manage notes</h5>
+<h5>Manage agenda</h5>
+<h5>Code</h5>
+<h5>Remote text editing</h5>
+<h5>Prepare presentation</h5></div></section>
+<section class='slide left'><div class='content'><h2>About GNU Emacs</h2>
+<h5>Emacs has been around since 1970's</h5>
+<h5>Originally written by Richard Stallman &amp; Guy L. Steele, Jr.</h5>
+<h5>It's core is written in C</h5>
+<h5>with elisp wrapper</h5></div></section>
 <section class='slide left'><div class='content'><h2>Starting <em>GNU Emacs</em></h2>
+<h5>Application menu -&gt; Editors -&gt; Emacs</h5>
 <h3>GUI</h3>
 <div class="codehilite"><pre><span class="nv">$ </span>emacs &amp;
 </pre></div>
@@ -56,10 +71,15 @@
 </pre></div></div></section>
 <section class='slide left'><div class='content'><h2>Key bindings</h2>
 <h4>C : <code>Control key</code></h4>
-<h4>M : <code>Alt key</code>, <code>Esc key</code></h4>
+<h4>M : <code>Alt key</code>, <code>Esc key</code>, <code>Meta key</code></h4>
 <p><code>---</code></p>
 <h4>C-a : <code>Control-key</code> + <code>a</code></h4>
 <h4>M-x : <code>Alt-key</code> + <code>x</code></h4></div></section>
+<section class='slide '><div class='content'><h2>Self tutorial</h2>
+<div class="codehilite"><pre>C-h t
+</pre></div></div></section>
+<section class='slide '><div class='content'><h2>Moving around</h2>
+<p><img alt="moving" src="images/moving.png" /></p></div></section>
 <section class='slide left'><div class='content'><h2>Moving around</h2>
 <h3>Begining of line</h3>
 <div class="codehilite"><pre>C-a
@@ -68,6 +88,13 @@
 
 <h3>End of line</h3>
 <div class="codehilite"><pre>C-e
+</pre></div></div></section>
+<section class='slide left'><div class='content'><h2>Emacs macros</h2>
+<h3></h3>
+<div class="codehilite"><pre>  <span class="o">*</span> <span class="n">F3</span><span class="p">:</span> <span class="n">to</span> <span class="n">start</span> <span class="n">recording</span>
+  <span class="o">*</span> <span class="n">F4</span><span class="p">:</span> <span class="n">to</span> <span class="n">stop</span> <span class="n">recording</span>
+
+  <span class="o">*</span> <span class="n">F4</span><span class="p">:</span> <span class="n">use</span> <span class="n">macro</span>
 </pre></div></div></section>
 <section class='slide left'><div class='content'><h2>Formatting</h2>
 <h3>Capitalize</h3>
@@ -83,45 +110,21 @@
 <h3>Lowercase</h3>
 <div class="codehilite"><pre>M-l
 </pre></div></div></section>
-<section class='slide '><div class='content'><h2>Support code highlihting</h2>
-<div class="codehilite"><pre><span class="k">def</span> <span class="nf">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;find GCD/GCF of two numbers by Euclid’s GCD algorithm</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">while</span> <span class="n">a</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span> <span class="o">%</span> <span class="n">a</span><span class="p">,</span> <span class="n">a</span>
-    <span class="k">return</span> <span class="n">b</span>    
+<section class='slide left'><div class='content'><h2>Select text</h2>
+<div class="codehilite"><pre><span class="n">Ctrl</span> <span class="o">+</span> <span class="n">SPACE</span>
 </pre></div></div></section>
-<section class='slide '><div class='content'><h2>Bash code highlighting</h2>
-<div class="codehilite"><pre><span class="k">function </span>hello<span class="o">()</span> <span class="o">{</span>
-     <span class="nb">echo</span> <span class="s2">&quot;hello&quot;</span>
-    <span class="o">}</span>
+<section class='slide left'><div class='content'><h2>Basic editing</h2>
+<h5>Beginning of file: <code>M-&lt;</code></h5>
+<h5>End of file: <code>M-&gt;</code></h5>
+<h5>Cut: <code>C-w</code></h5>
+<h5>Copy: <code>M-w</code></h5>
+<h5>paste: <code>C-y</code></h5>
+<h5>Spell check: <code>M-x ispell</code></h5></div></section>
+<section class='slide left'><div class='content'><h2>Basic editing</h2>
+<div class="codehilite"><pre><span class="n">C</span><span class="o">-</span><span class="n">xf</span>
 </pre></div></div></section>
-<section class='slide '><div class='content'><h2>elisp code highlighting</h2>
-<div class="codehilite"><pre><span class="p">(</span><span class="n">defun</span> <span class="n">gcd</span><span class="p">(</span><span class="n">a</span> <span class="n">b</span><span class="p">)</span>
-  <span class="s">&quot;calculate GCD of two numbers&quot;</span>
-  <span class="p">(</span><span class="n">interactive</span> <span class="s">&quot;nN1: </span><span class="se">\n</span><span class="s">nN2: </span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
-  <span class="p">(</span><span class="k">while</span> <span class="p">(</span><span class="ow">not</span> <span class="p">(</span><span class="n">eq</span> <span class="n">a</span> <span class="mi">0</span><span class="p">))</span>
-    <span class="p">(</span><span class="n">setq</span> <span class="n">c</span> <span class="n">a</span><span class="p">)</span>
-    <span class="p">(</span><span class="n">setq</span> <span class="n">a</span> <span class="p">(</span><span class="n">mod</span> <span class="n">b</span> <span class="n">a</span><span class="p">))</span>
-    <span class="p">(</span><span class="n">setq</span> <span class="n">b</span> <span class="n">c</span><span class="p">)</span>
-    <span class="p">)</span>
-  <span class="p">(</span><span class="n">message</span> <span class="s">&quot;GCD is </span><span class="si">%d</span><span class="s">&quot;</span> <span class="n">b</span><span class="p">)</span>
-  <span class="p">)</span>
-</pre></div></div></section>
-<section class='slide left'><div class='content'><h2>You can <em>customize</em> with <strong>css</strong></h2>
-<h3>like <em>dropping</em> the <strong>centering</strong></h3></div></section>
-<section class='slide left'><div class='content'><h2>Easy to use</h2>
-<div class="codehilite"><pre>   1<span class="p">.</span> <span class="n">write</span> <span class="n">your</span> <span class="n">slides</span> <span class="n">markdown</span> <span class="n">file</span>
-   2<span class="p">.</span> <span class="n">python</span> <span class="n">main</span><span class="p">.</span><span class="n">py</span> <span class="n">md</span> <span class="n">diretory</span>
-</pre></div></div></section>
-<section class='slide '><div class='content'><h2>The previous slide just looks like this</h2>
-<div class="codehilite"><pre> !<span class="n">SLIDE</span> <span class="n">left</span>
-
- ##<span class="n">Easy</span> <span class="n">to</span> <span class="n">use</span>
-
- 1<span class="p">.</span> <span class="n">write</span> <span class="n">your</span> <span class="n">slides</span> <span class="n">markdown</span> <span class="n">file</span>
- 2<span class="p">.</span> <span class="n">python</span> <span class="n">main</span><span class="p">.</span><span class="n">py</span> <span class="n">md</span> <span class="n">diretory</span>
-</pre></div></div></section>
+<section class='slide '><div class='content'><h2>Org mode</h2>
+<h3>The Beast</h3></div></section>
 <section class='slide '><div class='content'><h2>Emacs modes</h2>
 <h3></h3>
 <div class="codehilite"><pre>1<span class="p">.</span> <span class="n">org</span><span class="o">-</span><span class="n">mode</span>
@@ -153,10 +156,10 @@
 
 
 <p>Install selected packages</p>
-<div class="codehilite"><pre><span class="n">x</span>
+<div class="codehilite"><pre>x
 </pre></div></div></section>
 <section class='slide '><div class='content'><h1>Thanks</h1>
-<h2>Sachin patil|<a href="#">isachin@iitb.ac.in</a></h2>
+<h2>Sachin | <a href="#">isachin@iitb.ac.in</a></h2>
 <h4>GitHub|<a href="https://github.com/psachin">https://github.com/psachin</a></h4>
 <h4>Made by <a href="https://github.com/isnowfy/pydown">pydown</a></h4></div></section>
 

@@ -2,7 +2,7 @@
 #GNU Emacs
 ![GNU Emacs logo](images/Emacs-logo.svg)
 ##### Universal text editor
-######_Sachin Patil_
+######_Sachin_
 
 !SLIDE
 ##
@@ -12,13 +12,38 @@
 ######  Robert Chassel
 ######_An Introduction to Programming in Emacs Lisp_
 
+
 !SLIDE left
 ## Features
-	* Simple to use
-	* Easily customizable
+##### Simple to use
+##### Easily customizable
+##### Take notes
+##### Use it as a word processor
+##### Write thesis, reports
+##### Coding
+
+
+!SLIDE left
+## What I do with Emacs?
+##### Manage notes
+##### Manage agenda
+##### Code
+##### Remote text editing
+##### Prepare presentation
+
+
+!SLIDE left
+## About GNU Emacs
+##### Emacs has been around since 1970's
+##### Originally written by Richard Stallman & Guy L. Steele, Jr.
+##### It's core is written in C
+##### with elisp wrapper
+
 
 !SLIDE left
 ##Starting _GNU Emacs_
+
+##### Application menu -> Editors -> Emacs
 
 ### GUI
 ~~~~{bash}
@@ -33,11 +58,25 @@ $ emacs -nw
 !SLIDE left
 ## Key bindings
 #### C : `Control key`
-#### M : `Alt key`, `Esc key`
+#### M : `Alt key`, `Esc key`, `Meta key`
 
 `---`
 #### C-a : `Control-key` + `a`
 #### M-x : `Alt-key` + `x`
+
+
+
+!SLIDE
+## Self tutorial
+~~~~{bash}
+C-h t
+~~~~
+
+
+!SLIDE
+## Moving around
+![moving](images/moving.png)
+
 
 !SLIDE left
 ## Moving around
@@ -50,6 +89,17 @@ C-a
 ~~~~{bash}
 C-e
 ~~~~
+
+
+!SLIDE left
+## Emacs macros
+###
+
+      * F3: to start recording
+	  * F4: to stop recording
+
+      * F4: use macro
+
 
 !SLIDE left
 ## Formatting
@@ -69,64 +119,33 @@ M-l
 ~~~~
 
 
-!SLIDE
-##Support code highlihting
-~~~~{python}
-def gcd(a, b):
-    """find GCD/GCF of two numbers by Euclid’s GCD algorithm
-    """
-    while a != 0:
-        a, b = b % a, a
-    return b    
+!SLIDE left
+## Select text
+~~~~{elisp}
+Ctrl + SPACE
 ~~~~
 
-!SLIDE
-##Bash code highlighting
-~~~~{bash}
-function hello() {
-	 echo "hello"
-    }
-~~~~
-
-!SLIDE
-##elisp code highlighting
-~~~~{python}
-(defun gcd(a b)
-  "calculate GCD of two numbers"
-  (interactive "nN1: \nnN2: \n")
-  (while (not (eq a 0))
-    (setq c a)
-    (setq a (mod b a))
-    (setq b c)
-    )
-  (message "GCD is %d" b)
-  )
-~~~~
 
 !SLIDE left
+## Basic editing
+##### Beginning of file: `M-<`
+##### End of file: `M->`
+##### Cut: `C-w`
+##### Copy: `M-w`
+##### paste: `C-y`
 
-##You can _customize_ with __css__
-###like *dropping* the **centering**
+##### Spell check: `M-x ispell`
+
 
 !SLIDE left
-
-##Easy to use
-
-       1. write your slides markdown file
-       2. python main.py md diretory
+## File browser
+~~~~
+C-xf
+~~~~
 
 !SLIDE
-
-##The previous slide just looks like this
-
-~~~~
- !SLIDE left
- 
- ##Easy to use
- 
- 1. write your slides markdown file
- 2. python main.py md diretory
-~~~~
+##Org mode
+### The Beast
 
 
 
@@ -146,7 +165,6 @@ function hello() {
 	4. M-x customize-face
 
 
-
 !SLIDE left
 ## Coool extensions
 ### * yasnippet [https://github.com/capitaomorte/yasnippet](https://github.com/capitaomorte/yasnippet)
@@ -157,8 +175,7 @@ function hello() {
 
 !SLIDE left
 ##Installing packages
-
-~~~~	     
+~~~~
 M-x list-packages
 ~~~~
 
@@ -168,14 +185,14 @@ i
 ~~~~
 
 Install selected packages
-~~~~
+~~~~{bash}
 x
 ~~~~
 
 !SLIDE
 
 #Thanks
-##Sachin patil|[isachin@iitb.ac.in](#)
+##Sachin | [isachin@iitb.ac.in](#)
 ####GitHub|[https://github.com/psachin](https://github.com/psachin)
 ####Made by [pydown](https://github.com/isnowfy/pydown)
 

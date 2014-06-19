@@ -36,33 +36,33 @@
 <p><img alt="tux" src="img/tux.svg" /></p>
 <h2>Refresher session</h2>
 <h4><em>Sachin</em></h4></div></section>
-<section class='slide center'><div class='content'><h2>History</h2>
+<section class='slide '><div class='content'><h2>History</h2>
 <h3>RMS</h3>
 <p><img alt="rms" src="img/rms.jpg" /></p></div></section>
-<section class='slide center'><div class='content'><h2>History</h2>
+<section class='slide '><div class='content'><h2>History</h2>
 <h3>GNU</h3>
 <p><img alt="gnu" src="img/gnu.svg" /></p></div></section>
-<section class='slide center'><div class='content'><h2>Richard M. Stallman</h2>
+<section class='slide '><div class='content'><h2>Richard M. Stallman</h2>
 <div class="codehilite"><pre><span class="o">*</span> <span class="n">GNU</span> <span class="n">Hurd</span>
 <span class="o">*</span> <span class="n">GNU</span> <span class="n">Emacs</span>
 </pre></div></div></section>
-<section class='slide center'><div class='content'><h2>History</h2>
+<section class='slide '><div class='content'><h2>History</h2>
 <h3>UNIX <a href="http://www.unix.org/">(www.unix.org)</a></h3>
 <p><img alt="unix" src="img/unix.png" /></p></div></section>
-<section class='slide center'><div class='content'><h2>History</h2>
+<section class='slide '><div class='content'><h2>History</h2>
 <h3>Andrew Tanenbaum</h3>
 <p><img alt="andrew" src="img/andrew-t.jpg" /></p></div></section>
-<section class='slide center'><div class='content'><h2>History</h2>
+<section class='slide '><div class='content'><h2>History</h2>
 <h1>MINIX</h1>
 <h6><a href="http://www.minix3.org/">http://www.minix3.org</a></h6></div></section>
-<section class='slide center'><div class='content'><h2>History</h2>
+<section class='slide '><div class='content'><h2>History</h2>
 <h3>Linus Torvalds</h3>
 <p><img alt="linus" src="img/linus.jpg" /></p></div></section>
 <section class='slide center'><div class='content'><h2>Linus Torvalds</h2>
 <div class="codehilite"><pre><span class="o">*</span> <span class="n">linux</span> <span class="n">kernel</span>
 <span class="o">*</span> <span class="n">git</span>
 </pre></div></div></section>
-<section class='slide center'><div class='content'><h2>Other UNIX's</h2>
+<section class='slide '><div class='content'><h2>Other UNIX's</h2>
 <div class="codehilite"><pre><span class="o">-</span> <span class="n">BSD</span>
 <span class="o">-</span> <span class="n">Solarix</span>
 <span class="o">-</span> <span class="n">IBM</span>
@@ -74,6 +74,18 @@
 <span class="o">*</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">bash</span><span class="p">.</span><span class="n">bashrc</span>
 <span class="o">*</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">profile</span>
 </pre></div></div></section>
+<section class='slide left'><div class='content'><h2>Beautifying BASH</h2>
+<h5>Bash Prompt</h5>
+<p>Download file from:</p>
+<p><a href="https://raw.githubusercontent.com/psachin/bash_scripts/master/bashPrompt.sh">https://raw.githubusercontent.com/psachin/bash_scripts/master/bashPrompt.sh</a></p>
+<p>Save it as <code>~/bashPrompt.sh</code></p>
+<p><code>~/.bashrc</code></p>
+<div class="codehilite"><pre><span class="nb">source</span> <span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/bashPrompt.sh
+<span class="nv">PS1</span><span class="o">=</span>
+</pre></div>
+
+
+<p><a href="https://gist.github.com/psachin/8171015">https://gist.github.com/psachin/8171015</a></p></div></section>
 <section class='slide left'><div class='content'><h2>Beautifying BASH</h2>
 <h3>Bash aliases</h3>
 <p><code>~/.bashrc</code></p>
@@ -155,7 +167,7 @@
  <span class="o">|-/</span><span class="n">sbin</span>
  <span class="o">|-/</span><span class="n">opt</span>
 </pre></div></div></section>
-<section class='slide center'><div class='content'><h2>File system</h2>
+<section class='slide '><div class='content'><h2>File system</h2>
 <h3><em>Everything is a file</em></h3></div></section>
 <section class='slide left'><div class='content'><h2>File system</h2>
 <h3><em>mount, mount points, mounting</em></h3>
@@ -175,7 +187,7 @@
  <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">flash</span>
 </pre></div></div></section>
 <section class='slide left'><div class='content'><h2>Mount</h2>
-<div class="codehilite"><pre>sudo mount -t -o &lt;Options&gt; &lt;device file&gt; &lt;destination directory&gt;
+<div class="codehilite"><pre>sudo mount -t &lt;fs&gt; -o &lt;options&gt; &lt;device_file&gt; &lt;destination_directory&gt;
 </pre></div>
 
 
@@ -190,7 +202,7 @@
 <section class='slide left'><div class='content'><h2>Mount</h2>
 <div class="codehilite"><pre>sudo mount -t vfat -o rw /dev/sdb1 /mnt/sworm
 </pre></div></div></section>
-<section class='slide left'><div class='content'><h2>Remote login</h2>
+<section class='slide '><div class='content'><h2>Remote login</h2>
 <div class="codehilite"><pre>ssh username@hostname
 ssh username@IP-address
 </pre></div>
@@ -211,7 +223,7 @@ scp -r username@hostname:~/super-duper-directory
 <div class="codehilite"><pre>rsync username@hostname:~/file.txt
 rsync -r username@hostname:~/super-duper-directory
 </pre></div></div></section>
-<section class='slide left'><div class='content'><h2>Download file</h2>
+<section class='slide '><div class='content'><h2>Download file</h2>
 <h5>Using <code>wget</code></h5>
 <div class="codehilite"><pre>wget https://www.gnu.org/graphics/Gnulove.jpg
 </pre></div>
@@ -222,27 +234,118 @@ rsync -r username@hostname:~/super-duper-directory
 -r: Recursive
 -d: Turn on debug output
 </pre></div></div></section>
-<section class='slide left'><div class='content'><h2>You can customize with css</h2>
-<h3>like dropping the centering</h3></div></section>
-<section class='slide left'><div class='content'><h2>Easy to use</h2>
-<ol>
-<li>write your slides markdown file</li>
-<li>python main.py md diretory</li>
-</ol></div></section>
-<section class='slide '><div class='content'><h2>The previous slide just looks like this</h2>
-<div class="codehilite"><pre> !<span class="n">SLIDE</span> <span class="n">left</span>
-
- ##<span class="n">Easy</span> <span class="n">to</span> <span class="n">use</span>
-
- 1<span class="p">.</span> <span class="n">write</span> <span class="n">your</span> <span class="n">slides</span> <span class="n">markdown</span> <span class="n">file</span>
- 2<span class="p">.</span> <span class="n">python</span> <span class="n">main</span><span class="p">.</span><span class="n">py</span> <span class="n">md</span> <span class="n">diretory</span>
+<section class='slide '><div class='content'><h2>Install software/package</h2>
+<h5>Using package manager</h5>
+<div class="codehilite"><pre>   <span class="o">*</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span><span class="p">(</span><span class="n">Ubuntu</span><span class="p">)</span>
+   <span class="o">*</span> <span class="n">aptitude</span><span class="p">(</span><span class="n">Debian</span><span class="p">)</span>
+   <span class="o">*</span> <span class="n">dpkg</span>
+   <span class="o">*</span> <span class="n">yum</span><span class="p">(</span><span class="n">RedHat</span><span class="p">)</span>
+   <span class="o">*</span> <span class="n">rpm</span>
+   <span class="o">*</span> <span class="n">pacman</span><span class="p">(</span><span class="n">Arch</span> <span class="n">Linux</span><span class="p">)</span>
+   <span class="o">*</span> <span class="n">emerge</span><span class="p">(</span><span class="n">Gentoo</span><span class="p">)</span>
+   <span class="o">*</span> <span class="n">slapt</span><span class="o">-</span><span class="n">get</span><span class="p">(</span><span class="n">Slackware</span><span class="p">)</span>
+   <span class="o">*</span> <span class="n">pkgtool</span><span class="p">(</span><span class="n">Slackware</span><span class="p">)</span>
 </pre></div></div></section>
-<section class='slide '><div class='content'><h2>Just simple</h2>
-<h2>and enjoy yourself</h2></div></section>
+<section class='slide '><div class='content'><h2>Install software/package</h2>
+<h5>Using <code>apt-get</code></h5>
+<div class="codehilite"><pre>sudo apt-get install &lt;PACKAGE-NAME&gt;
+</pre></div>
+
+
+<p>Example:</p>
+<div class="codehilite"><pre>sudo apt-get install wget
+</pre></div></div></section>
+<section class='slide left'><div class='content'><h2>Install software/package</h2>
+<h3>from source</h3>
+<div class="codehilite"><pre>wget http://www.ee.surrey.ac.uk/Teaching/Unix/units-1.74.tar.gz
+</pre></div>
+
+
+<div class="codehilite"><pre>tar -xvzf units-1.74.tar.gz
+<span class="nb">cd </span>units-1.74
+</pre></div>
+
+
+<div class="codehilite"><pre>mkdir ~/units
+./configure --prefix<span class="o">=</span><span class="nv">$HOME</span>/units
+make
+make check
+make install
+</pre></div></div></section>
+<section class='slide left'><div class='content'><h2>Install software/package</h2>
+<h3>From source &amp; configure</h3>
+<div class="codehilite"><pre><span class="nb">cd</span> ~/units/bin
+</pre></div>
+
+
+<div class="codehilite"><pre>./units
+</pre></div>
+
+
+<p><code>~/.bashrc</code></p>
+<div class="codehilite"><pre><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$HOME</span>/units/bin:<span class="nv">$PATH</span>
+</pre></div></div></section>
+<section class='slide left'><div class='content'><h2>Media tweaks</h2>
+<h4>Convert FLV to MP4</h4>
+<div class="codehilite"><pre>ffmpeg -i input.flv -sameq -ar 22050 output.mp4
+</pre></div>
+
+
+<div class="codehilite"><pre><span class="o">-</span><span class="nb">i</span><span class="p">:</span> <span class="n">Input</span> <span class="n">file</span>
+<span class="o">-</span><span class="n">sameq</span><span class="p">:</span> <span class="n">Use</span> <span class="n">same</span> <span class="n">quantizer</span> <span class="n">as</span> <span class="n">source</span><span class="p">.</span>
+<span class="o">-</span><span class="n">ar</span><span class="p">:</span> <span class="n">Sampling</span> <span class="n">frequency</span>
+</pre></div></div></section>
+<section class='slide left'><div class='content'><h2>Media tweaks</h2>
+<h4>Extract mp3 audio from MP4</h4>
+<div class="codehilite"><pre>ffmpeg -i video.mp4 -f mp3 -ab 192000 -vn music.mp3
+</pre></div>
+
+
+<div class="codehilite"><pre><span class="o">-</span><span class="nb">i</span><span class="p">:</span> <span class="n">Input</span> <span class="n">file</span>
+<span class="o">-</span><span class="n">f</span><span class="p">:</span> <span class="n">Output</span> <span class="n">format</span>
+<span class="o">-</span><span class="n">ab</span><span class="p">:</span> <span class="n">Encoding</span> <span class="n">rate</span>
+<span class="o">-</span><span class="n">vn</span><span class="p">:</span> <span class="n">No</span> <span class="n">video</span>
+</pre></div></div></section>
+<section class='slide left'><div class='content'><h2>Media tweaks</h2>
+<h4>Cut video file at time interval</h4>
+<div class="codehilite"><pre>ffmpeg -y -i Video.mp4 -sameq -ss 00:19:49.0 -t 00:04:18.0 -acodec copy -vcodec copy output.mp4
+</pre></div>
+
+
+<div class="codehilite"><pre><span class="n">man</span> <span class="n">ffmpeg</span>
+</pre></div></div></section>
+<section class='slide left'><div class='content'><h2>Media tweaks</h2>
+<h4>Resize an image</h4>
+<div class="codehilite"><pre>convert input.png -quality 75 output.jpg
+</pre></div></div></section>
+<section class='slide left'><div class='content'><h2>Chat</h2>
+<h4>using terminal: <code>ytalk</code></h4>
+<div class="codehilite"><pre>ytalk -h &lt;IP-address&gt; &lt;your-friends-username&gt;
+</pre></div>
+
+
+<div class="codehilite"><pre>talk your-friends-username@IP-address
+</pre></div></div></section>
+<section class='slide '><div class='content'><h2>Security</h2>
+<h4>local</h4>
+<div class="codehilite"><pre> <span class="o">*</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">hosts</span><span class="p">.</span><span class="n">allow</span>
+ <span class="o">*</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">hosts</span><span class="p">.</span><span class="n">deny</span>
+</pre></div></div></section>
+<section class='slide '><div class='content'><h2>Security</h2>
+<h4>firewall</h4>
+<p><img alt="fw" src="img/fw.png" /></p></div></section>
+<section class='slide left'><div class='content'><h2>Security</h2>
+<h4>firewall: <code>iptables</code></h4>
+<div class="codehilite"><pre>iptables -A &lt;CHAIN&gt; -p &lt;PROTOCOL&gt; --dport &lt;PORT&gt; -j &lt;WHAT-TO-DO?&gt;
+</pre></div>
+
+
+<div class="codehilite"><pre>iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+</pre></div></div></section>
 <section class='slide '><div class='content'><h1>Thanks</h1>
-<h2><a href="http://www.isnowfy.com">isnowfy</a>|<a href="https://github.com/isnowfy">isnowfy</a> on Github</h2>
-<h3>Made by <a href="https://github.com/isnowfy/pydown">pydown</a></h3>
-<h3>Inspired by <a href="https://github.com/infews/keydown">keydown</a></h3></div></section>
+<h2>Sachin | <a href="#">isachin@iitb.ac.in</a></h2>
+<h4>GitHub|<a href="https://github.com/psachin/slides/tree/master/pydown/refresher">https://github.com/psachin/slides/tree/master/pydown/refresher</a></h4>
+<h4>Made by <a href="https://github.com/isnowfy/pydown">pydown</a></h4></div></section>
 
 
 <!-- deck.status snippet -->
