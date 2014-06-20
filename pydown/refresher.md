@@ -1,9 +1,9 @@
-!SLIDE
+!SLIDE 
 
-#OpenSource
+#Linux, FOSS et al.
 ![tux](img/tux.svg)
 ## Refresher session
-####_Sachin_
+###_Sachin_
 
 
 !SLIDE
@@ -181,6 +181,35 @@ function mcd()
 ~~~~{bash}
 Ctrl + r
 ~~~~
+
+
+!SLIDE
+
+##Anatomy of the Linux kernel
+~~~~
+User application
+~~~~
+|
+~~~~
+GNU C Library(`glibc`)
+~~~~
+|
+~~~~
+API: System call interface
+~~~~
+|
+~~~~
+Kernel
+~~~~
+|
+~~~~
+Hardware dependent kernel code
+~~~~
+|
+~~~~
+Hardware
+~~~~
+(Courtesy: [ibm.com](http://www.ibm.com/developerworks/library/l-linux-kernel/))
 
 
 !SLIDE
@@ -428,6 +457,7 @@ man ffmpeg
 
 ## Media tweaks
 #### Resize an image
+`imagemagick`
 ~~~~{bash}
 convert input.png -quality 75 output.jpg
 ~~~~
@@ -474,6 +504,7 @@ talk your-friends-username@IP-address
 iptables -A <CHAIN> -p <PROTOCOL> --dport <PORT> -j <WHAT-TO-DO?>
 ~~~~
 
+##### Example: Open port 80
 ~~~~{bash}
 iptables -A INPUT -p tcp --dport 80 -j ACCEPT
 ~~~~

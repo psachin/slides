@@ -32,10 +32,10 @@
 <body class="deck-container">
 
 <!-- Begin slides -->
-<section class='slide '><div class='content'><h1>OpenSource</h1>
+<section class='slide '><div class='content'><h1>Linux, FOSS et al.</h1>
 <p><img alt="tux" src="img/tux.svg" /></p>
 <h2>Refresher session</h2>
-<h4><em>Sachin</em></h4></div></section>
+<h3><em>Sachin</em></h3></div></section>
 <section class='slide '><div class='content'><h2>History</h2>
 <h3>RMS</h3>
 <p><img alt="rms" src="img/rms.jpg" /></p></div></section>
@@ -145,6 +145,37 @@
 <h3>Interactive search</h3>
 <div class="codehilite"><pre>Ctrl + r
 </pre></div></div></section>
+<section class='slide '><div class='content'><h2>Anatomy of the Linux kernel</h2>
+<div class="codehilite"><pre><span class="n">User</span> <span class="n">application</span>
+</pre></div>
+
+
+<p>|</p>
+<div class="codehilite"><pre><span class="n">GNU</span> <span class="n">C</span> <span class="n">Library</span><span class="p">(</span>`<span class="n">glibc</span>`<span class="p">)</span>
+</pre></div>
+
+
+<p>|</p>
+<div class="codehilite"><pre><span class="n">API</span><span class="o">:</span> <span class="n">System</span> <span class="n">call</span> <span class="kd">interface</span>
+</pre></div>
+
+
+<p>|</p>
+<div class="codehilite"><pre><span class="n">Kernel</span>
+</pre></div>
+
+
+<p>|</p>
+<div class="codehilite"><pre><span class="n">Hardware</span> <span class="n">dependent</span> <span class="n">kernel</span> <span class="n">code</span>
+</pre></div>
+
+
+<p>|</p>
+<div class="codehilite"><pre><span class="n">Hardware</span>
+</pre></div>
+
+
+<p>(Courtesy: <a href="http://www.ibm.com/developerworks/library/l-linux-kernel/">ibm.com</a>)</p></div></section>
 <section class='slide '><div class='content'><h2>File system</h2>
 <div class="codehilite"><pre><span class="o">/-</span>
  <span class="o">|-/</span><span class="n">root</span>
@@ -316,6 +347,7 @@ make install
 </pre></div></div></section>
 <section class='slide left'><div class='content'><h2>Media tweaks</h2>
 <h4>Resize an image</h4>
+<p><code>imagemagick</code></p>
 <div class="codehilite"><pre>convert input.png -quality 75 output.jpg
 </pre></div></div></section>
 <section class='slide left'><div class='content'><h2>Chat</h2>
@@ -340,6 +372,7 @@ make install
 </pre></div>
 
 
+<h5>Example: Open port 80</h5>
 <div class="codehilite"><pre>iptables -A INPUT -p tcp --dport 80 -j ACCEPT
 </pre></div></div></section>
 <section class='slide '><div class='content'><h1>Thanks</h1>
