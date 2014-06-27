@@ -64,6 +64,8 @@ $ emacs -nw
 #### C-a : `Control-key` + `a`
 #### M-x : `Alt-key` + `x`
 
+## Example
+#### C-x C-c : `Control-key` + `x` , `Control-key` + `c`
 
 
 !SLIDE
@@ -142,6 +144,21 @@ Ctrl + SPACE
 ~~~~
 C-xf
 ~~~~
+
+
+!SLIDE left
+## Customize Emacs
+
+[haqiba.org](http://haqiba.org/)
+
+
+!SLIDE left
+## Assignments
+
+#### indent
+#### spell check
+
+
 
 !SLIDE
 ##Org mode

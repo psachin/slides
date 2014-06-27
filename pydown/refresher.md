@@ -313,14 +313,14 @@ ssh sachin@localhost
 ## Remote copying
 ##### Using `scp`: Secure CoPy
 ~~~~{bash}
-scp username@hostname:~/file.txt
-scp -r username@hostname:~/super-duper-directory
+scp username@hostname:~/file.txt .
+scp -r username@hostname:~/super-duper-directory .
 ~~~~
 
 ##### Using `rsync`
 ~~~~{bash}
-rsync username@hostname:~/file.txt
-rsync -r username@hostname:~/super-duper-directory
+rsync username@hostname:~/file.txt .
+rsync -r username@hostname:~/super-duper-directory .
 ~~~~
 
 
