@@ -1,0 +1,436 @@
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [bigger, presentation]
+#+BEAMER_FRAME_LEVEL: 2
+
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:t d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:
+#+LINK_HOME:
+#+XSLT:
+#+COLUMNS: %40ITEM %10BEAMER_env(Env) %9BEAMER_envargs(Env Args) %4BEAMER_col(Col) %10BEAMER_extra(Extra)
+
+# +PROPERTY: BEAMER_col_ALL 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0 :ETC
+
+#+LaTeX_HEADER:  \usetheme{Frankfurt}
+#+LaTeX_HEADER:  \usecolortheme[RGB={0,104,139}]{structure}%deepskyblue
+#+LaTeX_HEADER:  \usefonttheme{serif}  % or try serif, structurebold, ...
+#+LaTeX_HEADER:  \setbeamertemplate{navigation symbols}[horizontal]
+#+LaTeX_HEADER:  \setbeamertemplate{caption}[numbered]
+#+LaTeX_HEADER:  \useinnertheme{rounded}
+
+#+LaTeX_HEADER: \setbeamercovered{transparent}
+#+LaTeX_HEADER: \usepackage{pgfpages}
+#+LaTeX_HEADER: \pgfpagesuselayout{resize to}[physical paper width=8in, physical paper height=6in]
+
+# #+LaTeX_HEADER: \logo{\includegraphics[height=0.8cm,width=2cm]{igate.jpg}}
+#+LaTeX_HEADER: \usepackage{array}
+#+LaTeX_HEADER: \usepackage{graphicx}
+#+LaTeX_HEADER: \usepackage{hyperref}
+#+LaTeX_HEADER:  \usepackage[english]{babel}
+#+LaTeX_HEADER: \usepackage{pxfonts}
+#+LaTeX_HEADER: \usepackage{listings}
+#+LaTex_HEADER: \lstset{numbers=left,numbersep=6pt,numberstyle=\tiny,showstringspaces=false,aboveskip=-50pt,frame=leftline,keywordstyle=\color{black},commentstyle=\color{orange},stringstyle=\color{black},}
+
+#+TITLE:     Python
+#+AUTHOR:    Sachin
+#+EMAIL:     iclcoolster@gmail.com
+#+LATEX_HEADER: \date{today}
+
+#+LaTeX_HEADER: \subtitle{Python | Session 1}
+# #+LaTeX_HEADER: \institute{IGATE Global Solutions Ltd.}
+
+#+DESCRIPTION: my first presentation made in org mode
+#+KEYWORDS: org mode, emacs, latex, beamer, pdf
+
+* Intro
+** Python
+
+   - High level programming language
+   - Used in Scientific computing, Application development, etc.
+
+** Why Python?
+
+   - Easy to learn, read and, modify
+   - Easy to implement
+   - Object Oriented
+
+* Basics
+** Lists
+   /List manipulation/
+
+   #+BEGIN_SRC python
+     empty_list = []
+     list = [1, 4, 9, 2]             # List
+     print list                      # [1, 4, 9, 2]
+     list.append(8)                  # [1, 4, 9, 2, 8]
+     list.pop()                      # 8
+     print list                      # [1, 4, 9, 2]
+   #+END_SRC
+
+** Lists
+   /List manipulation- access elements/
+
+   #+BEGIN_SRC python
+     org = ["gnu.org", "emacs.org", "hive.org"] # List
+     print org[0]                   # gnu.org
+     print org[2]                   # hive.org
+
+     # Last elements
+     print org[-1]                  # hive.org
+     print org[-2]                  # emacs.org
+   #+END_SRC
+
+** Lists
+   /List manipulation- slicing/
+
+   #+BEGIN_SRC python
+     org = ["gnu.org", "emacs.org", "hive.org"] # List
+     print org[:1]  # ['gnu.org']
+     print org[:2]  # ['gnu.org', 'emacs.org']
+     print org[:3]  # ['gnu.org', 'emacs.org', 'hive.org']
+   #+END_SRC
+
+** Lists
+   /List manipulation- slicing/
+
+   #+BEGIN_SRC python
+     list = [9, 6, 3, 1, 7, 5, 0, 4, 8]
+     list[0:3] # [9, 6, 3]
+     list[1:3] # [6, 3]
+     list[1:1] # []
+     list[5:7] # [5, 0]
+     list[4:5] # ?
+   #+END_SRC
+
+
+** Lists
+   /List manipulation/
+
+   #+BEGIN_SRC python
+     list = [9, 6, 3]
+     # Add list
+     new_list = ["Gandolf", "Gollum", "Aragron"]
+     my_new_list = list + new_list
+     # [9, 6, 3, 'Gandolf', 'Gollum', 'Aragron']
+     len(my_new_list)                # 6
+     list_in_list = list.append(new_list)
+     # [9, 6, 3, ['Gandolf', 'Gollum', 'Aragron']]
+     list_in_list[3][2]              # 'Aragron'
+     # What if I want to print 'Gandolf'?
+   #+END_SRC
+
+** List
+   /Run for-loop over list/
+
+   #+BEGIN_SRC python
+     new_list = ["Gandolf", "Gollum", "Aragron"]
+     for item in new_list:
+         print item
+
+     # Gandolf
+     # Gollum
+     # Aragron
+   #+END_SRC
+
+** Dictionary
+
+   #+BEGIN_SRC python
+       empty_dict = {}
+       status = {
+           'stdout': 'Hello',
+           'stderr': None,
+           'exit': 0,
+       }
+
+       print status['exit'] # 0
+       print status['stdout'] # 'Hello'
+
+       print status.keys() # ['stdout', 'stderr', 'exit']
+       print status.values() # ['Hello', None, 0]
+   #+END_SRC
+
+** Dictionary
+   /run for-loop over a dictionary/
+   #+BEGIN_SRC python
+     numbers = {
+         'one': 1,
+         'two': 2,
+         'three': 3,
+         'four': 4
+     }
+
+     for k, v in numbers.iteritems():
+         print k,v
+   #+END_SRC
+
+** Functions
+   /Define a function/
+
+   #+BEGIN_SRC python
+     # Function definition
+     def greet():
+         """Greet user."""
+         print "Hello "
+
+     # Call a function
+     greet()
+   #+END_SRC
+
+** Functions
+   /function return a value/
+
+   #+BEGIN_SRC python
+     # Function definition
+     def greet():
+         """Greet user."""
+         # return a string
+         return "Hello "
+
+     # Call a function
+     print greet()
+   #+END_SRC
+
+** Functions
+   /Function with argument/
+
+   #+BEGIN_SRC python
+     # Function definition
+     def greet(username):
+         """Greet user."""
+         print "Hello ", username
+
+     # Call a function
+     name="Sachin"
+     greet(name)
+   #+END_SRC
+
+** Functions
+   /Function with argument/
+
+   #+BEGIN_SRC python
+     # Function definition
+     def greet(username):
+         """Greet user."""
+         print "Hello %s" % username
+
+     # Call a function
+     name="Sachin"
+     greet(name)
+   #+END_SRC
+
+** Functions
+   /lambda function/
+
+   #+BEGIN_SRC python
+     (lambda x: x > 2)(3)  # True
+     (lambda x: x > 2)(1)  # False
+     (lambda x: x+10)(45)  # 55
+   #+END_SRC
+
+** string method
+   =format=
+   #+BEGIN_SRC python
+     "1st arg: {0}, 2nd arg: {1}".format(47, 11)
+     # 1st arg: 47, 2nd arg: 11
+
+     "1st arg: {0:.2f}, 2nd arg: {1:.1f}".format(47.874,
+                                                 11.345)
+     # 1st arg: 47.87, 2nd arg: 11.3
+   #+END_SRC
+
+
+* Class
+** Simple class
+
+   #+BEGIN_SRC python
+     class Animal(object):
+         """Animal class"""
+         def walk(self):
+             print "Walking.."
+
+         def eat(self, food):
+             print "Eating %s" % food
+
+         def fight(self):
+             print "Fighting.."
+
+     if __name__=='__main__':
+         animal_obj = Animal() # instance
+         animal_obj.fight() # Fighting..
+         animal_obj.eat("flesh") # Eating flesh
+   #+END_SRC
+
+** Simple class
+
+   #+BEGIN_SRC python
+     class Animal(object):
+         """Animal class"""
+         def walk(self):
+             print "Walking.."
+
+         def eat(self, food="flesh"):
+             print "Eating %s" % food
+
+         def fight(self):
+             print "Fighting.."
+
+     if __name__=='__main__':
+         animal_obj = Animal() # instance
+         animal_obj.fight() # Fighting..
+         animal_obj.eat() # Eating flesh
+   #+END_SRC
+
+** Inherit a class
+   /Inherit Animal class/
+
+   #+BEGIN_SRC python
+     class Cat(Animal):
+         """Animal category: Cat"""
+         def drink(self):
+             print "Drink Milk"
+
+     if __name__=='__main__':
+         cat_obj = Cat()  # instance
+         cat_obj.drink() # Drink Milk
+         cat_obj.walk() # Walking
+         cat_obj.eat("Biscuit") # Eating Biscuit
+   #+END_SRC
+
+** Class constructor
+   /init/
+
+   #+BEGIN_SRC python
+     class Calculator():
+         """
+         A calculator with offset.
+         """
+         def __init__(self, offset=0):
+             self.offset = offset
+
+         def add(self, x, y):
+             return  x + y + self.offset
+
+     if __name__=='__main__':
+         calc = Calculator()
+         print calc.add(2, 3) # 5
+   #+END_SRC
+
+** A word about *self*
+
+   - =self= is similar to =.this= in Java
+   - Scope will be within a /Class/
+
+** Module
+
+   #+BEGIN_SRC python
+     import Calculator
+
+     calc = Calculator()
+     calc.add(6, 7)  # 13
+   #+END_SRC
+
+** Module
+
+   #+BEGIN_SRC python
+     from Calculator import add
+
+     add(6, 7)  # 13
+   #+END_SRC
+* virtualenv
+** Virtualenv
+
+   - Written in python
+
+   /Install - Ubuntu/
+
+   #+BEGIN_SRC sh
+     sudo apt-get install python-virtualenv
+   #+END_SRC sh
+
+** Create a virtual environment
+
+*** Create 							    :B_block:
+      :PROPERTIES:
+      :BEAMER_env: block
+      :END:
+       #+BEGIN_SRC sh
+         virtualenv ~/enigma
+       #+END_SRC sh
+
+*** --no-site-packages 						    :B_block:
+      :PROPERTIES:
+      :BEAMER_env: block
+      :END:
+    /Don't give access to global package directory to virtual
+    environment/
+       #+BEGIN_SRC sh
+        virtualenv --no-site-packages ~/enigma
+       #+END_SRC sh
+
+** Activate/Deactivate
+
+*** Activate 							    :B_block:
+      :PROPERTIES:
+      :BEAMER_env: block
+      :END:
+       #+BEGIN_SRC sh
+         source ~/enigma/bin/activate
+       #+END_SRC sh
+
+*** Deactivate 							    :B_block:
+      :PROPERTIES:
+      :BEAMER_env: block
+      :END:
+       #+BEGIN_SRC sh
+         deactivate
+       #+END_SRC sh
+
+** pip
+*** Install packages 						    :B_block:
+      :PROPERTIES:
+      :BEAMER_env: block
+      :END:
+       #+BEGIN_SRC sh
+         pip install pep8
+         pip install pylint
+         pip install django==1.5
+       #+END_SRC sh
+
+*** List packages 						    :B_block:
+      :PROPERTIES:
+      :BEAMER_env: block
+      :END:
+       #+BEGIN_SRC sh
+         pip list
+         pip freeze
+       #+END_SRC sh
+
+* Reference
+** References
+   - Books
+     - Byte of Python
+     - Dive into Python
+     - Learn Python the Hard Way
+
+   - Links
+     - [[https://docs.python.org/2.7/tutorial/]]
+     - [[https://docs.python.org/2/]]
+     - [[http://learnxinyminutes.com/docs/python/]]
+
+
+
+* Contact
+** Contact
+   Proudly made with Emacs org-mode and LaTeX
+
+*** Contact 							    :B_block:
+      :PROPERTIES:
+      :BEAMER_env: block
+      :END:
+        - =isachin@iitb.ac.in=
+        - [[https://github.com/psachin/slides/python]]

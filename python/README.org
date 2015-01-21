@@ -1,0 +1,14 @@
+* Slides made in org-mode
+** key bindings
+   - create template : C-c C-e t
+   - generate .tex file : C-c C-e l
+   - generate .pdf file : C-c C-e p
+
+** ref
+   - http://orgmode.org/worg/org-tutorials/org-beamer/tutorial.html
+   - http://orgmode.org/manual/LaTeX_002fPDF-export-commands.html#LaTeX_002fPDF-export-commands
+
+** todo
+   - subsections in org-mode so that 'dots' appear on the header of slides
+   - how to : \listing, \pause, \numbering, \coloring code
+

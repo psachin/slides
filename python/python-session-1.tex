@@ -1,0 +1,562 @@
+% Created 2015-01-21 Wed 16:18
+\documentclass[bigger, presentation]{beamer}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{soul}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\tolerance=1000
+\usepackage{minted}
+\usetheme{Frankfurt}
+\usecolortheme[RGB={0,104,139}]{structure}%deepskyblue
+\usefonttheme{serif}  % or try serif, structurebold, ...
+\setbeamertemplate{navigation symbols}[horizontal]
+\setbeamertemplate{caption}[numbered]
+\useinnertheme{rounded}
+\setbeamercovered{transparent}
+\usepackage{pgfpages}
+\pgfpagesuselayout{resize to}[physical paper width=8in, physical paper height=6in]
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[english]{babel}
+\usepackage{pxfonts}
+\usepackage{listings}
+\lstset{numbers=left,numbersep=6pt,numberstyle=\tiny,showstringspaces=false,aboveskip=-50pt,frame=leftline,keywordstyle=\color{black},commentstyle=\color{orange},stringstyle=\color{black},}
+\date{today}
+\subtitle{Python | Session 1}
+\providecommand{\alert}[1]{\textbf{#1}}
+
+\title{Python}
+\author{Sachin}
+\date{\today}
+\hypersetup{
+  pdfkeywords={org mode, emacs, latex, beamer, pdf},
+  pdfsubject={my first presentation made in org mode},
+  pdfcreator={Emacs Org-mode version 7.9.3f}}
+
+\begin{document}
+
+\maketitle
+
+\section{Intro}
+\label{sec-1}
+\begin{frame}
+\frametitle{Python}
+\label{sec-1-1}
+
+
+\begin{itemize}
+\item High level programming language
+\item Used in Scientific computing, Application development, etc.
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Why Python?}
+\label{sec-1-2}
+
+
+\begin{itemize}
+\item Easy to learn, read and, modify
+\item Easy to implement
+\item Object Oriented
+\end{itemize}
+\end{frame}
+\section{Basics}
+\label{sec-2}
+\begin{frame}[fragile]
+\frametitle{Lists}
+\label{sec-2-1}
+
+   \emph{List manipulation}
+
+
+\begin{minted}[]{python}
+empty_list = []
+list = [1, 4, 9, 2]             # List
+print list                      # [1, 4, 9, 2]
+list.append(8)                  # [1, 4, 9, 2, 8]
+list.pop()                      # 8
+print list                      # [1, 4, 9, 2]
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Lists}
+\label{sec-2-2}
+
+   \emph{List manipulation- access elements}
+
+
+\begin{minted}[]{python}
+org = ["gnu.org", "emacs.org", "hive.org"] # List
+print org[0]                   # gnu.org
+print org[2]                   # hive.org
+
+# Last elements
+print org[-1]                  # hive.org
+print org[-2]                  # emacs.org
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Lists}
+\label{sec-2-3}
+
+   \emph{List manipulation- slicing}
+
+
+\begin{minted}[]{python}
+org = ["gnu.org", "emacs.org", "hive.org"] # List
+print org[:1]  # ['gnu.org']
+print org[:2]  # ['gnu.org', 'emacs.org']
+print org[:3]  # ['gnu.org', 'emacs.org', 'hive.org']
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Lists}
+\label{sec-2-4}
+
+   \emph{List manipulation- slicing}
+
+
+\begin{minted}[]{python}
+list = [9, 6, 3, 1, 7, 5, 0, 4, 8]
+list[0:3] # [9, 6, 3]
+list[1:3] # [6, 3]
+list[1:1] # []
+list[5:7] # [5, 0]
+list[4:5] # ?
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Lists}
+\label{sec-2-5}
+
+   \emph{List manipulation}
+
+
+\begin{minted}[]{python}
+list = [9, 6, 3]
+# Add list
+new_list = ["Gandolf", "Gollum", "Aragron"]
+my_new_list = list + new_list
+# [9, 6, 3, 'Gandolf', 'Gollum', 'Aragron']
+len(my_new_list)                # 6
+list_in_list = list.append(new_list)
+# [9, 6, 3, ['Gandolf', 'Gollum', 'Aragron']]
+list_in_list[3][2]              # 'Aragron'
+# What if I want to print 'Gandolf'?
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{List}
+\label{sec-2-6}
+
+   \emph{Run for-loop over list}
+
+
+\begin{minted}[]{python}
+new_list = ["Gandolf", "Gollum", "Aragron"]
+for item in new_list:
+    print item
+
+# Gandolf
+# Gollum
+# Aragron
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Dictionary}
+\label{sec-2-7}
+
+
+
+\begin{minted}[]{python}
+empty_dict = {}
+status = {
+    'stdout': 'Hello',
+    'stderr': None,
+    'exit': 0,
+}
+
+print status['exit'] # 0
+print status['stdout'] # 'Hello'
+
+print status.keys() # ['stdout', 'stderr', 'exit']
+print status.values() # ['Hello', None, 0]
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Dictionary}
+\label{sec-2-8}
+
+   \emph{run for-loop over a dictionary}
+
+\begin{minted}[]{python}
+numbers = {
+    'one': 1,
+    'two': 2,
+    'three': 3,
+    'four': 4
+}
+
+for k, v in numbers.iteritems():
+    print k,v
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Functions}
+\label{sec-2-9}
+
+   \emph{Define a function}
+
+
+\begin{minted}[]{python}
+# Function definition
+def greet():
+    """Greet user."""
+    print "Hello "
+
+# Call a function
+greet()
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Functions}
+\label{sec-2-10}
+
+   \emph{function return a value}
+
+
+\begin{minted}[]{python}
+# Function definition
+def greet():
+    """Greet user."""
+    # return a string
+    return "Hello "
+
+# Call a function
+print greet()
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Functions}
+\label{sec-2-11}
+
+   \emph{Function with argument}
+
+
+\begin{minted}[]{python}
+# Function definition
+def greet(username):
+    """Greet user."""
+    print "Hello ", username
+
+# Call a function
+name="Sachin"
+greet(name)
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Functions}
+\label{sec-2-12}
+
+   \emph{Function with argument}
+
+
+\begin{minted}[]{python}
+# Function definition
+def greet(username):
+    """Greet user."""
+    print "Hello %s" % username
+
+# Call a function
+name="Sachin"
+greet(name)
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Functions}
+\label{sec-2-13}
+
+   \emph{lambda function}
+
+
+\begin{minted}[]{python}
+(lambda x: x > 2)(3)  # True
+(lambda x: x > 2)(1)  # False
+(lambda x: x+10)(45)  # 55
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{string method}
+\label{sec-2-14}
+
+   \texttt{format}
+
+\begin{minted}[]{python}
+"1st arg: {0}, 2nd arg: {1}".format(47, 11)
+# 1st arg: 47, 2nd arg: 11
+
+"1st arg: {0:.2f}, 2nd arg: {1:.1f}".format(47.874,
+                                            11.345)
+# 1st arg: 47.87, 2nd arg: 11.3
+\end{minted}
+\end{frame}
+\section{Class}
+\label{sec-3}
+\begin{frame}[fragile]
+\frametitle{Simple class}
+\label{sec-3-1}
+
+
+
+\begin{minted}[]{python}
+class Animal(object):
+    """Animal class"""
+    def walk(self):
+        print "Walking.."
+
+    def eat(self, food):
+        print "Eating %s" % food
+
+    def fight(self):
+        print "Fighting.."
+
+if __name__=='__main__':
+    animal_obj = Animal() # instance
+    animal_obj.fight() # Fighting..
+    animal_obj.eat("flesh") # Eating flesh
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Simple class}
+\label{sec-3-2}
+
+
+
+\begin{minted}[]{python}
+class Animal(object):
+    """Animal class"""
+    def walk(self):
+        print "Walking.."
+
+    def eat(self, food="flesh"):
+        print "Eating %s" % food
+
+    def fight(self):
+        print "Fighting.."
+
+if __name__=='__main__':
+    animal_obj = Animal() # instance
+    animal_obj.fight() # Fighting..
+    animal_obj.eat() # Eating flesh
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Inherit a class}
+\label{sec-3-3}
+
+   \emph{Inherit Animal class}
+
+
+\begin{minted}[]{python}
+class Cat(Animal):
+    """Animal category: Cat"""
+    def drink(self):
+        print "Drink Milk"
+
+if __name__=='__main__':
+    cat_obj = Cat()  # instance
+    cat_obj.drink() # Drink Milk
+    cat_obj.walk() # Walking
+    cat_obj.eat("Biscuit") # Eating Biscuit
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Class constructor}
+\label{sec-3-4}
+
+   \emph{init}
+
+
+\begin{minted}[]{python}
+class Calculator():
+    """
+    A calculator with offset.
+    """
+    def __init__(self, offset=0):
+        self.offset = offset
+
+    def add(self, x, y):
+        return  x + y + self.offset
+
+if __name__=='__main__':
+    calc = Calculator()
+    print calc.add(2, 3) # 5
+\end{minted}
+\end{frame}
+\begin{frame}
+\frametitle{A word about \textbf{self}}
+\label{sec-3-5}
+
+
+\begin{itemize}
+\item \texttt{self} is similar to \texttt{.this} in Java
+\item Scope will be within a \emph{Class}
+\end{itemize}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Module}
+\label{sec-3-6}
+
+
+
+\begin{minted}[]{python}
+import Calculator
+
+calc = Calculator()
+calc.add(6, 7)  # 13
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Module}
+\label{sec-3-7}
+
+
+
+\begin{minted}[]{python}
+from Calculator import add
+
+add(6, 7)  # 13
+\end{minted}
+\end{frame}
+\section{virtualenv}
+\label{sec-4}
+\begin{frame}[fragile]
+\frametitle{Virtualenv}
+\label{sec-4-1}
+
+
+\begin{itemize}
+\item Written in python
+\end{itemize}
+
+   \emph{Install - Ubuntu}
+
+
+\begin{minted}[]{sh}
+sudo apt-get install python-virtualenv
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Create a virtual environment}
+\label{sec-4-2}
+\begin{block}{Create}
+\label{sec-4-2-1}
+
+
+\begin{minted}[]{sh}
+virtualenv ~/enigma
+\end{minted}
+\end{block}
+\begin{block}{--no-site-packages}
+\label{sec-4-2-2}
+
+    \emph{Don't give access to global package directory to virtual     environment}
+
+\begin{minted}[]{sh}
+virtualenv --no-site-packages ~/enigma
+\end{minted}
+\end{block}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Activate/Deactivate}
+\label{sec-4-3}
+\begin{block}{Activate}
+\label{sec-4-3-1}
+
+
+\begin{minted}[]{sh}
+source ~/enigma/bin/activate
+\end{minted}
+\end{block}
+\begin{block}{Deactivate}
+\label{sec-4-3-2}
+
+
+\begin{minted}[]{sh}
+deactivate
+\end{minted}
+\end{block}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{pip}
+\label{sec-4-4}
+\begin{block}{Install packages}
+\label{sec-4-4-1}
+
+
+\begin{minted}[]{sh}
+pip install pep8
+pip install pylint
+pip install django==1.5
+\end{minted}
+\end{block}
+\begin{block}{List packages}
+\label{sec-4-4-2}
+
+
+\begin{minted}[]{sh}
+pip list
+pip freeze
+\end{minted}
+\end{block}
+\end{frame}
+\section{Reference}
+\label{sec-5}
+\begin{frame}
+\frametitle{References}
+\label{sec-5-1}
+
+\begin{itemize}
+\item Books
+\begin{itemize}
+\item Byte of Python
+\item Dive into Python
+\item Learn Python the Hard Way
+\end{itemize}
+\item Links
+\begin{itemize}
+\item \href{https://docs.python.org/2.7/tutorial/}{https://docs.python.org/2.7/tutorial/}
+\item \href{https://docs.python.org/2/}{https://docs.python.org/2/}
+\item \href{http://learnxinyminutes.com/docs/python/}{http://learnxinyminutes.com/docs/python/}
+\end{itemize}
+\end{itemize}
+\end{frame}
+\section{Contact}
+\label{sec-6}
+\begin{frame}
+\frametitle{Contact}
+\label{sec-6-1}
+
+   Proudly made with Emacs org-mode and \LaTeX{}
+\begin{block}{Contact}
+\label{sec-6-1-1}
+
+\begin{itemize}
+\item \texttt{isachin@iitb.ac.in}
+\item \href{https://github.com/psachin/slides/python}{https://github.com/psachin/slides/python}
+\end{itemize}
+\end{block}
+\end{frame}
+
+\end{document}
