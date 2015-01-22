@@ -1,4 +1,4 @@
-% Created 2015-01-21 Wed 16:18
+% Created 2015-01-22 Thu 11:49
 \documentclass[bigger, presentation]{beamer}
 \usepackage[latin1]{inputenc}
 \usepackage[T1]{fontenc}
@@ -25,6 +25,8 @@
 \setbeamercovered{transparent}
 \usepackage{pgfpages}
 \pgfpagesuselayout{resize to}[physical paper width=8in, physical paper height=6in]
+\titlegraphic{\includegraphics[width=2.3cm,height=2.3cm]{python.png}}
+\logo{\includegraphics[height=0.9cm,width=0.9cm]{python.png}}
 \usepackage{array}
 \usepackage{graphicx}
 \usepackage{hyperref}
@@ -33,7 +35,7 @@
 \usepackage{listings}
 \lstset{numbers=left,numbersep=6pt,numberstyle=\tiny,showstringspaces=false,aboveskip=-50pt,frame=leftline,keywordstyle=\color{black},commentstyle=\color{orange},stringstyle=\color{black},}
 \date{today}
-\subtitle{Python | Session 1}
+\subtitle{Session 1}
 \providecommand{\alert}[1]{\textbf{#1}}
 
 \title{Python}
@@ -57,7 +59,8 @@
 
 \begin{itemize}
 \item High level programming language
-\item Used in Scientific computing, Application development, etc.
+\item Used in Scientific computing, Application development, Scripting,
+     etc.
 \end{itemize}
 \end{frame}
 \begin{frame}
@@ -66,7 +69,7 @@
 
 
 \begin{itemize}
-\item Easy to learn, read and, modify
+\item Easy to learn, read, and modify the code
 \item Easy to implement
 \item Object Oriented
 \end{itemize}
@@ -180,7 +183,7 @@ for item in new_list:
 
 
 \begin{minted}[]{python}
-empty_dict = {}
+empty_dict = {} # Empty dictionary
 status = {
     'stdout': 'Hello',
     'stderr': None,
@@ -198,6 +201,23 @@ print status.values() # ['Hello', None, 0]
 \frametitle{Dictionary}
 \label{sec-2-8}
 
+
+
+\begin{minted}[]{python}
+status = {
+    'stdout': 'Hello',
+    'stderr': None,
+    'exit': 0,
+}
+
+# Change value
+print status['exit'] = 1 # 0 -> 1
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Dictionary}
+\label{sec-2-9}
+
    \emph{run for-loop over a dictionary}
 
 \begin{minted}[]{python}
@@ -214,7 +234,7 @@ for k, v in numbers.iteritems():
 \end{frame}
 \begin{frame}[fragile]
 \frametitle{Functions}
-\label{sec-2-9}
+\label{sec-2-10}
 
    \emph{Define a function}
 
@@ -226,12 +246,12 @@ def greet():
     print "Hello "
 
 # Call a function
-greet()
+greet() # Hello
 \end{minted}
 \end{frame}
 \begin{frame}[fragile]
 \frametitle{Functions}
-\label{sec-2-10}
+\label{sec-2-11}
 
    \emph{function return a value}
 
@@ -244,25 +264,7 @@ def greet():
     return "Hello "
 
 # Call a function
-print greet()
-\end{minted}
-\end{frame}
-\begin{frame}[fragile]
-\frametitle{Functions}
-\label{sec-2-11}
-
-   \emph{Function with argument}
-
-
-\begin{minted}[]{python}
-# Function definition
-def greet(username):
-    """Greet user."""
-    print "Hello ", username
-
-# Call a function
-name="Sachin"
-greet(name)
+print greet() # Hello
 \end{minted}
 \end{frame}
 \begin{frame}[fragile]
@@ -276,16 +278,34 @@ greet(name)
 # Function definition
 def greet(username):
     """Greet user."""
-    print "Hello %s" % username
+    print "Hello ", username
 
 # Call a function
 name="Sachin"
-greet(name)
+greet(name) # Hello Sachin
 \end{minted}
 \end{frame}
 \begin{frame}[fragile]
 \frametitle{Functions}
 \label{sec-2-13}
+
+   \emph{Function with argument}
+
+
+\begin{minted}[]{python}
+# Function definition
+def greet(username):
+    """Greet user."""
+    print "Hello %s" % username
+
+# Call a function
+name="Sachin"
+greet(name) # Hello Sachin
+\end{minted}
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Functions}
+\label{sec-2-14}
 
    \emph{lambda function}
 
@@ -298,7 +318,7 @@ greet(name)
 \end{frame}
 \begin{frame}[fragile]
 \frametitle{string method}
-\label{sec-2-14}
+\label{sec-2-15}
 
    \texttt{format}
 
@@ -404,7 +424,7 @@ if __name__=='__main__':
     print calc.add(2, 3) # 5
 \end{minted}
 \end{frame}
-\begin{frame}
+\begin{frame}[fragile]
 \frametitle{A word about \textbf{self}}
 \label{sec-3-5}
 
@@ -413,6 +433,21 @@ if __name__=='__main__':
 \item \texttt{self} is similar to \texttt{.this} in Java
 \item Scope will be within a \emph{Class}
 \end{itemize}
+
+
+
+\begin{minted}[]{python}
+def add(self, x, y):
+    self.total = x + y # self :)
+    return x + y + self.offset
+
+def adder(self):
+    """
+    Simple function which make use of
+    self.total defined in add()
+    """
+    return self.total + self.offset
+\end{minted}
 \end{frame}
 \begin{frame}[fragile]
 \frametitle{Module}
@@ -425,6 +460,16 @@ import Calculator
 
 calc = Calculator()
 calc.add(6, 7)  # 13
+\end{minted}
+
+
+\begin{minted}[]{python}
+# Define 'offset'
+calc = Calculator(9) # offset=9
+calc.add(6, 7)  # 22
+
+calc = Calculator(-5) # offset=-5
+calc.add(6, 7)  # ?
 \end{minted}
 \end{frame}
 \begin{frame}[fragile]
@@ -557,6 +602,22 @@ pip freeze
 \item \href{https://github.com/psachin/slides/python}{https://github.com/psachin/slides/python}
 \end{itemize}
 \end{block}
+\end{frame}
+\section{Todo}
+\label{sec-7}
+\begin{frame}
+\frametitle{Todo}
+\label{sec-7-1}
+
+\begin{itemize}
+\item user input
+\item class method
+\item static methods
+\item list comprehension
+\item decorators
+\item super
+\item *args, **kwargs
+\end{itemize}
 \end{frame}
 
 \end{document}
