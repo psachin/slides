@@ -1,4 +1,4 @@
-% Created 2015-01-22 Thu 11:49
+% Created 2015-01-23 Fri 13:19
 \documentclass[bigger, presentation]{beamer}
 \usepackage[latin1]{inputenc}
 \usepackage[T1]{fontenc}
@@ -211,7 +211,7 @@ status = {
 }
 
 # Change value
-print status['exit'] = 1 # 0 -> 1
+status['exit'] = 1 # 0 to 1
 \end{minted}
 \end{frame}
 \begin{frame}[fragile]
@@ -230,6 +230,11 @@ numbers = {
 
 for k, v in numbers.iteritems():
     print k,v
+
+# four 4
+# three 3
+# two 2
+# one 1
 \end{minted}
 \end{frame}
 \begin{frame}[fragile]
@@ -611,12 +616,14 @@ pip freeze
 
 \begin{itemize}
 \item user input
+\item list comprehension
+\item funtion as an argument
+\item return a function
+\item *args, **kwargs
 \item class method
 \item static methods
-\item list comprehension
 \item decorators
 \item super
-\item *args, **kwargs
 \end{itemize}
 \end{frame}
 

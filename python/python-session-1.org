@@ -167,7 +167,7 @@
      }
 
      # Change value
-     print status['exit'] = 1 # 0 -> 1
+     status['exit'] = 1 # 0 to 1
    #+END_SRC
 
 ** Dictionary
@@ -182,6 +182,11 @@
 
      for k, v in numbers.iteritems():
          print k,v
+
+     # four 4
+     # three 3
+     # two 2
+     # one 1
    #+END_SRC
 
 ** Functions
@@ -478,10 +483,11 @@
 * Todo
 ** Todo
    - user input
+   - list comprehension
+   - funtion as an argument
+   - return a function
+   - *args, **kwargs
    - class method
    - static methods
-   - list comprehension
    - decorators
-   - super 
-   - *args, **kwargs
-
+   - super
