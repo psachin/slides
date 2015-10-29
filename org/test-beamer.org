@@ -9,7 +9,7 @@
 #+LaTeX_CLASS_OPTIONS: [bigger, presentation]
 #+BEAMER_FRAME_LEVEL: 2
 #+OPTIONS: H:3
-#+OPTIONS: toc:nil
+#+OPTIONS: toc:nil email:nil
 #+BEAMER_COLOR_THEME:
 #+BEAMER_FONT_THEME: serif
 #+BEAMER_HEADER: \usecolortheme[RGB={0,104,139}]{structure}%deepskyblue
@@ -22,7 +22,14 @@
 #+LaTeX_HEADER: \subtitle{Presentation subtitle | Session 1}
 #+LaTeX_HEADER: \institute{Venue}
 #+LaTeX_HEADER: \titlegraphic{\includegraphics[width=4.7cm,height=1.9cm]{django-logo.png}}
-
+#+LaTeX_HEADER: \setbeamertemplate{navigation symbols}[horizontal]
+# #+LaTex_HEADER: \setbeamertemplate{footline}{\color{gray}Proprietary and Confidential}
+#+LaTeX_HEADER: \usepackage{pxfonts}
+#+LaTeX_HEADER: \usepackage{hyperref}
+# #+LaTeX_HEADER: \usepackage{listings}
+# #+LaTex_HEADER: \lstset{numbers=left,numbersep=6pt,numberstyle=\tiny,showstringspaces=false,aboveskip=-50pt,frame=leftline,keywordstyle=\color{green},commentstyle=\color{orange},stringstyle=\color{black},}
+#+LaTeX_HEADER: \setbeamertemplate{caption}[numbered]
+#+LaTeX_HEADER: \setbeamercovered{invisible}
 
 * Section 1
 ** Subsection 1
@@ -77,7 +84,7 @@
      #+END_SRC
 
 *** Block
-**** block 1
+**** creditcard.c
 
      #+BEGIN_SRC c
        #include <stdio.h>
@@ -88,13 +95,10 @@
 
        long long number,rec;
        long long divthree = 10e+10;
-       long long divfive = 10e+12;
-       long long divsix = 10e+13;
 
-       /* FUNCTION PROTOTYPE */
+       /* Function prototype */
        void identify();
        void hans();
-
      #+END_SRC
 
 * Image
