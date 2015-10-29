@@ -1,0 +1,157 @@
+#+startup: beamer
+#+TITLE: Presentation
+#+DATE: \today
+#+AUTHOR: Sachin
+#+EMAIL: iclcoolster@gmail.com
+#+CREATOR: Emacs 24.4.1 (Org mode 8.2.10)
+#+LANGUAGE: en
+#+DESCRIPTION: Sample org beamer presentation
+#+LaTeX_CLASS_OPTIONS: [bigger, presentation]
+#+BEAMER_FRAME_LEVEL: 2
+#+OPTIONS: H:3
+#+OPTIONS: toc:nil
+#+BEAMER_COLOR_THEME:
+#+BEAMER_FONT_THEME: serif
+#+BEAMER_HEADER: \usecolortheme[RGB={0,104,139}]{structure}%deepskyblue
+#+BEAMER_INNER_THEME: rounded
+#+BEAMER_OUTER_THEME:
+#+BEAMER_THEME: Frankfurt
+#+LATEX_CLASS: beamer
+
+#+LaTeX_HEADER: \logo{\includegraphics[height=0.8cm,width=2cm]{django-logo.png}}
+#+LaTeX_HEADER: \subtitle{Presentation subtitle | Session 1}
+#+LaTeX_HEADER: \institute{Venue}
+#+LaTeX_HEADER: \titlegraphic{\includegraphics[width=4.7cm,height=1.9cm]{django-logo.png}}
+
+
+* Section 1
+** Subsection 1
+*** Text
+    texts in various formats
+
+    - this is in *bold*
+    - this is _underline_
+    - this is /emphasis/
+    - and this is the [[www.google.ru][link]]
+
+*** subsubsection 1
+
+    - some code
+     #+BEGIN_SRC python -n
+       from sachin import sachin as s
+
+       def some_crazy_func():
+           return "I m crazy"
+     #+END_SRC
+
+*** subsubsection 2
+
+    - some code
+     #+BEGIN_SRC python -n
+       from sachin import sachin as s
+
+       def some_crazy_func():
+           return "I m crazy"
+     #+END_SRC
+
+* Code
+** Code
+*** Python
+
+    - some code
+     #+BEGIN_SRC python -n
+       from sachin import sachin as s
+
+       def some_crazy_func():
+           return "I m crazy"
+     #+END_SRC
+
+*** Python v2
+
+    - some code
+     #+BEGIN_SRC python -n
+       from sachin import sachin as s
+
+       def some_crazy_func():
+           return "I m crazy"
+     #+END_SRC
+
+*** Block
+**** block 1
+
+     #+BEGIN_SRC c
+       #include <stdio.h>
+       #include "cs50.h"
+
+       int initial;
+       int dig;
+
+       long long number,rec;
+       long long divthree = 10e+10;
+       long long divfive = 10e+12;
+       long long divsix = 10e+13;
+
+       /* FUNCTION PROTOTYPE */
+       void identify();
+       void hans();
+
+     #+END_SRC
+
+* Image
+** Image
+*** Simple image
+    #+CAPTION:    Django logo
+    #+LABEL:      fig:1
+    #+ATTR_LATEX: :width 5cm :options angle=0
+    [[/home/sachin/work/training/pvppcoe-python/django-logo.png]]
+
+*** Rotating image
+    #+CAPTION:    Django logo resized and rotated
+    #+LABEL:      fig:2
+    #+ATTR_LATEX: :height 2.5cm :width 1cm :options angle=90
+    [[/home/sachin/work/training/pvppcoe-python/django-logo.png]]
+
+* Table
+** Table
+*** Simple table
+    #+CAPTION: A long table
+    #+ATTR_LATEX: longtable align=c|c|c
+    #+LABEL: tab:long
+
+
+    |-------+-------+-----|
+    | Name  | Phone | Age |
+    |-------+-------+-----|
+    | Peter |  1234 |  17 |
+    | Anna  |  4321 |  25 |
+    |-------+-------+-----|
+    | sds   |    ds |  sd |
+    |-------+-------+-----|
+
+* Quote
+** Quote
+*** Quotes sample
+    #+begin_quote
+    Emacs org-mode is a
+    great presentation tool
+- Fast to beautiful slides
+- Arne Babenhauserheide
+    #+end_quote
+
+* columns
+** columns
+*** Simple block  :BMCOL:B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :BEAMER_col: 0.5
+    :END:
+    - one
+    - two
+    - three
+
+*** second block
+    :PROPERTIES:
+    :BEAMER_env: block
+    :BEAMER_col: 0.5
+    :END:
+    Some text, the headline above is ignored
