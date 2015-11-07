@@ -101,6 +101,9 @@
        void hans();
      #+END_SRC
 
+*** Include file
+    #+INCLUDE: "./class_static_methods.py" :minlevel 1 src python -i :lines "11-21"
+
 * Image
 ** Image
 *** Simple image
