@@ -1,14 +1,14 @@
-* Scipy 2013
+* Scipy-2013 Conference
   Python + Emacs in Scientific Computing.
 
 ** Usage
    - Clone dependency.
-     
+
    #+BEGIN_SRC sh
      git clone https://github.com/psachin/slides.git
+     cd scipy2013
      git submodule init
      git submodule update
-   #+END_SRC sh
+   #+END_SRC
 
-   - Open =/path/to/scipy-2013.html= in web browser.
-   
+   - Open =/path/to/scipy-2013.html= in web-browser.
