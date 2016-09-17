@@ -1,0 +1,267 @@
+#+startup: beamer
+#+TITLE: \textit{Design your private cloud with} \newline Red Hat OpenStack Platform
+#+DATE: September 23, 2016
+#+AUTHOR: Sachin
+#+EMAIL: psachin@redhat.com
+#+LANGUAGE: en
+#+DESCRIPTION: Sample org beamer presentation
+#+LaTeX_CLASS_OPTIONS: [bigger, presentation]
+#+BEAMER_FRAME_LEVEL: 2
+#+OPTIONS: H:3
+#+OPTIONS: toc:nil email:nil author:nil
+#+BEAMER_COLOR_THEME:
+#+BEAMER_FONT_THEME: serif
+# #+BEAMER_HEADER: \usecolortheme[RGB={0,104,139}]{structure}%deepskyblue
+#+BEAMER_HEADER: \usecolortheme[RGB={204,0,0}]{structure}%Red Hat
+#+BEAMER_INNER_THEME: rounded
+#+BEAMER_OUTER_THEME:
+#+BEAMER_THEME: Frankfurt
+#+LATEX_CLASS: beamer
+#+LATEX_CLASS_OPTIONS: [10pt]
+
+#+LaTeX_HEADER: \logo{\includegraphics[height=0.4cm,width=1.15cm]{Logo_RH_CMYK_Default.jpg}}
+# #+LaTeX_HEADER: \subtitle{Red Hat OpenStack Platform}
+#+LaTeX_HEADER: \institute{Red Hat Forum, Bangalore}
+#+LaTeX_HEADER: \titlegraphic{\includegraphics[width=4.3cm,height=1.4cm]{Logo_RH_CMYK_Default.jpg}}
+# #+LaTeX_HEADER: \titlegraphic{\includegraphics[width=5.3cm,height=2.3cm]{Logotype_RH_OpenStackPlatform_RGB_Gray.png}}
+#+LaTeX_HEADER: \setbeamertemplate{navigation symbols}[horizontal]
+#+LaTex_HEADER: \setbeamertemplate{footline}{\color{gray}Red Hat forum 2016 | psachin@redhat.com}
+#+LaTeX_HEADER: \usepackage{pxfonts}
+#+LaTeX_HEADER: \usepackage{hyperref}
+#+LaTeX_HEADER: \hypersetup{colorlinks=true, linkcolor=red, filecolor=magenta, urlcolor=cyan}
+#+LaTeX_HEADER: \urlstyle{same}
+#+LaTeX_HEADER: \usepackage{minted}
+#+LaTeX_HEADER: \usepackage[utf8]{inputenc}
+#+LaTeX_HEADER: \usepackage[english]{babel}
+#+LaTeX_HEADER: \usepackage{listings}
+#+LaTex_HEADER: \lstset{numbers=left,numbersep=6pt,numberstyle=\tiny,showstringspaces=false,aboveskip=-50pt,frame=leftline,keywordstyle=\color{green},commentstyle=\color{orange},stringstyle=\color{black},}
+#+LaTeX_HEADER: \setbeamertemplate{caption}[numbered]
+#+LaTeX_HEADER: \setbeamercovered{invisible}
+
+
+* Intro
+** Introduction
+
+*** What is OpenStack?
+
+	#+ATTR_LaTeX: :width 10cm :height 5cm :align center :options angle=0
+	#+ATTR_LaTeX: :float t
+	[[/home/psachin/github/slides/RH-forum-2016/openstack-software-diagram.png]]
+
+	- Cloud operating system
+
+
+*** What is Red Hat OpenStack Platform?
+
+	#+ATTR_LaTeX: :width 4.8cm :height 2cm :options angle=0
+	#+ATTR_LaTeX: :float t
+	[[/home/psachin/github/slides/RH-forum-2016/Logotype_RH_OpenStackPlatform_RGB_Gray.png]]
+
+	\vspace{1.5cm}
+
+	- Infrastructure-as-a-Service
+	- Stable and trusted
+	- Always up to date
+
+* Devstack
+** Devstack
+*** Devstack
+
+	#+CAPTION:   Devstack dashboard
+	#+NAME:      fig:Devstack
+	#+ATTR_LaTeX: :width 4cm :height 6cm :options angle=0
+	[[/home/psachin/github/slides/RH-forum-2016/devstack-dashboard.png]]
+
+	- [[https://gist.github.com/psachin/c338c291e318d5c33632d024937a67d2][local.conf]]
+
+* Packstack
+** Packstack
+*** Packstack
+
+	#+CAPTION:   Packstack
+	#+NAME:      fig:Packstack
+	#+ATTR_LaTeX: :width 7.5cm :height 4.5cm :options angle=0
+	[[/home/psachin/github/slides/RH-forum-2016/packstack.png]]
+
+	- [[https://access.redhat.com/articles/1127153][OpenStack Single node deployment]]
+	- [[https://access.redhat.com/articles/1146173][Packstack networking overview]]
+
+* Director
+** Director
+*** Director
+
+	#+CAPTION:   Director
+	#+NAME:      fig:Director
+	#+ATTR_LaTeX: :width 10cm :height 4.5cm :options angle=0
+	[[/home/psachin/github/slides/RH-forum-2016/over-undercloud.png]]
+
+  - /Undercloud/: Main director node. Single system installation
+  - /Overcloud/: Resulting Red Hat OpenStack Platform
+
+*** TripleO
+
+	#+CAPTION:    TripleO
+	#+LABEL:      fig:TripleO
+	#+ATTR_LaTeX: :width 9cm :height 3.6cm :options angle=0
+	[[/home/psachin/github/slides/RH-forum-2016/tripleO-alpha.png]]
+
+	What is *TripleO*?
+	- Friendly name for /OpenStack on OpenStack/
+	- Allows you to deploy production cloud on bare-metal hardware
+	- /Undercloud/: Subset of existing OpenStack components
+	- /Overcloud/: Production OpenStack cloud
+
+*** TripleO
+
+	#+CAPTION:    TripleO overview
+	#+LABEL:      fig:TripleO overview
+	#+ATTR_LaTeX: :width 9cm :height 3.6cm :options angle=0
+	[[/home/psachin/github/slides/RH-forum-2016/tripleO-overview.png]]
+
+	We start by creating *Deployment cloud* (/undercloud/) that will
+	deploy and manage *Workload cloud* (/overcloud/)
+
+*** TripleO - Physical view
+
+	#+ATTR_LaTeX: :width 10.5cm :height 7cm :options angle=0
+	[[/home/psachin/github/slides/RH-forum-2016/physical_view.png]]
+
+
+* Deployment
+** Deployment
+*** TripleO - Deployment workflow overview
+
+	#+ATTR_LaTeX: :width 8cm :height 7cm :options angle=0
+	[[/home/psachin/github/slides/RH-forum-2016/deployment_workflow_overview.png]]
+
+*** Undercloud requirements
+
+	#+ATTR_LaTeX: :width 5cm :height 3cm :center :options angle=0
+	[[/home/psachin/github/slides/RH-forum-2016/undercloud.png]]
+
+**** Requirements
+	 + 8-core 64-bit x86 processor
+	 + A minimum of 16 GB of RAM
+	 + 40 GB of available disk space
+	 + 2 x 1 Gbps NICs
+	 + Red Hat Enterprise Linux 7.2
+
+*** Overcloud requirements
+
+**** Compute
+	 #+ATTR_LaTeX: :align |l|l|
+     | Type       | Values                              |
+     |------------+-------------------------------------|
+     | Processor  | 64-bit x86(Intel 64 or AMD64)       |
+     | Memory     | min 6 GB of RAM                     |
+     | Disk space | 40 GB available                     |
+     | NICs       | min 1 Gbps, at-least 2 in production |
+     | IPMI       | IPMI functionality in motherboard   |
+
+**** Controller
+	 #+ATTR_LaTeX: :align |l|l|
+     | Type      | Value                            |
+     |-----------+----------------------------------|
+     | Processor | 64-bit x86(Intel 64 or AMD64)    |
+     | Memory    | min 32 GB RAM, 64 GB recommended |
+
+
+
+*** Planning your Overcloud
+
+	#+ATTR_LaTeX: :width 5cm :height 3cm :options angle=0
+	[[/home/psachin/github/slides/RH-forum-2016/overcloud.png]]
+
+**** Node types
+	 - Controller
+	 - Compute
+	 - Ceph-Storage
+	 - Cinder-Storage
+	 - Swift-Storage
+
+*** Planning your Overcloud
+
+	#+ATTR_LaTeX: :width 5cm :height 3cm :options angle=0
+	[[/home/psachin/github/slides/RH-forum-2016/overcloud.png]]
+
+	 #+ATTR_LaTeX: :align |l|c|c|c|c|
+    | Overcloud                  | Controller | Compute | Ceph | Swift |
+    |----------------------------+------------+---------+------+-------|
+    | Small                      |          1 |       1 | -    | -     |
+    | Medium                     |          1 |       3 | -    | -     |
+    | Medium with Object Storage |          1 |       3 | -    | 1     |
+    | Medium(HA)                 |          3 |       3 | -    | -     |
+    | Medium(HA) with Ceph       |          3 |       3 | 3    | -     |
+
+
+	Ref: [[https://access.redhat.com/documentation/en/red-hat-openstack-platform/8/single/director-installation-and-usage/#chap-Planning_your_Overcloud][Director Installation and Usage]]
+
+*** Planning networks
+
+	#+ATTR_LaTeX: :width 7.5cm :height 7.5cm :options angle=0
+	[[/home/psachin/github/slides/RH-forum-2016/Diagram-002-Network.png]]
+
+*** Register nodes
+
+	#+ATTR_LaTeX: :width 8cm :height 3cm :options angle=0
+	[[/home/psachin/github/slides/RH-forum-2016/register_nodes.png]]
+
+	\vspace{1cm}
+
+**** 
+	 *Director* /requires node definition template(=JSON=) which
+     contains hardware and power-management details for your nodes/
+
+*** Register nodes
+
+	#+BEGIN_SRC sh -n
+      $ openstack baremetal import json ~/instackenv.json
+      # Assign kernel and ramdisk
+      $ openstack baremetal configure boot
+      # List nodes
+      $ ironic node-list
+	#+END_SRC
+
+*** Introspect nodes
+
+	#+ATTR_LaTeX: :width 8cm :height 2cm :options angle=0
+	[[/home/psachin/github/slides/RH-forum-2016/introspect_nodes.png]]
+
+	\vspace{1cm}
+
+**** 
+	 *Ironic inspector* /collects hardware data from nodes to director/
+
+
+*** Plan and deploy overcloud
+
+	#+ATTR_LaTeX: :width 8cm :height 2cm :options angle=0
+	[[/home/psachin/github/slides/RH-forum-2016/deploy_overcloud.png]]
+
+
+*** Heat template
+
+	#+ATTR_LaTeX: :width 7cm :height 6cm :options angle=0
+	[[/home/psachin/github/slides/RH-forum-2016/heat-template.png]]
+
+	\vspace{0.5cm}
+
+	Ref: [[https://access.redhat.com/documentation/en/red-hat-openstack-platform/8/single/director-installation-and-usage/#sect-Understanding_Heat_Templates][Understanding heat templates]]
+
+
+*** Deploy overcloud
+
+	#+ATTR_LaTeX: :width 10cm :height 7cm :options angle=0
+	[[/home/psachin/github/slides/RH-forum-2016/triple0-topology.png]]
+
+	#+BEGIN_SRC sh
+      $ openstack overcloud deploy
+	#+END_SRC
+
+
+* Reference
+** Reference
+*** Reference
+**** Links
+	 - [[https://access.redhat.com/documentation/en/red-hat-openstack-platform/][red-hat-openstack-platform]]
+	 - [[https://access.redhat.com/documentation/en/red-hat-openstack-platform/8/single/director-installation-and-usage/][director-installation-and-usage]]
