@@ -1,0 +1,235 @@
+#+startup: beamer
+#+TITLE: Socializing with the Community
+#+DATE: Feb 15, 2017
+#+AUTHOR: Sachin
+#+EMAIL: psachin@redhat.com
+#+CREATOR: Emacs 25.1.1 (Org mode 9.0.4)
+#+LANGUAGE: en
+#+DESCRIPTION: Sample org beamer presentation
+#+LaTeX_CLASS_OPTIONS: [bigger, presentation]
+#+BEAMER_FRAME_LEVEL: 2
+#+OPTIONS: H:3
+#+OPTIONS: toc:nil email:nil
+#+BEAMER_COLOR_THEME:
+#+BEAMER_FONT_THEME: serif
+# #+BEAMER_HEADER: \usecolortheme[RGB={0,104,139}]{structure}%deepskyblue
+#+BEAMER_HEADER: \usecolortheme[RGB={204,0,0}]{structure}%Red Hat
+#+BEAMER_INNER_THEME: rounded
+#+BEAMER_OUTER_THEME:
+#+BEAMER_THEME: Frankfurt
+#+LATEX_CLASS: beamer
+#+LATEX_CLASS_OPTIONS: [10pt]
+
+#+LaTeX_HEADER: \logo{\includegraphics[height=1.4cm,width=1.5cm]{RedHat-IsoLogo.jpg}}
+#+LaTeX_HEADER: \subtitle{Internet Relay Chat}
+#+LaTeX_HEADER: \institute{Red Hat}
+# #+LaTeX_HEADER: \titlegraphic{\includegraphics[width=2.3cm,height=2.3cm]{python.png}}
+#+LaTeX_HEADER: \setbeamertemplate{navigation symbols}[horizontal]
+# #+LaTex_HEADER: \setbeamertemplate{footline}{\color{gray}Proprietary and Confidential}
+#+LaTeX_HEADER: \usepackage{pxfonts}
+#+LaTeX_HEADER: \usepackage{hyperref}
+#+LaTeX_HEADER: \hypersetup{colorlinks=true, linkcolor=red, filecolor=magenta, urlcolor=cyan}
+#+LaTeX_HEADER: \urlstyle{same}
+#+LaTeX_HEADER: \usepackage{minted}
+#+LaTeX_HEADER: \usepackage[utf8]{inputenc}
+#+LaTeX_HEADER: \usepackage[english]{babel}
+# #+LaTeX_HEADER: \usepackage{listings}
+# #+LaTex_HEADER: \lstset{numbers=left,numbersep=6pt,numberstyle=\tiny,showstringspaces=false,aboveskip=-50pt,frame=leftline,keywordstyle=\color{green},commentstyle=\color{orange},stringstyle=\color{black},}
+#+LaTeX_HEADER: \setbeamertemplate{caption}[numbered]
+#+LaTeX_HEADER: \setbeamercovered{invisible}
+
+
+* IRC
+** IRC
+*** Question?
+
+	- Whom do I ask questions?
+	- Where do I ask questions?
+	- How do I ask question?
+
+*** Motivation
+
+	- You look for people with similar interests
+	- With specific topic
+	- You want to avoid delays(email, blogs)
+	- /Just want to be an observer/
+
+*** IRC?
+
+**** /Internet Relay Chat/
+
+	 /Enable people to talk to each other via *internet* exchanging
+      textual messages/
+
+
+*** IRC clients
+
+	/**You need to install IRC client/
+
+**** /Graphical/
+	  - =mIRC=
+      - =hexchat=
+
+**** /CommandLine/
+	  - =irssi=
+	  - =weechat=
+
+*** IRC server
+
+	/Listens to connections from IRC clients/
+
+
+	- =chat.freenode.net=
+	- =irc.oftc.net=
+	- =irc.gnome.org=
+
+*** IRC server
+
+
+	#+BEGIN_SRC sh
+      /CONNECT chat.freenode.net
+	#+END_SRC
+
+
+*** IRC channel
+
+
+	(/#kernelnewbies, #vim, #outreachy/)
+
+
+	#+BEGIN_SRC sh
+      /JOIN #openstack-101
+      /LEAVE #openstack-101
+	#+END_SRC
+
+
+*** IRB Bot
+
+**** 
+
+    =psachin:= /.weather pune/
+
+    =BB-8:= /Pune, MH, IN: Sunny, 27 C (80 F), Humidity: 36%/
+
+
+**** 
+
+    =psachin:= /mrNobody++/
+
+    =BB-8:= /mrNobody has 3 points of karma/
+
+
+**** 
+
+    =psachin:= /psachin++/
+
+    =BB-8:= /You cant give yourself karma/
+
+
+*** IRC on web(=http://webchat.freenode.net/=)
+
+	[[./webchat.freenode.png]]
+
+*** IRC nick
+
+	/Other users identify you by your =nick=. Avoid changing =nick=
+	once set/
+
+**** 
+
+	=guest2365:= /NICK psachin
+
+	/You are now known as psachin/
+
+	=psachin:= /Hello World/
+
+* etiquette
+** etiquette
+*** NO naked pings
+
+**** 
+
+	 =ircnewbie:= /ping/
+
+	 =ircnewbie:= /ping vader/
+
+	 =ircnewbie:= /ping #linuxOS/
+
+*** How to ask questions? | Newbie
+
+**** 
+
+     =ircnewbie:= /Hello guys. My OS crashed/
+
+
+*** How to ask questions? | Newbie - GoodGuy
+
+
+**** 
+
+     =ircnewbie:= /Hello guys. My OS crashed/
+
+     =GoodGuy:= /ircnewbie, How can I help you with the crash?/
+
+
+*** How to ask questions? | Newbie - BadGuy
+
+**** 
+
+     =ircnewbie:= /Hello guys. My OS crashed/
+
+     =BadGuy:= /ircnewbie, Congrats! Have fun :D/
+
+*** How to ask questions? | Describe your problem
+
+**** 
+
+     =ircnewbie:= /Hello #linuxOS, I installed Fedora-25 on my desktop The installation went well. After reboot I see a message "Kernel
+     panic - not syncing: Fatal Machine check"/
+
+
+*** How to ask questions? | Give a background
+
+**** 
+
+     =ircnewbie:= /Hello #linuxOS, I was installing Fedora-25 on my desktop/
+     /alongside Windows 10. It prompted for select HDD to install MBR(I/
+     /dont know what that mean). I clicked =sda=. The installation went well. After/
+     /reboot I see a message "Kernel panic - not syncing: Fatal Machine/
+     /check". Full logs here/: http://pastebin.com/36794
+
+*** Do your homework
+
+**** 
+
+	 =reedip:= /hi guys , I have a query/
+
+	 =reedip:=  /If Swift and Ceilometer are communicating, and if
+	 swift ... Would the request from Swift be hanged ?/
+
+	 =psachin:=  /reedip: It should timeout I guess/
+
+	 =reedip:=  /psachin : this is a behavior which one of our team
+	 members noticed in stable/mitaka/
+
+	 =psachin:= /reedip: The request hangs without an error?/
+
+	 =reedip:= /psachin : any idea about the timeout value?/
+
+	 =reedip:= /psachin: no the request hangs indefinetly, without an error, on the screen. Let me check the logs once though./
+
+
+* Thanks
+*** Reference
+
+**** How To Ask Questions The Smart Way
+	http://www.catb.org/~esr/faqs/smart-questions.html
+
+**** Naked Pings
+	 https://blogs.gnome.org/markmc/2014/02/20/naked-pings/
+
+*** Thanks
+**** Email
+     =psachin@redhat.com=
+**** Blog
+     =http://psachin.github.io/about=
