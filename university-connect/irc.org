@@ -188,7 +188,7 @@
      panic - not syncing: Fatal Machine check"/
 
 
-*** How to ask questions? | Give a background
+*** How to ask questions? | Give background
 
 **** 
 
@@ -228,8 +228,15 @@
 **** Naked Pings
 	 https://blogs.gnome.org/markmc/2014/02/20/naked-pings/
 
+**** Slides
+	 https://github.com/psachin/slides/
+
 *** Thanks
 **** Email
      =psachin@redhat.com=
 **** Blog
      =http://psachin.github.io/about=
+
+
+**** 
+	 /Made with love and GNU Emacs/
