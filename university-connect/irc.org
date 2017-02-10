@@ -98,8 +98,8 @@
 
 
 	#+BEGIN_SRC sh
-      /JOIN #openstack-101
-      /LEAVE #openstack-101
+      /JOIN #fedoraindia
+      /LEAVE #fedoraindia
 	#+END_SRC
 
 
