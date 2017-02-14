@@ -21,7 +21,7 @@
 #+LATEX_CLASS_OPTIONS: [10pt]
 
 #+LaTeX_HEADER: \logo{\includegraphics[height=1.4cm,width=1.5cm]{RedHat-IsoLogo.jpg}}
-#+LaTeX_HEADER: \subtitle{Internet Relay Chat}
+#+LaTeX_HEADER: \subtitle{Mailing list \& IRC}
 #+LaTeX_HEADER: \institute{Red Hat}
 # #+LaTeX_HEADER: \titlegraphic{\includegraphics[width=2.3cm,height=2.3cm]{python.png}}
 #+LaTeX_HEADER: \setbeamertemplate{navigation symbols}[horizontal]
@@ -39,8 +39,9 @@
 #+LaTeX_HEADER: \setbeamercovered{invisible}
 
 
-* IRC
-** IRC
+
+* Intro
+** Intro
 *** Question?
 
 	- Whom do I ask questions?
@@ -51,8 +52,15 @@
 
 	- You look for people with similar interests
 	- With specific topic
-	- You want to avoid delays(email, blogs)
 	- /Just want to be an observer/
+
+*** Mailing list?
+
+**** Mailing list
+     /Send mail to multiple recipients/
+
+**** 
+	 https://www.redhat.com/mailman/listinfo/universityoutreach-pune
 
 *** IRC?
 
@@ -217,7 +225,6 @@
 	 =reedip:= /psachin : any idea about the timeout value?/
 
 	 =reedip:= /psachin: no the request hangs indefinetly, without an error, on the screen. Let me check the logs once though./
-
 
 * Thanks
 *** Reference
