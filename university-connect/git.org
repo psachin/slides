@@ -1,0 +1,258 @@
+#+startup: beamer
+#+TITLE: git
+#+AUTHOR: Sachin
+#+EMAIL: psachin@redhat.com
+#+DATE: \today
+#+CREATOR: Emacs 25.1.1 (Org mode 9.0.4)
+#+LANGUAGE: en
+#+DESCRIPTION: Sample org beamer presentation
+#+KEYWORDS: git, version control
+#+LaTeX_CLASS_OPTIONS: [bigger, presentation]
+#+BEAMER_FRAME_LEVEL: 2
+#+OPTIONS: H:3
+#+OPTIONS: toc:nil email:nil
+#+BEAMER_COLOR_THEME:
+#+BEAMER_FONT_THEME: serif
+#+BEAMER_HEADER: \usecolortheme[RGB={0,104,139}]{structure}%deepskyblue
+#+BEAMER_INNER_THEME: rounded
+#+BEAMER_OUTER_THEME:
+#+BEAMER_THEME: Frankfurt
+#+LATEX_CLASS: beamer
+#+LATEX_CLASS_OPTIONS: [10pt]
+
+#+LaTeX_HEADER: \logo{\includegraphics[height=1.4cm,width=1.5cm]{RedHat-IsoLogo.jpg}}
+#+LaTeX_HEADER: \subtitle{Because we like silly names}
+#+LaTeX_HEADER: \institute{Red Hat}
+# #+LaTeX_HEADER: \titlegraphic{\includegraphics[width=2.3cm,height=2.3cm]{python.png}}
+#+LaTeX_HEADER: \setbeamertemplate{navigation symbols}[horizontal]
+# #+LaTex_HEADER: \setbeamertemplate{footline}{\color{gray}Proprietary and Confidential}
+#+LaTeX_HEADER: \usepackage{pxfonts}
+#+LaTeX_HEADER: \usepackage{hyperref}
+#+LaTeX_HEADER: \hypersetup{colorlinks=true, linkcolor=red, filecolor=magenta, urlcolor=cyan}
+#+LaTeX_HEADER: \urlstyle{same}
+#+LaTeX_HEADER: \usepackage{minted}
+#+LaTeX_HEADER: \usepackage[utf8]{inputenc}
+#+LaTeX_HEADER: \usepackage[english]{babel}
+# #+LaTeX_HEADER: \usepackage{listings}
+# #+LaTex_HEADER: \lstset{numbers=left,numbersep=6pt,numberstyle=\tiny,showstringspaces=false,aboveskip=-50pt,frame=leftline,keywordstyle=\color{green},commentstyle=\color{orange},stringstyle=\color{black},}
+#+LaTeX_HEADER: \setbeamertemplate{caption}[numbered]
+#+LaTeX_HEADER: \setbeamercovered{invisible}
+
+
+** Intro
+*** What is git?
+	#+begin_quote
+      A programs that remembers the changes in your file(s)
+	#+end_quote
+
+*** Other version control systems
+	- Mercurial(=hg=)
+	- Subversion Control(=svn=)
+	- bazaar(=bzr=)
+
+** Summary
+*** Why should I use git?
+	- Once you get familiar it will be a part of you life.
+	- Cleaner approach to file management
+
+*** Usefulness
+	#+begin_quote
+      I'm no coder or a developer, can I use *git*?
+	#+end_quote
+
+
+*** Basic concept
+	#+CAPTION:    life of a file
+	#+LABEL:      fig:life-of-file
+	#+ATTR_LaTeX: width=9cm,angle=0
+	[[./concept.png]]
+
+*** Installing =git=
+
+	#+BEGIN_SRC sh -n
+      # RHEL/Fedora
+      sudo dnf install git
+      # or
+      sudo yum install git
+
+      # Ubuntu
+      sudo apt-get install git
+	#+END_SRC
+
+
+*** Basic setup
+
+	#+BEGIN_SRC sh -n
+      # Your name
+      git config --global user.name "Sachin"
+
+      # Your Email
+      git config --global user.email "psachin@redhat.com"
+	#+END_SRC
+
+
+*** Create a project
+
+	#+BEGIN_SRC sh -n
+      git init octo
+
+      # Check status of project
+      cd octo
+      git status
+	#+END_SRC
+
+*** Add file to the project
+
+	#+BEGIN_SRC sh -n
+      # Create file
+      echo "git -- a version control tool" > introduction.txt
+
+      # Add file
+      git add introduction.txt
+
+      # or add everything within current directory
+      git add .
+
+      # or add files using wild card entries
+      git add *.txt
+	#+END_SRC
+
+*** Check status of your project
+
+	#+BEGIN_SRC sh
+      git status
+	#+END_SRC
+
+*** Commit if your are happy :D
+
+	#+BEGIN_SRC sh
+      git commit -m "My message"
+	#+END_SRC
+
+
+*** Make changes to file
+
+	#+BEGIN_SRC sh
+      echo "I use it to manage project" >> introduction.txt
+	#+END_SRC
+
+*** See changes w.r.t last commit
+
+	#+BEGIN_SRC sh -n
+      git diff
+      # or
+      git diff introduction.txt
+	#+END_SRC
+
+
+*** Update modified file(s)
+
+	#+BEGIN_SRC sh -n
+      # to update already committed file
+      git add -u
+	#+END_SRC
+
+	(/do some more commits/)
+
+** Log
+*** View commits
+	#+BEGIN_SRC sh
+      git log
+
+      # Each commit on single line
+      git log --oneline
+
+      # A more decorated view. Looks great when working with branch
+      git log --graph --decorate --oneline
+	#+END_SRC
+
+* GitHub
+** Hosting your code
+
+   #+CAPTION:    GitHub
+   #+LABEL:      fig:GitHub
+
+  [[./github.png]]
+
+** Branch
+*** Git branch?
+
+	#+CAPTION:    Git branche
+	#+LABEL:      fig:branch
+	#+ATTR_LaTeX: width=10cm,angle=0
+
+   [[./branch.png]]
+
+*** Git branch
+
+	#+BEGIN_SRC sh -n
+      # Create new branch from master
+      git branch new-feature
+
+      # Change from master branch to new-feature branch
+      git checkout new-feature
+
+      # Or perform above steps in one go
+      git checkout -b new-feature
+    #+END_SRC
+
+*** Git remote
+
+	#+CAPTION:    Git remote
+	#+LABEL:      fig:remote
+	#+ATTR_LaTeX: width=10cm,angle=0
+
+	[[./remotes.png]]
+
+	Image source: http://jlord.us/git-it/challenges/remote_control.html
+
+*** Git remote
+
+	#+BEGIN_SRC sh -n
+      # Display remote host
+      git remote
+      # Or add verbosity
+      git remote -v
+
+      # Syntax: Add remote hosts
+      git remote add <REMOTE_NAME> <REMOTE_URL>
+
+      # Example
+      git remote add origin https://github.com/psachin/octo.git
+	#+END_SRC
+
+*** git pull/push
+
+	#+BEGIN_SRC sh -n
+      # Syntax: Push commit for the first time
+      git push -u <REMOTE_NAME <BRANCH_NAME>
+
+      # Example
+      git push -u origin master
+
+      # You can use 'git push' afterwards
+
+      # To download latest changes from current branch
+      # (assuming remote is added)
+      git pull
+	#+END_SRC
+
+** Host
+*** Hosting sites
+	- github.com
+    - gitlab.com
+    - bitbucket.org
+    - sourceforge.net
+
+*** Thanks
+**** git
+	 https://git-scm.com/book/en/v2
+
+*** Thanks
+**** Email
+     psachin@redhat.com
+**** IRC
+	 psachin@{freenode, gnome, OFTC}
+**** Blog
+	 https://psachin.github.io
+

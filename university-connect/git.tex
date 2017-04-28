@@ -1,0 +1,290 @@
+% Created 2017-04-28 Fri 16:19
+% Intended LaTeX compiler: pdflatex
+\documentclass[10pt]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\logo{\includegraphics[height=1.4cm,width=1.5cm]{RedHat-IsoLogo.jpg}}
+\subtitle{Because we like silly names}
+\institute{Red Hat}
+\setbeamertemplate{navigation symbols}[horizontal]
+\usepackage{pxfonts}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=red, filecolor=magenta, urlcolor=cyan}
+\urlstyle{same}
+\usepackage{minted}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\setbeamertemplate{caption}[numbered]
+\setbeamercovered{invisible}
+\usetheme{Frankfurt}
+\usecolortheme{}
+\usefonttheme{serif}
+\useinnertheme{rounded}
+\useoutertheme{}
+\author{Sachin}
+\date{\today}
+\title{git}
+\usecolortheme[RGB={0,104,139}]{structure}%deepskyblue
+\hypersetup{
+ pdfauthor={Sachin},
+ pdftitle={git},
+ pdfkeywords={git, version control},
+ pdfsubject={Sample org beamer presentation},
+ pdfcreator={Emacs 25.1.1 (Org mode 9.0.4)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+
+
+\subsection{Intro}
+\label{sec:orgf9854fc}
+\begin{frame}[label={sec:orgb44c75d}]{What is git?}
+\begin{quote}
+A programs that remembers the changes in your file(s)
+\end{quote}
+\end{frame}
+
+\begin{frame}[fragile,label={sec:orgc6c636a}]{Other version control systems}
+ \begin{itemize}
+\item Mercurial(\texttt{hg})
+\item Subversion Control(\texttt{svn})
+\item bazaar(\texttt{bzr})
+\end{itemize}
+\end{frame}
+
+\subsection{Summary}
+\label{sec:orgbecbd53}
+\begin{frame}[label={sec:org5785b28}]{Why should I use git?}
+\begin{itemize}
+\item Once you get familiar it will be a part of you life.
+\item Cleaner approach to file management
+\end{itemize}
+\end{frame}
+
+\begin{frame}[label={sec:orgf326437}]{Usefulness}
+\begin{quote}
+I'm no coder or a developer, can I use \alert{git}?
+\end{quote}
+\end{frame}
+
+
+\begin{frame}[label={sec:org3902933}]{Basic concept}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.9\linewidth]{./concept.png}
+\caption{\label{fig:orga33f18a}
+life of a file}
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile,label={sec:orgc99e35d}]{Installing \texttt{git}}
+ \begin{minted}[linenos,firstnumber=1]{sh}
+# RHEL/Fedora
+sudo dnf install git
+# or
+sudo yum install git
+
+# Ubuntu
+sudo apt-get install git
+\end{minted}
+\end{frame}
+
+
+\begin{frame}[fragile,label={sec:org1b7d10e}]{Basic setup}
+ \begin{minted}[linenos,firstnumber=1]{sh}
+# Your name
+git config --global user.name "Sachin"
+
+# Your Email
+git config --global user.email "psachin@redhat.com"
+\end{minted}
+\end{frame}
+
+
+\begin{frame}[fragile,label={sec:org81ff28c}]{Create a project}
+ \begin{minted}[linenos,firstnumber=1]{sh}
+git init octo
+
+# Check status of project
+cd octo
+git status
+\end{minted}
+\end{frame}
+
+\begin{frame}[fragile,label={sec:orga3c2b16}]{Add file to the project}
+ \begin{minted}[linenos,firstnumber=1]{sh}
+# Create file
+echo "git -- a version control tool" > introduction.txt
+
+# Add file
+git add introduction.txt
+
+# or add everything within current directory
+git add .
+
+# or add files using wild card entries
+git add *.txt
+\end{minted}
+\end{frame}
+
+\begin{frame}[fragile,label={sec:org5ed31e6}]{Check status of your project}
+ \begin{minted}[]{sh}
+git status
+\end{minted}
+\end{frame}
+
+\begin{frame}[fragile,label={sec:orga162fb0}]{Commit if your are happy :D}
+ \begin{minted}[]{sh}
+git commit -m "My message"
+\end{minted}
+\end{frame}
+
+
+\begin{frame}[fragile,label={sec:org6d0cd34}]{Make changes to file}
+ \begin{minted}[]{sh}
+echo "I use it to manage project" >> introduction.txt
+\end{minted}
+\end{frame}
+
+\begin{frame}[fragile,label={sec:orga3651fe}]{See changes w.r.t last commit}
+ \begin{minted}[linenos,firstnumber=1]{sh}
+git diff
+# or
+git diff introduction.txt
+\end{minted}
+\end{frame}
+
+
+\begin{frame}[fragile,label={sec:org4a50f2e}]{Update modified file(s)}
+ \begin{minted}[linenos,firstnumber=1]{sh}
+# to update already committed file
+git add -u
+\end{minted}
+
+(\emph{do some more commits})
+\end{frame}
+
+\subsection{Log}
+\label{sec:orgd3bbb13}
+\begin{frame}[fragile,label={sec:orgdb5a94c}]{View commits}
+ \begin{minted}[]{sh}
+git log
+
+# Each commit on single line
+git log --oneline
+
+# A more decorated view. Looks great when working with branch
+git log --graph --decorate --oneline
+\end{minted}
+\end{frame}
+
+\section{GitHub}
+\label{sec:org1175d07}
+\subsection{Hosting your code}
+\label{sec:org8c1590b}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{./github.png}
+\end{center}
+
+\subsection{Branch}
+\label{sec:orgc9cfe9f}
+\begin{frame}[label={sec:org055a17a}]{Git branch?}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./branch.png}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile,label={sec:org13ed12a}]{Git branch}
+ \begin{minted}[linenos,firstnumber=1]{sh}
+# Create new branch from master
+git branch new-feature
+
+# Change from master branch to new-feature branch
+git checkout new-feature
+
+# Or perform above steps in one go
+git checkout -b new-feature
+\end{minted}
+\end{frame}
+
+\begin{frame}[label={sec:org564f49c}]{Git remote}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./remotes.png}
+\end{center}
+
+Image source: \url{http://jlord.us/git-it/challenges/remote\_control.html}
+\end{frame}
+
+\begin{frame}[fragile,label={sec:orgdc68973}]{Git remote}
+ \begin{minted}[linenos,firstnumber=1]{sh}
+# Display remote host
+git remote
+# Or add verbosity
+git remote -v
+
+# Syntax: Add remote hosts
+git remote add <REMOTE_NAME> <REMOTE_URL>
+
+# Example
+git remote add origin https://github.com/psachin/octo.git
+\end{minted}
+\end{frame}
+
+\begin{frame}[fragile,label={sec:org2b4a83e}]{git pull/push}
+ \begin{minted}[linenos,firstnumber=1]{sh}
+# Syntax: Push commit for the first time
+git push -u <REMOTE_NAME <BRANCH_NAME>
+
+# Example
+git push -u origin master
+
+# You can use 'git push' afterwards
+
+# To download latest changes from current branch
+# (assuming remote is added)
+git pull
+\end{minted}
+\end{frame}
+
+\subsection{Host}
+\label{sec:org2fa4c92}
+\begin{frame}[label={sec:org834893b}]{Hosting sites}
+\begin{itemize}
+\item github.com
+\item gitlab.com
+\item bitbucket.org
+\item sourceforge.net
+\end{itemize}
+\end{frame}
+
+\begin{frame}[label={sec:org6329979}]{Thanks}
+\begin{block}{git}
+\url{https://git-scm.com/book/en/v2}
+\end{block}
+\end{frame}
+
+\begin{frame}[label={sec:orgacca45a}]{Thanks}
+\begin{block}{Email}
+psachin@redhat.com
+\end{block}
+\begin{block}{IRC}
+psachin@\{freenode, gnome, OFTC\}
+\end{block}
+\begin{block}{Blog}
+\url{https://psachin.github.io}
+\end{block}
+\end{frame}
+\end{document}

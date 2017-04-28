@@ -1,6 +1,6 @@
 #+startup: beamer
-#+TITLE: Socializing with the Community
-#+DATE: Feb 15, 2017
+#+TITLE: Socializing with the community
+#+DATE: \today
 #+AUTHOR: Sachin
 #+EMAIL: psachin@redhat.com
 #+CREATOR: Emacs 25.1.1 (Org mode 9.0.4)
@@ -21,7 +21,7 @@
 #+LATEX_CLASS_OPTIONS: [10pt]
 
 #+LaTeX_HEADER: \logo{\includegraphics[height=1.4cm,width=1.5cm]{RedHat-IsoLogo.jpg}}
-#+LaTeX_HEADER: \subtitle{Mailing list \& IRC}
+#+LaTeX_HEADER: \subtitle{Getting started with mailing list \& IRC}
 #+LaTeX_HEADER: \institute{Red Hat}
 # #+LaTeX_HEADER: \titlegraphic{\includegraphics[width=2.3cm,height=2.3cm]{python.png}}
 #+LaTeX_HEADER: \setbeamertemplate{navigation symbols}[horizontal]
@@ -59,7 +59,7 @@
 **** Mailing list
      /Send mail to multiple recipients/
 
-**** 
+****
 	 https://www.redhat.com/mailman/listinfo/universityoutreach-pune
 
 *** IRC?
@@ -210,21 +210,21 @@
 
 **** 
 
-	 =reedip:= /hi guys , I have a query/
+	 =ridip:= /hi guys , I have a query/
 
-	 =reedip:=  /If Swift and Ceilometer are communicating, and if
+	 =ridip:=  /If Swift and Ceilometer are communicating, and if
 	 swift ... Would the request from Swift be hanged ?/
 
-	 =psachin:=  /reedip: It should timeout I guess/
+	 =psachin:=  /reedip: It should timeout/
 
-	 =reedip:=  /psachin : this is a behavior which one of our team
+	 =ridip:=  /psachin : this is a behavior which one of our team
 	 members noticed in stable/mitaka/
 
 	 =psachin:= /reedip: The request hangs without an error?/
 
-	 =reedip:= /psachin : any idea about the timeout value?/
+	 =ridip:= /psachin : any idea about the timeout value?/
 
-	 =reedip:= /psachin: no the request hangs indefinetly, without an error, on the screen. Let me check the logs once though./
+	 =ridip:= /psachin: no the request hangs indefinetly, without an error, on the screen. Let me check the logs once though./
 
 * Thanks
 *** Reference
@@ -246,4 +246,4 @@
 
 
 **** 
-	 /Made with love and GNU Emacs/
+	 /Made with love, \LaTeX and GNU Emacs/
