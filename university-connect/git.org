@@ -239,10 +239,12 @@
 
 ** Host
 *** Hosting sites
-	- github.com
+    - savannah.gnu.org
     - gitlab.com
+    - github.com
     - bitbucket.org
     - sourceforge.net
+    - notabug.org
 
 *** Thanks
 **** git

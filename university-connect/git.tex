@@ -1,4 +1,4 @@
-% Created 2017-04-28 Fri 16:19
+% Created 2018-02-01 Thu 11:19
 % Intended LaTeX compiler: pdflatex
 \documentclass[10pt]{beamer}
 \usepackage[utf8]{inputenc}
@@ -49,14 +49,14 @@
 
 
 \subsection{Intro}
-\label{sec:orgf9854fc}
-\begin{frame}[label={sec:orgb44c75d}]{What is git?}
+\label{sec:org9656fa7}
+\begin{frame}[label={sec:org3e2e206}]{What is git?}
 \begin{quote}
 A programs that remembers the changes in your file(s)
 \end{quote}
 \end{frame}
 
-\begin{frame}[fragile,label={sec:orgc6c636a}]{Other version control systems}
+\begin{frame}[fragile,label={sec:org0797f98}]{Other version control systems}
  \begin{itemize}
 \item Mercurial(\texttt{hg})
 \item Subversion Control(\texttt{svn})
@@ -65,31 +65,31 @@ A programs that remembers the changes in your file(s)
 \end{frame}
 
 \subsection{Summary}
-\label{sec:orgbecbd53}
-\begin{frame}[label={sec:org5785b28}]{Why should I use git?}
+\label{sec:orgccbdb4f}
+\begin{frame}[label={sec:orgf2be779}]{Why should I use git?}
 \begin{itemize}
 \item Once you get familiar it will be a part of you life.
 \item Cleaner approach to file management
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:orgf326437}]{Usefulness}
+\begin{frame}[label={sec:orga540567}]{Usefulness}
 \begin{quote}
 I'm no coder or a developer, can I use \alert{git}?
 \end{quote}
 \end{frame}
 
 
-\begin{frame}[label={sec:org3902933}]{Basic concept}
+\begin{frame}[label={sec:org6343acc}]{Basic concept}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=.9\linewidth]{./concept.png}
-\caption{\label{fig:orga33f18a}
+\caption{\label{fig:org6cfa832}
 life of a file}
 \end{figure}
 \end{frame}
 
-\begin{frame}[fragile,label={sec:orgc99e35d}]{Installing \texttt{git}}
+\begin{frame}[fragile,label={sec:org44d3edb}]{Installing \texttt{git}}
  \begin{minted}[linenos,firstnumber=1]{sh}
 # RHEL/Fedora
 sudo dnf install git
@@ -102,7 +102,7 @@ sudo apt-get install git
 \end{frame}
 
 
-\begin{frame}[fragile,label={sec:org1b7d10e}]{Basic setup}
+\begin{frame}[fragile,label={sec:org753a809}]{Basic setup}
  \begin{minted}[linenos,firstnumber=1]{sh}
 # Your name
 git config --global user.name "Sachin"
@@ -113,7 +113,7 @@ git config --global user.email "psachin@redhat.com"
 \end{frame}
 
 
-\begin{frame}[fragile,label={sec:org81ff28c}]{Create a project}
+\begin{frame}[fragile,label={sec:org26537d0}]{Create a project}
  \begin{minted}[linenos,firstnumber=1]{sh}
 git init octo
 
@@ -123,7 +123,7 @@ git status
 \end{minted}
 \end{frame}
 
-\begin{frame}[fragile,label={sec:orga3c2b16}]{Add file to the project}
+\begin{frame}[fragile,label={sec:orgb4439d0}]{Add file to the project}
  \begin{minted}[linenos,firstnumber=1]{sh}
 # Create file
 echo "git -- a version control tool" > introduction.txt
@@ -139,26 +139,26 @@ git add *.txt
 \end{minted}
 \end{frame}
 
-\begin{frame}[fragile,label={sec:org5ed31e6}]{Check status of your project}
+\begin{frame}[fragile,label={sec:orgee60fa0}]{Check status of your project}
  \begin{minted}[]{sh}
 git status
 \end{minted}
 \end{frame}
 
-\begin{frame}[fragile,label={sec:orga162fb0}]{Commit if your are happy :D}
+\begin{frame}[fragile,label={sec:org3823ffa}]{Commit if your are happy :D}
  \begin{minted}[]{sh}
 git commit -m "My message"
 \end{minted}
 \end{frame}
 
 
-\begin{frame}[fragile,label={sec:org6d0cd34}]{Make changes to file}
+\begin{frame}[fragile,label={sec:org3804c9f}]{Make changes to file}
  \begin{minted}[]{sh}
 echo "I use it to manage project" >> introduction.txt
 \end{minted}
 \end{frame}
 
-\begin{frame}[fragile,label={sec:orga3651fe}]{See changes w.r.t last commit}
+\begin{frame}[fragile,label={sec:org4bda706}]{See changes w.r.t last commit}
  \begin{minted}[linenos,firstnumber=1]{sh}
 git diff
 # or
@@ -167,7 +167,7 @@ git diff introduction.txt
 \end{frame}
 
 
-\begin{frame}[fragile,label={sec:org4a50f2e}]{Update modified file(s)}
+\begin{frame}[fragile,label={sec:org4236b8a}]{Update modified file(s)}
  \begin{minted}[linenos,firstnumber=1]{sh}
 # to update already committed file
 git add -u
@@ -177,8 +177,8 @@ git add -u
 \end{frame}
 
 \subsection{Log}
-\label{sec:orgd3bbb13}
-\begin{frame}[fragile,label={sec:orgdb5a94c}]{View commits}
+\label{sec:org06e84c7}
+\begin{frame}[fragile,label={sec:org26d365d}]{View commits}
  \begin{minted}[]{sh}
 git log
 
@@ -191,23 +191,23 @@ git log --graph --decorate --oneline
 \end{frame}
 
 \section{GitHub}
-\label{sec:org1175d07}
+\label{sec:org6b52598}
 \subsection{Hosting your code}
-\label{sec:org8c1590b}
+\label{sec:org1adde17}
 
 \begin{center}
 \includegraphics[width=.9\linewidth]{./github.png}
 \end{center}
 
 \subsection{Branch}
-\label{sec:orgc9cfe9f}
-\begin{frame}[label={sec:org055a17a}]{Git branch?}
+\label{sec:orgef91365}
+\begin{frame}[label={sec:org77a22a4}]{Git branch?}
 \begin{center}
 \includegraphics[width=.9\linewidth]{./branch.png}
 \end{center}
 \end{frame}
 
-\begin{frame}[fragile,label={sec:org13ed12a}]{Git branch}
+\begin{frame}[fragile,label={sec:org2fe5ce7}]{Git branch}
  \begin{minted}[linenos,firstnumber=1]{sh}
 # Create new branch from master
 git branch new-feature
@@ -220,7 +220,7 @@ git checkout -b new-feature
 \end{minted}
 \end{frame}
 
-\begin{frame}[label={sec:org564f49c}]{Git remote}
+\begin{frame}[label={sec:org5798f2d}]{Git remote}
 \begin{center}
 \includegraphics[width=.9\linewidth]{./remotes.png}
 \end{center}
@@ -228,7 +228,7 @@ git checkout -b new-feature
 Image source: \url{http://jlord.us/git-it/challenges/remote\_control.html}
 \end{frame}
 
-\begin{frame}[fragile,label={sec:orgdc68973}]{Git remote}
+\begin{frame}[fragile,label={sec:org6a01c72}]{Git remote}
  \begin{minted}[linenos,firstnumber=1]{sh}
 # Display remote host
 git remote
@@ -243,7 +243,7 @@ git remote add origin https://github.com/psachin/octo.git
 \end{minted}
 \end{frame}
 
-\begin{frame}[fragile,label={sec:org2b4a83e}]{git pull/push}
+\begin{frame}[fragile,label={sec:org8236c74}]{git pull/push}
  \begin{minted}[linenos,firstnumber=1]{sh}
 # Syntax: Push commit for the first time
 git push -u <REMOTE_NAME <BRANCH_NAME>
@@ -260,23 +260,25 @@ git pull
 \end{frame}
 
 \subsection{Host}
-\label{sec:org2fa4c92}
-\begin{frame}[label={sec:org834893b}]{Hosting sites}
+\label{sec:orgb6f55a2}
+\begin{frame}[label={sec:org46d9f1b}]{Hosting sites}
 \begin{itemize}
-\item github.com
+\item savannah.gnu.org
 \item gitlab.com
+\item github.com
 \item bitbucket.org
 \item sourceforge.net
+\item notabug.org
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label={sec:org6329979}]{Thanks}
+\begin{frame}[label={sec:org0915c98}]{Thanks}
 \begin{block}{git}
 \url{https://git-scm.com/book/en/v2}
 \end{block}
 \end{frame}
 
-\begin{frame}[label={sec:orgacca45a}]{Thanks}
+\begin{frame}[label={sec:orgdbbcd57}]{Thanks}
 \begin{block}{Email}
 psachin@redhat.com
 \end{block}

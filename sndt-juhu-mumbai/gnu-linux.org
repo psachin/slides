@@ -1,0 +1,101 @@
+#+startup: beamer
+#+TITLE: Introduction to GNU/Linux
+#+DATE: \today
+#+AUTHOR: Sachin
+#+EMAIL: psachin@redhat.com
+#+CREATOR: Emacs 27.0.50.1 (Org mode 9.1.3)
+#+LANGUAGE: en
+#+DESCRIPTION: Sample org beamer presentation
+#+LaTeX_CLASS_OPTIONS: [bigger, presentation]
+#+BEAMER_FRAME_LEVEL: 2
+#+OPTIONS: H:3
+#+OPTIONS: toc:nil email:nil
+#+BEAMER_COLOR_THEME:
+#+BEAMER_FONT_THEME: serif
+# #+BEAMER_HEADER: \usecolortheme[RGB={0,104,139}]{structure}%deepskyblue
+#+BEAMER_HEADER: \usecolortheme[RGB={204,0,0}]{structure}%Red Hat
+#+BEAMER_INNER_THEME: rounded
+#+BEAMER_OUTER_THEME:
+#+BEAMER_THEME: Frankfurt
+#+LATEX_CLASS: beamer
+
+#+LaTeX_HEADER: \logo{\includegraphics[height=0.9cm,width=1cm]{RedHat-IsoLogo.jpg}}
+#+LaTeX_HEADER: \subtitle{}
+#+LaTeX_HEADER: \institute{Red Hat}
+#+LaTeX_HEADER: \titlegraphic{\includegraphics[width=2.5cm,height=2.3cm]{RedHat-IsoLogo.jpg}}
+#+LaTeX_HEADER: \setbeamertemplate{navigation symbols}[horizontal]
+# #+LaTex_HEADER: \setbeamertemplate{footline}{\color{gray}Proprietary and Confidential}
+#+LaTeX_HEADER: \usepackage{pxfonts}
+#+LaTeX_HEADER: \usepackage{hyperref}
+#+LaTeX_HEADER: \hypersetup{colorlinks=true, linkcolor=red, filecolor=magenta, urlcolor=cyan}
+#+LaTeX_HEADER: \urlstyle{same}
+#+LaTeX_HEADER: \usepackage{minted}
+#+LaTeX_HEADER: \usepackage[utf8]{inputenc}
+#+LaTeX_HEADER: \usepackage[english]{babel}
+#+LaTeX_HEADER: \usepackage{listings}
+#+LaTex_HEADER: \lstset{numbers=left,numbersep=6pt,numberstyle=\tiny,showstringspaces=false,aboveskip=-50pt,frame=leftline,keywordstyle=\color{green},commentstyle=\color{orange},stringstyle=\color{black},}
+#+LaTeX_HEADER: \setbeamertemplate{caption}[numbered]
+#+LaTeX_HEADER: \setbeamercovered{invisible}
+
+
+* The GNU Project & RMS
+*** The GNU Project & RMS
+    - RMS
+    - Free to copy, modify and redistribute
+    - Free software & GPL License
+    - Open source
+
+* Linux
+*** Linux
+    - Linus Torvalds & Minix
+    - Kernel
+
+* Linux Distributions
+*** Linux Distributions
+    - Fedora -> RHEL -> CentOS
+    - Debian -> Ubuntu -> Linux Mint
+    - Open SUSE
+    - Knoppix
+    - Gentoo
+    - Slackware
+    - Scientific Linux
+
+* Package Manager
+*** Package Manager
+    - Package & Package Manager
+    - =apt-get=, =yum=
+    - =dpkg=, =rpm=, =pacman=
+    - Manually install
+      - =configure=
+      - =make=
+      - =make install=
+
+* Text editors
+*** Text editors
+    - gedit
+    - nano
+    - vi/m
+    - GNU Emacs
+
+* Linux shell
+*** Linux shell
+    - Moving around
+    - =ls=, =cd=, =man=
+    - HOME, root, /
+    - File operations
+      - =echo=, =cat=, =grep=, =sed=
+    - =alias=
+
+* Networking
+*** Networking
+    - =ip addr add <IP-ADDRESS/CIDR> dev <INTERFACE>=
+    - =ip route add default via <GATEWAY-IP> dev <INTERFACE>=
+    - =ip route add 10.10.10.0/24 via 192.168.1.11 dev eth0=
+    - Make changes persistent
+      - =/etc/sysconfig/network-scripts/ifcfg-DEVICE_NAME=
+      - =/etc/sysconfig/network-scripts/route-DEVICE_NAME=
+
+* End
+*** End
+    - psachin@redhat.com
+    - http://psachin.github.io
