@@ -20,12 +20,12 @@
 #+LATEX_CLASS: beamer
 #+LATEX_CLASS_OPTIONS: [10pt]
 
-#+LaTeX_HEADER: \logo{\includegraphics[height=1.4cm,width=1.5cm]{RedHat-IsoLogo.jpg}}
+#+LaTeX_HEADER: \logo{\includegraphics[height=1.4cm,width=1.6cm]{RedHat-IsoLogo.jpg}}
 #+LaTeX_HEADER: \subtitle{Getting started with mailing list \& IRC}
 #+LaTeX_HEADER: \institute{Red Hat}
 # #+LaTeX_HEADER: \titlegraphic{\includegraphics[width=2.3cm,height=2.3cm]{python.png}}
 #+LaTeX_HEADER: \setbeamertemplate{navigation symbols}[horizontal]
-# #+LaTex_HEADER: \setbeamertemplate{footline}{\color{gray}Proprietary and Confidential}
+#+LaTex_HEADER: \setbeamertemplate{footline}{\color{gray}Prepared for Red Hat's University Outreach Program}
 #+LaTeX_HEADER: \usepackage{pxfonts}
 #+LaTeX_HEADER: \usepackage{hyperref}
 #+LaTeX_HEADER: \hypersetup{colorlinks=true, linkcolor=red, filecolor=magenta, urlcolor=cyan}
@@ -75,12 +75,14 @@
 	/**You need to install IRC client/
 
 **** /Graphical/
-	  - =mIRC=
-      - =hexchat=
+     - =mIRC=
+     - =hexchat=
+     - Mozilla Thunderbird
 
 **** /CommandLine/
-	  - =irssi=
-	  - =weechat=
+     - =irssi=
+     - =weechat=
+     - GNU Emacs ERC*
 
 *** IRC server
 
@@ -226,6 +228,18 @@
 
 	 =ridip:= /psachin: no the request hangs indefinetly, without an error, on the screen. Let me check the logs once though./
 
+*** Private messages
+**** 
+
+     \centering /Avoid private messages/
+
+**** 
+       - =/QUERY <nick>=
+
+       - =/MSG <nick> <message>=
+
+       - =/NOTICE <nick> <message>=
+
 * Thanks
 *** Reference
 
@@ -246,4 +260,4 @@
 
 
 **** 
-	 /Made with love, \LaTeX and GNU Emacs/
+	 /Made with Love, \LaTeX and GNU Emacs/
