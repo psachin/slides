@@ -1,0 +1,174 @@
+# #+BEAMER_HEADER: \AtBeginSection{\frame{\sectionpage}}
+#+TITLE:  Python programming language
+#+AUTHOR: Sachin
+#+DESCRIPTION: Yet another org-beamer template
+#+BEAMER_HEADER: \institute{/dev/null}
+#+PROPERTY: comments yes
+#+PROPERTY: header-args :exports both :eval never-export
+#+OPTIONS: H:2
+#+OPTIONS: toc:nil
+#+BEAMER_THEME: CambridgeUS
+#+BEAMER_COLOR_THEME: spruce
+#+BEAMER_INNER_THEME: default
+# #+LaTeX_CLASS_OPTIONS: [aspectratio=169]
+#+BEAMER_HEADER: \definecolor{links}{HTML}{0000A0}
+#+BEAMER_HEADER: \definecolor{deepskyblue}{RGB}{0,104,139}
+#+BEAMER_HEADER: \hypersetup{colorlinks=,linkcolor=,urlcolor=links}
+#+BEAMER_HEADER: \setbeamertemplate{itemize items}[default]
+#+BEAMER_HEADER: \setbeamertemplate{enumerate items}[default]
+#+BEAMER_HEADER: \setbeamertemplate{items}[default]
+#+BEAMER_HEADER: \setbeamercolor*{local structure}{fg=darkred}
+#+BEAMER_HEADER: \setbeamercolor{section in toc}{fg=darkred}
+#+BEAMER_HEADER: \setlength{\parskip}{\smallskipamount}
+#+LaTeX_HEADER: \usepackage{minted}
+
+** Introduction
+*** Introduction
+
+    - Scripting language
+    - Easy to learn/Powerful
+    - Efficient data structures
+    - Object Oriented
+    - Dynamic Typing
+    - Extended support for C(CPython), Java(Jython) & (.NET)IronPython
+    - Runs on most platforms
+    - Latest version =2.7.11= & =3.5.1=
+
+** Why Python
+*** Why Python?
+
+    - Readable code
+    - Faster development cycle
+    - Powerful standard libraries
+    - Powerful interpreter
+    - [[https://www.python.org/about/success/]]
+
+** Features
+*** Features
+    - Easy
+
+      #+BEGIN_SRC python -n
+        first_name = 'Sachin'
+        print(first_name)  # Sachin
+      #+END_SRC
+
+*** Features
+    - Easy
+
+      #+BEGIN_SRC python -n
+        first_name = 'Sachin'
+        print("Hello %s!" % first_name)
+        print("Hello " + first_name + "!")
+        # Hello Sachin!
+        print("Hello",first_name)
+        # Hello Sachin
+      #+END_SRC
+
+*** Features
+    - Inbuilt libraries
+
+      #+BEGIN_SRC python -n
+        for i in range(3):
+            print(i)
+        # 0
+        # 1
+        # 2
+      #+END_SRC
+
+*** Features
+    - Inbuilt libraries
+
+      #+BEGIN_SRC python -n
+        import crypt
+        crypt.crypt('mysupersecretpassword')
+        # '$6$ipQOpnmdAK/tXVle$lEZw4mxJJrTPZsm...'
+      #+END_SRC
+
+*** Features
+    - Inbuilt libraries
+
+      #+BEGIN_SRC python -n
+        import crypt
+        crypt.crypt('mysupersecretpassword', 'py')
+        # 'pyjwbR4BKuWLo'
+      #+END_SRC
+
+
+    - [[https://docs.python.org/3.4/library/crypt.html][docs.python.org/3.4/library/crypt]]
+
+*** Features:
+    Powerful interpreters
+
+    - python
+    - ipython
+    - bpython(/we will use bpython/)
+
+*** Features
+    - /Indentation specifies scope/
+
+      #+BEGIN_SRC python -n
+        if cars:
+            for car in cars:
+                print(car.speed)
+      #+END_SRC
+
+*** Features
+    Package utils
+
+    - =pip=
+    - =easy_install=
+
+** Virtual environment
+*** Python virtual environment
+
+    #+BEGIN_SRC sh -i
+
+		      Physical system
+      ,''''''''''''''''''''''''''''''''''''''''''|
+      |  python 2.5                              |
+      |  python 2.7                              |
+      |  python 3.4.3(system default)            |
+      |  python 3.5(unstable)                    |
+      |                                          |
+      |  ,'''''''''''''`.   ,--------------.     |
+      |  |              |   |              |     |
+      |  | python 3.4.3 |   |  python 2.7  |     |
+      |  | (virtual env)|   | (virtual env)|     |
+      |  |              |   |              |     |
+      |  "---------------   `--------------'     |
+      |__________________________________________|
+
+    #+END_SRC
+
+** Python virtual env
+*** Installation
+
+    #+BEGIN_SRC sh -i
+      sudo dnf install python3-virtualenv -y
+      sudo dnf install python3-devel -y
+      sudo dnf install python3-setuptools -y
+    #+END_SRC
+
+*** Create virtual env
+    #+BEGIN_SRC sh -i -n
+      mkdir ~/virtualenvs
+      virtualenv-3.4 ~/virtualenvs/pywar
+    #+END_SRC
+
+*** Virtual env
+**** Activate
+     #+BEGIN_SRC sh
+       source ~/virtualenvs/pywar/bin/activate
+     #+END_SRC
+
+**** Deactivate
+     #+BEGIN_SRC sh
+       deactivate
+     #+END_SRC
+
+** End
+*** 
+**** Email
+     =psachin@redhat.com=
+**** Blog
+     =http://psachin.github.io=
