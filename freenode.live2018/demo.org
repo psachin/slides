@@ -1,0 +1,120 @@
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t broken-links:nil c:nil creator:nil
+#+OPTIONS: d:(not "LOGBOOK") date:t e:t email:t f:t inline:t num:t
+#+OPTIONS: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+OPTIONS: timestamp:nil title:t toc:t todo:t |:t
+#+TITLE: A demo document
+#+DATE: <2018-10-22 Mon>
+#+AUTHOR: Sachin Patil
+#+EMAIL: sacpatil@redhat.com
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+#+CREATOR: Emacs 27.0.50 (Org mode 9.1.7)
+
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS:
+#+LATEX_HEADER: \usepackage{listings}
+#+LaTeX_HEADER: \usepackage{minted}
+#+LaTeX_HEADER: \usemintedstyle{emacs}
+#+LATEX_HEADER_EXTRA:
+#+DESCRIPTION:
+#+KEYWORDS:
+#+SUBTITLE:
+#+LATEX_COMPILER: pdflatex
+
+
+* Para 1
+
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget
+  luctus diam, at tincidunt felis. Praesent vehicula iaculis faucibus.
+  Vivamus ligula nunc, hendrerit sed sapien faucibus, faucibus dictum
+  quam. Proin volutpat convallis metus id tincidunt. Morbi malesuada
+  enim ligula, sed dignissim risus pellentesque vel. Proin sit amet
+  ante aliquet, semper ante vitae, dictum leo. Donec a nulla sed purus
+  laoreet efficitur. Pellentesque iaculis et erat a egestas. Praesent
+  sed diam vitae sem accumsan vestibulum. Vestibulum ante ipsum primis
+  in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque
+  ac lacus ut quam tincidunt commodo. Phasellus elementum facilisis
+  elementum. Cras et nisl lobortis, consequat nibh eget, tincidunt
+  massa. Nullam et orci felis. Fusce blandit purus nec augue lobortis
+  convallis.
+
+* Para 2
+
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget
+  luctus diam, at tincidunt felis. Praesent vehicula iaculis faucibus.
+  Vivamus ligula nunc, hendrerit sed sapien faucibus, faucibus dictum
+  quam. Proin volutpat convallis metus id tincidunt. Morbi malesuada
+  enim ligula, sed dignissim risus pellentesque vel. Proin sit amet
+  ante aliquet, semper ante vitae, dictum leo. Donec a nulla sed purus
+  laoreet efficitur. Pellentesque iaculis et erat a egestas. Praesent
+  sed diam vitae sem accumsan vestibulum. Vestibulum ante ipsum primis
+  in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque
+  ac lacus ut quam tincidunt commodo. Phasellus elementum facilisis
+  elementum. Cras et nisl lobortis, consequat nibh eget, tincidunt
+  massa. Nullam et orci felis. Fusce blandit purus nec augue lobortis
+  convallis.
+
+* Image
+
+  - A logo
+    #+CAPTION: Presentation
+    #+ATTR_LaTeX: :width 5cm
+    [[./assets/gnome-x-office-presentation.png]]
+
+
+* Table
+
+
+       #+ATTR_LaTeX: :align |c|c|c|c|
+
+       |               | Replica # 3 | Replica # 2 | Replica # 11 |
+       |---------------+-------------+-------------+--------------|
+       | Partition # 1 | Device # 2  | Device # 3  | Device # 4   |
+       | Partition # 2 | Device # 3  | Device # 4  | Device # 5   |
+       | Partition # 3 | Device # 4  | Device # 5  | Device # 6   |
+       | Partition # 4 | Device # 5  | Device # 6  | Device # 7   |
+       | Partition # 5 | Device # 6  | Device # 7  | Device # 8   |
+       | Partition # 6 | Device # 7  | Device # 8  | Device # 1   |
+       | Partition # 7 | Device # 8  | Device # 1  | Device # 2   |
+       | Partition # 8 | Device # 1  | Device # 2  | Device # 3   |
+
+
+* Source code
+
+  #+BEGIN_SRC python -n
+    #!/usr/bin/env python
+
+
+    def postproc(self):
+	protect_keys = [
+	    "vnc_password", "spice_password"
+	]
+
+	regexp = r"((?m)^\s*(%s)\s*=\s*)(.*)" % "|".join(protect_keys)
+	self.do_path_regex_sub("/etc/swift/.*\.conf.*", regexp, r"\1*********")
+  #+END_SRC
+
+
+* Ditaa
+  #+BEGIN_SRC bash :file foo.txt
+	echo "
+	+--------+   +-------+    +-------+
+	|        | --+ ditaa +--> |       |
+	|  Text  |   +-------+    |diagram|
+	|Document|   |!magic!|    |       |
+	|     {d}|   |       |    |       |
+	+---+----+   +-------+    +-------+
+	    :                         ^
+	    |       Lots of work      |
+	    +-------------------------+
+    "
+  #+END_SRC
+
+  #+RESULTS:
+  [[file:foo.txt]]
+
+  #+BEGIN_SRC bash :result none
+    ditaa foo.txt foo.png
+  #+END_SRC

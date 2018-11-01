@@ -1,0 +1,37 @@
+#+REVEAL_THEME: moon
+#+REVEAL_TRANS: linear
+#+REVEAL_SPEED: default
+#+REVEAL_ROOT: http://cdn.jsdelivr.net/reveal.js/3.0.0/
+#+REVEAL_TITLE_SLIDE_BACKGROUND:
+#+OPTIONS: reveal_center:t reveal_progress:t reveal_history:nil reveal_control:t
+#+OPTIONS: num:nil toc:nil
+#+OPTIONS: timestamp:nil, email:nil
+#+LANGUAGE: en
+
+#+OPTIONS: H:2
+#+LATEX_CLASS: beamer
+#+COLUMNS: %45ITEM %10BEAMER_env(Env) %10BEAMER_act(Act) %4BEAMER_col(Col) %8BEAMER_opt(Opt)
+#+BEAMER_THEME: Frankfurt
+#+BEAMER_COLOR_THEME:
+#+BEAMER_FONT_THEME:
+#+BEAMER_INNER_THEME:
+#+BEAMER_OUTER_THEME:
+#+BEAMER_HEADER:
+
+* Introduction
+** Programming
+   - Python
+   - Ruby
+** Paragraph one
+
+   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lorem
+   nisi, tincidunt tempus sem nec, elementum feugiat ipsum. Nulla in
+   diam libero. Nunc tristique ex a nibh egestas sollicitudin.
+
+
+** Paragraph two
+
+   Mauris efficitur vitae ex id egestas. Vestibulum ligula felis,
+   pulvinar a posuere id, luctus vitae leo. Sed ac imperdiet orci, non
+   elementum leo. Nullam molestie congue placerat. Phasellus tempor et
+   libero maximus commodo.

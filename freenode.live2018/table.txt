@@ -1,0 +1,10 @@
+|               | Replica # 3 | Replica # 2 | Replica # 11 |
+|---------------+-------------+-------------+--------------|
+| Partition # 1 | D #2  | D #3  | D #4   |
+| Partition # 2 | D #3  | D #4  | D #5   |
+| Partition # 3 | D #4  | D #5  | D #6   |
+| Partition # 4 | D #5  | D #6  | D #7   |
+| Partition # 5 | D #6  | D #7  | D #8   |
+| Partition # 6 | D #7  | D #8  | D #1   |
+| Partition # 7 | D #8  | D #1  | D #2   |
+| Partition # 8 | D #1  | D #2  | D #3   |

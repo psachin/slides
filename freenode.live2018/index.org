@@ -1,0 +1,386 @@
+#+REVEAL_THEME: moon
+#+REVEAL_TRANS: linear
+#+REVEAL_SPEED: default
+#+REVEAL_ROOT: http://cdn.jsdelivr.net/reveal.js/3.0.0/
+#+REVEAL_TITLE_SLIDE_BACKGROUND:
+#+OPTIONS: reveal_center:t reveal_progress:t reveal_history:nil reveal_control:t
+#+OPTIONS: num:nil toc:nil
+#+OPTIONS: timestamp:nil, email:nil
+#+LANGUAGE: en
+
+#+LaTeX_CLASS_OPTIONS: [bigger, presentation]
+#+BEAMER_FRAME_LEVEL: 1
+# #+OPTIONS: H:2
+#+BEAMER_COLOR_THEME:
+#+BEAMER_FONT_THEME: serif
+#+BEAMER_HEADER: \usecolortheme[RGB={0,104,139}]{structure}%deepskyblue
+# #+BEAMER_HEADER: \usecolortheme[RGB={204,0,0}]{structure}%Red Hat
+#+BEAMER_INNER_THEME: rounded
+#+BEAMER_OUTER_THEME:
+#+BEAMER_THEME: Frankfurt
+#+LATEX_CLASS: beamer
+#+LATEX_CLASS_OPTIONS: [10pt]
+#+LaTeX_HEADER: \setbeamertemplate{navigation symbols}[horizontal]
+# #+LaTex_HEADER: \setbeamertemplate{footline}{\color{gray}Proprietary and Confidential}
+#+LaTeX_HEADER: \usepackage{pxfonts}
+#+LaTeX_HEADER: \usepackage{hyperref}
+#+LaTeX_HEADER: \hypersetup{colorlinks=true, linkcolor=red, filecolor=magenta, urlcolor=cyan}
+#+LaTeX_HEADER: \urlstyle{same}
+#+LaTeX_HEADER: \usepackage{minted}
+#+LaTeX_HEADER: \usepackage[utf8]{inputenc}
+#+LaTeX_HEADER: \usepackage[english]{babel}
+# #+LaTeX_HEADER: \usepackage{listings}
+# #+LaTex_HEADER: \lstset{numbers=left,numbersep=6pt,numberstyle=\tiny,showstringspaces=false,aboveskip=-50pt,frame=leftline,keywordstyle=\color{green},commentstyle=\color{orange},stringstyle=\color{black},}
+#+LaTeX_HEADER: \setbeamertemplate{caption}[numbered]
+#+LaTeX_HEADER: \setbeamercovered{invisible}
+
+#+Title: GNU Emacs for all
+#+Author: Sachin (@psachin)
+#+Email: psachin@redhat.com
+#+Date: [[http://freenode.live][Freenode #live 2018]]
+
+
+#+BEGIN_NOTES
+STORY: Built the context, show what use Emacs for in snapshots, pictures,
+video frames, then then show the title "GNU Emacs for all"
+#+END_NOTES
+
+
+* IRC
+  #+BEGIN_NOTES
+    - As this is freenode conf. Lets start with IRC itself
+    - 30 years of IRC
+    - We at redhat use IRC a lot!!
+    - Show conf:
+      - Configure nick
+      - autojoin
+      - configure channels and servers
+      - Configure smiley (show demo)
+      - Configure notify
+      - logging
+      - turn of linenum mode for irc
+      - start server
+    - Finally show ERC demo:
+      - C-c e: use ido to search channels
+      - ping
+  #+END_NOTES
+** ERC config: User configuration
+   #+BEGIN_SRC emacs-lisp -n
+   (setq erc-user-full-name user-full-name
+	   erc-nick user-login-name
+	   erc-away-nickname (concat erc-nick "|away")
+	   erc-keywords (quote("training" "session" "swift" "emacs"))
+	   erc-current-nick-highlight-type 'all
+	   erc-notify-list erc-pals
+	   erc-autojoin-enable t
+	   erc-autojoin-channels-alist
+   #+END_SRC
+
+** ERC config: Channels
+   #+BEGIN_SRC emacs-lisp -n
+     (quote
+      (("oftc" "#tor" "#kernelnewbies" "#kernel-outreachy")
+       ("freenode.net" "#emacs" "#emacs-beginners" "#linuxjournal" "#live")
+       ("GIMPNet" "#outreachy")))
+   #+END_SRC
+
+** ERC config: Modules
+   #+BEGIN_SRC emacs-lisp -n
+     erc-modules
+     (quote
+      (autojoin smiley notify))
+   #+END_SRC
+
+** ERC config: Logging
+   #+BEGIN_SRC emacs-lisp -n
+     ;; Logging
+     erc-enable-logging t
+     erc-log-mode t
+     erc-log-channels-directory "~/.erc/logs/"
+     ;; Timestamp position
+     erc-insert-timestamp-function 'erc-insert-timestamp-left
+     ;; Show channel name in the notification.
+     ;; Please apply: https://gist.github.com/psachin/f07c0741d0de4f2cf\
+     ;; 914eebbd45bddfc
+     erc-notifications-show-channel t
+     ;; Turn off linum for ERC buffer
+     (add-hook 'erc-mode-hook 'psachin/turn-off-linum)
+   #+END_SRC
+
+** ERC config: Start server
+   #+BEGIN_SRC emacs-lisp -n
+     (defun erc-start()
+       "Start ERC."
+       (interactive)
+       (erc :server "irc.freenode.net")
+       (erc :server "irc.oftc.net"))
+   #+END_SRC
+
+* Documents
+  #+BEGIN_NOTES
+    - Start by inserting a default template in an empty file: C-c C-e #
+      demo_document.org
+
+    - Insert two sections: Para 1 & Para 2
+    - Generate PDF using C-x C-e l p (or org-latex-export-to-pdf)
+    - Use Emacs window to show the rendered PDF
+
+    - Insert new section: Image and and a title "A logo"
+    - Insert caption: #+CAPTION: Presentation
+    - and image from ./assets/gnome-x-office-presentation.png
+    - Render PDF
+    - Adjust image size #+ATTR_LATEX: :width 5cm
+    - Render PDF again
+
+    - Insert new section "Table" & insert a table of 4x2
+    - Start writing table name, |   | Replica # 2| Replica # 2 |
+      ....you got an idea how Emacs or the org mode is table aware I'd
+      say
+    - Let me insert a table which I prepared for this demo C-x i
+      table.txt
+    - Render PDF
+    - align column: #+ATTR_LaTeX: :align |c|c|c|c|
+
+    - source code
+      - New section: "Source code"
+      - python
+      - Insert from code.txt: M-x i code.txt
+      - Render ... bad indentation
+      - Insert minted or listings from file latex_minted_header.txt
+      - Render
+      - add line number using `-n`
+      - Render
+
+    - Flow diagram
+      - New file image.txt
+      - M-x artist-mode
+      - Draw two rectangles
+      - Join by line
+      - first rectangle: {d} cFF3
+      - second rectangle: cGRE
+      - M-! ditaa image.txt image.png
+      - M-! eog image.png
+  #+END_NOTES
+  - LaTeX document
+  - Include image
+  - Include table
+  - Source code
+  - Flow diagram(ditaa)
+
+* Trello
+  #+BEGIN_NOTES
+    - I'm not very good at managing content using UI and trello is
+      really a pain for me
+    - I use org-trello
+    - The setup is quick and documented
+      - first you have to setup a key and token for trello
+      - Then for each trello board, you have to connect the org file
+        to install the metadata
+    - Demo:
+      - Open firefox tab for trello baord
+        https://trello.com/b/zQ2u4Atz/test-org-trello
+      - Open a file ~/trello/insights/rules/osp.org
+      - Create a new entry:
+	* virt: Callback remains even after client exit
+      - `C-c t` to change status to To-Do-Groomed
+      - sync card: org-trello-sync-card
+      - show web
+      - Insert description from ~/github/slides/freenode.live2018/trello.txt
+      - sync card:
+      - Add checklist:
+	- [ ] Checklist
+	  - [ ] Backend
+	  - [ ] Frontend
+	  - [ ] Playbook
+      - sync again and show web
+      - Assign the card: `org-trello-assign-me` and sync:
+        `org-trello-sync-card`
+      - Add card comment `org-trello-add-card-comment`. (NO NEED TO SYNC)
+      - Archive card: `org-trello-archive-card`
+  #+END_NOTES
+
+  #+ATTR_HTML: :width 50% :height
+  [[./assets/trello-logo-blue.svg]]
+
+** Setup key and token
+   #+BEGIN_SRC emacs-lisp -n
+     ;; ~/.emacs.d/.trello/username.el
+     (setq org-trello-consumer-key "abc..."
+	   org-trello-access-token "def...")
+   #+END_SRC
+
+   http://org-trello.github.io/trello-setup.html
+
+** Connect to the board
+   #+BEGIN_SRC emacs-lisp -n
+      (use-package org-trello
+	:ensure t
+	:config
+	(custom-set-variables '(org-trello-files
+				'("~/trello/myboard.org"))))
+   #+END_SRC
+
+* Presentation
+  #+ATTR_HTML: :width 100% :height
+  [[./assets/presentation.svg]]
+** LaTeX Beamer
+   [[https://opensource.com/article/18/4/how-create-latex-documents-emacs][how-create-latex-documents-emacs]]
+   #+BEGIN_NOTES
+     - start by creating an empty org file: demo_document.org
+     - Insert empty template using C-c C-x #
+     - Insert content from content.txt using C-x i
+
+     - Let me transform this into a presentation using LaTeX beamer
+       - Insert beamer teamplate from beamer.txt & run `M-x org-beamer-export-to-pdf`
+       - Let me get rid of the content part for now. toc:nil
+       - Apply theme, color, font
+	 - Madrid/Frankfurt
+         - [RGB={204,0,0}]{structure}, lily
+   #+END_NOTES
+
+** reveal.js
+   - https://github.com/yjwen/org-reveal
+   - [[https://opensource.com/article/18/2/how-create-slides-emacs-org-mode-and-revealjs][How to create slides with Emacs Org mode and Reveal.js]]
+   #+BEGIN_NOTES
+     - (Keep the file:///home/psachin/github/slides/freenode.live2018/ open in the browser)
+     - Lets how the same slide can be transformes into reveal.js presentation
+     - Insert template from reveal.txt
+     - convert using C-c C-e R R or org-reveal-export-to-html
+     - Change REVEAL_TRANS from default to linear
+   #+END_NOTES
+** org-tree-slide
+   https://github.com/takaxp/org-tree-slide
+   #+BEGIN_NOTES
+     - M-x org-tree-slide-mode
+     - C->   &  C-<
+   #+END_NOTES
+
+* Version control
+** magit
+   https://magit.vc/
+** git-timemachine
+   https://gitlab.com/pidu/git-timemachine
+
+    #+BEGIN_NOTES
+      magit: Visit github/insights/insights-core and st
+      git-timemachine: Visit github/manly and M-x git-timemachine, n, p, q
+    #+END_NOTES
+
+* Agenda
+** org-agenda
+   #+BEGIN_SRC emacs-lisp -n
+     (setq org-agenda-files '("~/agenda/work/work.org"
+			      "~/agenda/todo/read.org"
+			      "~/agenda/todo/todo.org"))
+
+     (setq org-capture-templates
+     '(("t" "Todo" entry
+	      (file+headline "~/agenda/todo/todo.org" "Tasks")
+	      "* TODO %i%?\n %U\n %a")
+	     ("n" "Notes" entry
+	      (file+headline "~/agenda/notes.org" "Notes")
+	      "* %A%?\n %U")
+	     ("i" "Insights" entry
+	      (file+headline "~/agenda/work/work.org" "Insights")
+	      "* %u%?")))
+   #+END_SRC
+
+   #+BEGIN_NOTES
+     I mostly use org mode to manage my notes and tasks. Time tracking
+     is simple using org-agenda. This is all the configuration I have
+     in my Emacs config.
+
+     - Add task: M-x org-capture (C-c c ) and show how to add tasks
+     - Add notes: Go to ~/notes/ open cloudforms.org and C-c c n
+     - Show clockin/clockout:
+       - C-c c i
+       - Add subtasks for the day:
+	 *** Write a parser
+	 *** Review playbook
+	 *** Review a blog
+       - clock in (C-c C-x i)
+       - clock out (C-c C-x o)
+       - Hack the timestamp
+       - Show time for each day in column view C-c C-x c
+       - Go to "* Insigts" and show tabular report C-c C-x C-r
+   #+END_NOTES
+** Orgmode for GTD
+   https://emacs.cafe/emacs/orgmode/gtd/2017/06/30/orgmode-gtd.html
+* System
+** Terminal
+   #+BEGIN_NOTES
+     - You don't really get out of Emacs to perfom shell activities
+     - Open a new window and type M-x shell
+   #+END_NOTES
+** Man pages
+   #+BEGIN_NOTES
+     - Man pages is something I definetly like to browse within Emacs
+     - Open a new terminal and type M-x man <ENTER> lsof <ENTER>
+   #+END_NOTES
+** File browser
+   #+BEGIN_NOTES
+     - Emacs has this dir-ed mode to to file operations like file &
+       directory browsing.
+     - Directory listing is like ls -l
+     - You can mark, and unmark and do file operations, and do copy,
+       paste like operations.
+     - Go to directory ~/tmp/sos and select multiple file and mark
+       them with `m`, then unmark with `u`
+
+     - Another feature I use is tramp, to access file over ssh,
+       secure-FTP
+     - Demonstrate tramp using /ssh:root@192.168.100.187:~
+     - Create a python file and show `import os`
+     - "Sysadmins have no excuse that they have to install Emacs on
+       all the servers."
+   #+END_NOTES
+** grep
+   #+BEGIN_NOTES
+     - Just one more tool which I use within Emacs that is `grep`
+     - go to ~/tmp/sos/ and
+     - M-x grep RET
+     - grep --color -nH --null -e dovecot * -r
+     - The cool this is Emacs highligts the line for you. I think is
+       pretty wonderful to have this kind of tool.
+   #+END_NOTES
+* Blogging
+  #+BEGIN_NOTES
+    - Option such as [[https://orgmode.org/worg/org-tutorials/org-jekyll.html][org-jekyll]]
+    - Plain HTML export
+    - I use org-publish
+  #+END_NOTES
+
+** [[https://orgmode.org/worg/org-tutorials/org-jekyll.html][org-jekyll]]
+** org-publish
+   #+BEGIN_SRC emacs-lisp -n
+     (require 'ox-publish)
+     (setq org-publish-project-alist
+	   '(
+
+	     ;; ... add all the components here (see below)...
+
+	     ))
+   #+END_SRC
+   - [[https://orgmode.org/worg/org-tutorials/org-publish-html-tutorial.html][org-publish-html-tutorial]]
+   - https://gitlab.com/psachin/psachin.gitlab.io
+* Games
+* Programming?
+  - Support to all major programming languages
+  - Syntax coloring etc
+    #+BEGIN_NOTES
+      - Open an empty py file prog file and start typing `import os`
+      - and then `os.sys.` till the pop up
+      - Delete the content
+      - Now insert content from code.txt
+      - "class Foo:" will have error-red mark. Show what is wrong in
+        the minor mode. Correct it.
+      - Execute the code in minor mode using `M-! python3 prog.py`
+    #+END_NOTES
+* Questions
+* Thank you
+
+  https://psachin.gitlab.io
+
+  [[mailto:psachin@redhat.com][psachin@redhat.com]]
+
+  Made with Love, [[https://www.gnu.org/software/emacs/][GNU Emacs]] & [[https://orgmode.org/][orgmode]]

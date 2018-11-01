@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>GNU Emacs for all</title>
+<meta name="author" content="(Sachin (@psachin))"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/moon.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'http://cdn.jsdelivr.net/reveal.js/3.0.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide" data-background=""><h1 class="title">GNU Emacs for all</h1><h2 class="author">Sachin (@psachin)</h2><h2 class="date"><a href="http://freenode.live">Freenode #live 2018</a></h2>
+</section>
+<aside class="notes">
+<p>
+STORY: Built the context, show what use Emacs for in snapshots, pictures,
+video frames, then then show the title "GNU Emacs for all"
+</p>
+
+</aside>
+
+
+<section>
+<section id="slide-org54ddbfc">
+<h2 id="org54ddbfc">IRC</h2>
+<aside class="notes">
+<ul>
+<li>As this is freenode conf. Lets start with IRC itself</li>
+<li>30 years of IRC</li>
+<li>We at redhat use IRC a lot!!</li>
+<li>Show conf:
+<ul>
+<li>Configure nick</li>
+<li>autojoin</li>
+<li>configure channels and servers</li>
+<li>Configure smiley (show demo)</li>
+<li>Configure notify</li>
+<li>logging</li>
+<li>turn of linenum mode for irc</li>
+<li>start server</li>
+
+</ul></li>
+<li>Finally show ERC demo:
+<ul>
+<li>C-c e: use ido to search channels</li>
+<li>ping</li>
+
+</ul></li>
+
+</ul>
+
+</aside>
+</section>
+<section id="slide-orgff7e608">
+<h3 id="orgff7e608">ERC config: User configuration</h3>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp"><span class="linenr">1: </span>(<span style="color: #b4fa70;">setq</span> erc-user-full-name user-full-name
+<span class="linenr">2: </span>        erc-nick user-login-name
+<span class="linenr">3: </span>        erc-away-nickname (concat erc-nick <span style="color: #e9b96e;">"|away"</span>)
+<span class="linenr">4: </span>        erc-keywords (<span style="color: #b4fa70;">quote</span>(<span style="color: #e9b96e;">"training"</span> <span style="color: #e9b96e;">"session"</span> <span style="color: #e9b96e;">"swift"</span> <span style="color: #e9b96e;">"emacs"</span>))
+<span class="linenr">5: </span>        erc-current-nick-highlight-type 'all
+<span class="linenr">6: </span>        erc-notify-list erc-pals
+<span class="linenr">7: </span>        erc-autojoin-enable t
+<span class="linenr">8: </span>        erc-autojoin-channels-alist
+</pre>
+</div>
+
+</section>
+<section id="slide-org2c8ffaf">
+<h3 id="org2c8ffaf">ERC config: Channels</h3>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp"><span class="linenr">1: </span>(<span style="color: #b4fa70;">quote</span>
+<span class="linenr">2: </span> ((<span style="color: #e9b96e;">"oftc"</span> <span style="color: #e9b96e;">"#tor"</span> <span style="color: #e9b96e;">"#kernelnewbies"</span> <span style="color: #e9b96e;">"#kernel-outreachy"</span>)
+<span class="linenr">3: </span>  (<span style="color: #e9b96e;">"freenode.net"</span> <span style="color: #e9b96e;">"#emacs"</span> <span style="color: #e9b96e;">"#emacs-beginners"</span> <span style="color: #e9b96e;">"#linuxjournal"</span> <span style="color: #e9b96e;">"#live"</span>)
+<span class="linenr">4: </span>  (<span style="color: #e9b96e;">"GIMPNet"</span> <span style="color: #e9b96e;">"#outreachy"</span>)))
+</pre>
+</div>
+
+</section>
+<section id="slide-org8521e74">
+<h3 id="org8521e74">ERC config: Modules</h3>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp"><span class="linenr">1: </span>erc-modules
+<span class="linenr">2: </span>(<span style="color: #b4fa70;">quote</span>
+<span class="linenr">3: </span> (autojoin smiley notify))
+</pre>
+</div>
+
+</section>
+<section id="slide-orga030b99">
+<h3 id="orga030b99">ERC config: Logging</h3>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp"><span class="linenr"> 1: </span><span style="color: #73d216;">;; </span><span style="color: #73d216;">Logging</span>
+<span class="linenr"> 2: </span>erc-enable-logging t
+<span class="linenr"> 3: </span>erc-log-mode t
+<span class="linenr"> 4: </span>erc-log-channels-directory <span style="color: #e9b96e;">"~/.erc/logs/"</span>
+<span class="linenr"> 5: </span><span style="color: #73d216;">;; </span><span style="color: #73d216;">Timestamp position</span>
+<span class="linenr"> 6: </span>erc-insert-timestamp-function 'erc-insert-timestamp-left
+<span class="linenr"> 7: </span><span style="color: #73d216;">;; </span><span style="color: #73d216;">Show channel name in the notification.</span>
+<span class="linenr"> 8: </span><span style="color: #73d216;">;; </span><span style="color: #73d216;">Please apply: https://gist.github.com/psachin/f07c0741d0de4f2cf\</span>
+<span class="linenr"> 9: </span><span style="color: #73d216;">;; </span><span style="color: #73d216;">914eebbd45bddfc</span>
+<span class="linenr">10: </span>erc-notifications-show-channel t
+<span class="linenr">11: </span><span style="color: #73d216;">;; </span><span style="color: #73d216;">Turn off linum for ERC buffer</span>
+<span class="linenr">12: </span>(add-hook 'erc-mode-hook 'psachin/turn-off-linum)
+</pre>
+</div>
+
+</section>
+<section id="slide-orga2a1451">
+<h3 id="orga2a1451">ERC config: Start server</h3>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp"><span class="linenr">1: </span>(<span style="color: #b4fa70;">defun</span> <span style="color: #fce94f;">erc-start</span>()
+<span class="linenr">2: </span>  <span style="color: #e9b96e;">"Start ERC."</span>
+<span class="linenr">3: </span>  (<span style="color: #b4fa70;">interactive</span>)
+<span class="linenr">4: </span>  (erc <span style="color: #e090d7;">:server</span> <span style="color: #e9b96e;">"irc.freenode.net"</span>)
+<span class="linenr">5: </span>  (erc <span style="color: #e090d7;">:server</span> <span style="color: #e9b96e;">"irc.oftc.net"</span>))
+</pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org8732a39">
+<h2 id="org8732a39">Documents</h2>
+<aside class="notes">
+<ul>
+<li>Start by inserting a default template in an empty file: C-c C-e #
+demo<sub>document.org</sub></li>
+
+<li>Insert two sections: Para 1 &amp; Para 2</li>
+<li>Generate PDF using C-x C-e l p (or org-latex-export-to-pdf)</li>
+<li>Use Emacs window to show the rendered PDF</li>
+
+<li>Insert new section: Image and and a title "A logo"</li>
+<li>Insert caption: #+CAPTION: Presentation</li>
+<li>and image from ./assets/gnome-x-office-presentation.png</li>
+<li>Render PDF</li>
+<li>Adjust image size #+ATTR<sub>LATEX</sub>: :width 5cm</li>
+<li>Render PDF again</li>
+
+<li>Insert new section "Table" &amp; insert a table of 4x2</li>
+<li>Start writing table name, |   | Replica # 2| Replica # 2 |
+&#x2026;.you got an idea how Emacs or the org mode is table aware I'd
+say</li>
+<li>Let me insert a table which I prepared for this demo C-x i
+table.txt</li>
+<li>Render PDF</li>
+<li>align column: #+ATTR<sub>LaTeX</sub>: :align |c|c|c|c|</li>
+
+<li>source code
+<ul>
+<li>New section: "Source code"</li>
+<li>python</li>
+<li>Insert from code.txt: M-x i code.txt</li>
+<li>Render &#x2026; bad indentation</li>
+<li>Insert minted or listings from file latex<sub>minted</sub><sub>header.txt</sub></li>
+<li>Render</li>
+<li>add line number using `-n`</li>
+<li>Render</li>
+
+</ul></li>
+
+<li>Flow diagram
+<ul>
+<li>New file image.txt</li>
+<li>M-x artist-mode</li>
+<li>Draw two rectangles</li>
+<li>Join by line</li>
+<li>first rectangle: {d} cFF3</li>
+<li>second rectangle: cGRE</li>
+<li>M-! ditaa image.txt image.png</li>
+<li>M-! eog image.png</li>
+
+</ul></li>
+
+</ul>
+
+</aside>
+<ul>
+<li>LaTeX document</li>
+<li>Include image</li>
+<li>Include table</li>
+<li>Source code</li>
+<li>Flow diagram(ditaa)</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org162315e">
+<h2 id="org162315e">Trello</h2>
+<aside class="notes">
+<ul>
+<li>I'm not very good at managing content using UI and trello is
+really a pain for me</li>
+<li>I use org-trello</li>
+<li>The setup is quick and documented
+<ul>
+<li>first you have to setup a key and token for trello</li>
+<li>Then for each trello board, you have to connect the org file
+to install the metadata</li>
+
+</ul></li>
+<li>Demo:
+<ul>
+<li>Open firefox tab for trello baord
+<a href="https://trello.com/b/zQ2u4Atz/test-org-trello">https://trello.com/b/zQ2u4Atz/test-org-trello</a></li>
+<li>Open a file ~/trello/insights/rules/osp.org</li>
+<li>Create a new entry:
+<ul>
+<li>virt: Callback remains even after client exit</li>
+
+</ul></li>
+<li>`C-c t` to change status to To-Do-Groomed</li>
+<li>sync card: org-trello-sync-card</li>
+<li>show web</li>
+<li>Insert description from ~/github/slides/freenode.live2018/trello.txt</li>
+<li>sync card:</li>
+<li>Add checklist:
+<ul>
+<li class="off"><code>[&#xa0;]</code> Checklist
+<ul>
+<li class="off"><code>[&#xa0;]</code> Backend</li>
+<li class="off"><code>[&#xa0;]</code> Frontend</li>
+<li class="off"><code>[&#xa0;]</code> Playbook</li>
+
+</ul></li>
+
+</ul></li>
+<li>sync again and show web</li>
+<li>Assign the card: `org-trello-assign-me` and sync:
+`org-trello-sync-card`</li>
+<li>Add card comment `org-trello-add-card-comment`. (NO NEED TO SYNC)</li>
+<li>Archive card: `org-trello-archive-card`</li>
+
+</ul></li>
+
+</ul>
+
+</aside>
+
+
+<div class="figure">
+<p><object type="image/svg+xml" data="./assets/trello-logo-blue.svg" class="org-svg" width="50%">
+Sorry, your browser does not support SVG.</object>
+</p>
+</div>
+
+</section>
+<section id="slide-org7623488">
+<h3 id="org7623488">Setup key and token</h3>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp"><span class="linenr">1: </span><span style="color: #73d216;">;; </span><span style="color: #73d216;">~/.emacs.d/.trello/username.el</span>
+<span class="linenr">2: </span>(<span style="color: #b4fa70;">setq</span> org-trello-consumer-key <span style="color: #e9b96e;">"abc..."</span>
+<span class="linenr">3: </span>      org-trello-access-token <span style="color: #e9b96e;">"def..."</span>)
+</pre>
+</div>
+
+<p>
+<a href="http://org-trello.github.io/trello-setup.html">http://org-trello.github.io/trello-setup.html</a>
+</p>
+
+</section>
+<section id="slide-orgb752086">
+<h3 id="orgb752086">Connect to the board</h3>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp"><span class="linenr">1: </span>(<span style="color: #b4fa70;">use-package</span> <span style="color: #e9b2e3;">org-trello</span>
+<span class="linenr">2: </span>  <span style="color: #e090d7;">:ensure</span> t
+<span class="linenr">3: </span>  <span style="color: #e090d7;">:config</span>
+<span class="linenr">4: </span>  (custom-set-variables '(org-trello-files
+<span class="linenr">5: </span>                          '(<span style="color: #e9b96e;">"~/trello/myboard.org"</span>))))
+</pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orge1e8a5b">
+<h2 id="orge1e8a5b">Presentation</h2>
+
+<div class="figure">
+<p><object type="image/svg+xml" data="./assets/presentation.svg" class="org-svg" width="100%">
+Sorry, your browser does not support SVG.</object>
+</p>
+</div>
+</section>
+<section id="slide-org1b7e731">
+<h3 id="org1b7e731">LaTeX Beamer</h3>
+<p>
+<a href="https://opensource.com/article/18/4/how-create-latex-documents-emacs">how-create-latex-documents-emacs</a>
+</p>
+<aside class="notes">
+<ul>
+<li>start by creating an empty org file: demo<sub>document.org</sub></li>
+<li>Insert empty template using C-c C-x #</li>
+<li>Insert content from content.txt using C-x i</li>
+
+<li>Let me transform this into a presentation using LaTeX beamer
+<ul>
+<li>Insert beamer teamplate from beamer.txt &amp; run `M-x org-beamer-export-to-pdf`</li>
+<li>Let me get rid of the content part for now. toc:nil</li>
+<li>Apply theme, color, font
+<ul>
+<li>Madrid/Frankfurt</li>
+<li>[RGB={204,0,0}]{structure}, lily</li>
+
+</ul></li>
+
+</ul></li>
+
+</ul>
+
+</aside>
+
+</section>
+<section id="slide-orgd393467">
+<h3 id="orgd393467">reveal.js</h3>
+<ul>
+<li><a href="https://github.com/yjwen/org-reveal">https://github.com/yjwen/org-reveal</a></li>
+<li><a href="https://opensource.com/article/18/2/how-create-slides-emacs-org-mode-and-revealjs">How to create slides with Emacs Org mode and Reveal.js</a></li>
+
+</ul>
+<aside class="notes">
+<ul>
+<li>(Keep the <a href="file:///home/psachin/github/slides/freenode.live2018/">file:///home/psachin/github/slides/freenode.live2018/</a> open in the browser)</li>
+<li>Lets how the same slide can be transformes into reveal.js presentation</li>
+<li>Insert template from reveal.txt</li>
+<li>convert using C-c C-e R R or org-reveal-export-to-html</li>
+<li>Change REVEAL<sub>TRANS</sub> from default to linear</li>
+
+</ul>
+
+</aside>
+</section>
+<section id="slide-orgd198ae7">
+<h3 id="orgd198ae7">org-tree-slide</h3>
+<p>
+<a href="https://github.com/takaxp/org-tree-slide">https://github.com/takaxp/org-tree-slide</a>
+</p>
+<aside class="notes">
+<ul>
+<li>M-x org-tree-slide-mode</li>
+<li>C-&gt;   &amp;  C-&lt;</li>
+
+</ul>
+
+</aside>
+
+</section>
+</section>
+<section>
+<section id="slide-org92c5822">
+<h2 id="org92c5822">Version control</h2>
+<div class="outline-text-2" id="text-org92c5822">
+</div>
+</section>
+<section id="slide-org71e284b">
+<h3 id="org71e284b">magit</h3>
+<p>
+<a href="https://magit.vc/">https://magit.vc/</a>
+</p>
+</section>
+<section id="slide-orgf55ef01">
+<h3 id="orgf55ef01">git-timemachine</h3>
+<p>
+<a href="https://gitlab.com/pidu/git-timemachine">https://gitlab.com/pidu/git-timemachine</a>
+</p>
+
+<aside class="notes">
+<p>
+magit: Visit github/insights/insights-core and st
+git-timemachine: Visit github/manly and M-x git-timemachine, n, p, q
+</p>
+
+</aside>
+
+</section>
+</section>
+<section>
+<section id="slide-org1a10c09">
+<h2 id="org1a10c09">Agenda</h2>
+<div class="outline-text-2" id="text-org1a10c09">
+</div>
+</section>
+<section id="slide-org5122fcf">
+<h3 id="org5122fcf">org-agenda</h3>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp"><span class="linenr"> 1: </span>(<span style="color: #b4fa70;">setq</span> org-agenda-files '(<span style="color: #e9b96e;">"~/agenda/work/work.org"</span>
+<span class="linenr"> 2: </span>                         <span style="color: #e9b96e;">"~/agenda/todo/read.org"</span>
+<span class="linenr"> 3: </span>                         <span style="color: #e9b96e;">"~/agenda/todo/todo.org"</span>))
+<span class="linenr"> 4: </span>
+<span class="linenr"> 5: </span>(<span style="color: #b4fa70;">setq</span> org-capture-templates
+<span class="linenr"> 6: </span>'((<span style="color: #e9b96e;">"t"</span> <span style="color: #e9b96e;">"Todo"</span> entry
+<span class="linenr"> 7: </span>         (file+headline <span style="color: #e9b96e;">"~/agenda/todo/todo.org"</span> <span style="color: #e9b96e;">"Tasks"</span>)
+<span class="linenr"> 8: </span>         <span style="color: #e9b96e;">"* TODO %i%?\n %U\n %a"</span>)
+<span class="linenr"> 9: </span>        (<span style="color: #e9b96e;">"n"</span> <span style="color: #e9b96e;">"Notes"</span> entry
+<span class="linenr">10: </span>         (file+headline <span style="color: #e9b96e;">"~/agenda/notes.org"</span> <span style="color: #e9b96e;">"Notes"</span>)
+<span class="linenr">11: </span>         <span style="color: #e9b96e;">"* %A%?\n %U"</span>)
+<span class="linenr">12: </span>        (<span style="color: #e9b96e;">"i"</span> <span style="color: #e9b96e;">"Insights"</span> entry
+<span class="linenr">13: </span>         (file+headline <span style="color: #e9b96e;">"~/agenda/work/work.org"</span> <span style="color: #e9b96e;">"Insights"</span>)
+<span class="linenr">14: </span>         <span style="color: #e9b96e;">"* %u%?"</span>)))
+</pre>
+</div>
+
+<aside class="notes">
+<p>
+I mostly use org mode to manage my notes and tasks. Time tracking
+is simple using org-agenda. This is all the configuration I have
+in my Emacs config.
+</p>
+
+<ul>
+<li>Add task: M-x org-capture (C-c c ) and show how to add tasks</li>
+<li>Add notes: Go to ~/notes/ open cloudforms.org and C-c c n</li>
+<li>Show clockin/clockout:
+<ul>
+<li>C-c c i</li>
+<li>Add subtasks for the day:
+<b>*</b> Write a parser
+<b>*</b> Review playbook
+<b>*</b> Review a blog</li>
+<li>clock in (C-c C-x i)</li>
+<li>clock out (C-c C-x o)</li>
+<li>Hack the timestamp</li>
+<li>Show time for each day in column view C-c C-x c</li>
+<li>Go to "* Insigts" and show tabular report C-c C-x C-r</li>
+
+</ul></li>
+
+</ul>
+
+</aside>
+</section>
+<section id="slide-org3f1b6d1">
+<h3 id="org3f1b6d1">Orgmode for GTD</h3>
+<p>
+<a href="https://emacs.cafe/emacs/orgmode/gtd/2017/06/30/orgmode-gtd.html">https://emacs.cafe/emacs/orgmode/gtd/2017/06/30/orgmode-gtd.html</a>
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org00a225f">
+<h2 id="org00a225f">System</h2>
+<div class="outline-text-2" id="text-org00a225f">
+</div>
+</section>
+<section id="slide-org22d2eab">
+<h3 id="org22d2eab">Terminal</h3>
+<aside class="notes">
+<ul>
+<li>You don't really get out of Emacs to perfom shell activities</li>
+<li>Open a new window and type M-x shell</li>
+
+</ul>
+
+</aside>
+</section>
+<section id="slide-org891c146">
+<h3 id="org891c146">Man pages</h3>
+<aside class="notes">
+<ul>
+<li>Man pages is something I definetly like to browse within Emacs</li>
+<li>Open a new terminal and type M-x man &lt;ENTER&gt; lsof &lt;ENTER&gt;</li>
+
+</ul>
+
+</aside>
+</section>
+<section id="slide-org10a9be9">
+<h3 id="org10a9be9">File browser</h3>
+<aside class="notes">
+<ul>
+<li>Emacs has this dir-ed mode to to file operations like file &amp;
+directory browsing.</li>
+<li>Directory listing is like ls -l</li>
+<li>You can mark, and unmark and do file operations, and do copy,
+paste like operations.</li>
+<li>Go to directory ~/tmp/sos and select multiple file and mark
+them with `m`, then unmark with `u`</li>
+
+<li>Another feature I use is tramp, to access file over ssh,
+secure-FTP</li>
+<li>Demonstrate tramp using /ssh:root@192.168.100.187:~</li>
+<li>Create a python file and show `import os`</li>
+<li>"Sysadmins have no excuse that they have to install Emacs on
+all the servers."</li>
+
+</ul>
+
+</aside>
+</section>
+<section id="slide-orgbfab14a">
+<h3 id="orgbfab14a">grep</h3>
+<aside class="notes">
+<ul>
+<li>Just one more tool which I use within Emacs that is `grep`</li>
+<li>go to ~/tmp/sos/ and</li>
+<li>M-x grep RET</li>
+<li>grep &#x2013;color -nH &#x2013;null -e dovecot * -r</li>
+<li>The cool this is Emacs highligts the line for you. I think is
+pretty wonderful to have this kind of tool.</li>
+
+</ul>
+
+</aside>
+</section>
+</section>
+<section>
+<section id="slide-orgdc5a244">
+<h2 id="orgdc5a244">Blogging</h2>
+<aside class="notes">
+<ul>
+<li>Option such as <a href="https://orgmode.org/worg/org-tutorials/org-jekyll.html">org-jekyll</a></li>
+<li>Plain HTML export</li>
+<li>I use org-publish</li>
+
+</ul>
+
+</aside>
+
+</section>
+<section id="slide-org3809849">
+<h3 id="org3809849"><a href="https://orgmode.org/worg/org-tutorials/org-jekyll.html">org-jekyll</a></h3>
+</section>
+<section id="slide-org3131a78">
+<h3 id="org3131a78">org-publish</h3>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp"><span class="linenr">1: </span>(<span style="color: #b4fa70;">require</span> '<span style="color: #e9b2e3;">ox-publish</span>)
+<span class="linenr">2: </span>(<span style="color: #b4fa70;">setq</span> org-publish-project-alist
+<span class="linenr">3: </span>      '(
+<span class="linenr">4: </span>
+<span class="linenr">5: </span>        <span style="color: #73d216;">;; </span><span style="color: #73d216;">... add all the components here (see below)...</span>
+<span class="linenr">6: </span>
+<span class="linenr">7: </span>        ))
+</pre>
+</div>
+<ul>
+<li><a href="https://orgmode.org/worg/org-tutorials/org-publish-html-tutorial.html">org-publish-html-tutorial</a></li>
+<li><a href="https://gitlab.com/psachin/psachin.gitlab.io">https://gitlab.com/psachin/psachin.gitlab.io</a></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org7b1a532">
+<h2 id="org7b1a532">Games</h2>
+</section>
+</section>
+<section>
+<section id="slide-orgb18f226">
+<h2 id="orgb18f226">Programming?</h2>
+<ul>
+<li>Support to all major programming languages</li>
+<li><p>
+Syntax coloring etc
+</p>
+<aside class="notes">
+<ul>
+<li>Open an empty py file prog file and start typing `import os`</li>
+<li>and then `os.sys.` till the pop up</li>
+<li>Delete the content</li>
+<li>Now insert content from code.txt</li>
+<li>"class Foo:" will have error-red mark. Show what is wrong in
+the minor mode. Correct it.</li>
+<li>Execute the code in minor mode using `M-! python3 prog.py`</li>
+
+</ul>
+
+</aside></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org180e0ff">
+<h2 id="org180e0ff">Questions</h2>
+</section>
+</section>
+<section>
+<section id="slide-orgf66c1e5">
+<h2 id="orgf66c1e5">Thank you</h2>
+<p>
+<a href="https://psachin.gitlab.io">https://psachin.gitlab.io</a>
+</p>
+
+<p>
+<a href="mailto:psachin@redhat.com">psachin@redhat.com</a>
+</p>
+
+<p>
+Made with Love, <a href="https://www.gnu.org/software/emacs/">GNU Emacs</a> &amp; <a href="https://orgmode.org/">orgmode</a>
+</p>
+</section>
+</section>
+</div>
+</div>
+<script src="http://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
+<script src="http://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>

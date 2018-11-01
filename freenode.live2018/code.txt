@@ -1,0 +1,28 @@
+class Foo:
+    def __init__(self, data):
+        self.data = data
+        self.index = len(data) - 1
+
+    def __iter__(self):
+        '''This makes the object iterable. This is invoked when `for` first
+        wants to check if it's iterable.
+
+        '''
+        return self
+
+    def __next__(self):
+        '''This is invoked when we start the first iteration.
+
+        '''
+        if self.index < 0:
+            raise(StopIteration)
+
+        value = self.data[self.index]
+        self.index -= 1
+        return value
+
+
+for item in Foo('abcd'):
+    print(item)
+
+# Execute using `python3 making_class_iterable.py`

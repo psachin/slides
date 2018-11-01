@@ -1,0 +1,7 @@
+(This bug is reported by john.doe@example.com)
+
+If callbacks remain after clients exited, virt will attempt to send
+messages to dead clients by using `remoteDispatchObjectEventSend()`
+and it will cause the memory leak. Bug 160002 fix the memory leak.
+This bug fix the callbacks issue. Fix available in version:
+`virt-0.9.0-14.el7_7.8`
