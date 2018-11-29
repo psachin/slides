@@ -1,6 +1,3 @@
 
-
-
-talks, presentations etc.
-
+Moved to https://gitlab.com/psachin/slides
                   
