@@ -1,7 +1,7 @@
 #+startup: beamer
 #+TITLE: Socializing with the community
-#+DATE: \today
-#+AUTHOR: Sachin
+#+DATE: updated on: \today
+#+AUTHOR: Sachin(psachin)
 #+EMAIL: psachin@redhat.com
 #+CREATOR: Emacs 25.1.1 (Org mode 9.0.4)
 #+LANGUAGE: en
@@ -22,7 +22,7 @@
 
 #+LaTeX_HEADER: \logo{\includegraphics[height=1.4cm,width=1.6cm]{RedHat-IsoLogo.jpg}}
 #+LaTeX_HEADER: \subtitle{Getting started with mailing list \& IRC}
-#+LaTeX_HEADER: \institute{Red Hat}
+#+LaTeX_HEADER: \institute{University Connect Program, Red Hat}
 # #+LaTeX_HEADER: \titlegraphic{\includegraphics[width=2.3cm,height=2.3cm]{python.png}}
 #+LaTeX_HEADER: \setbeamertemplate{navigation symbols}[horizontal]
 #+LaTex_HEADER: \setbeamertemplate{footline}{\color{gray}Prepared for Red Hat's University Outreach Program}
@@ -84,6 +84,9 @@
      - =weechat=
      - GNU Emacs ERC*
 
+**** /Browser/
+     - https://kiwiirc.com/
+
 *** IRC server
 
 	/Listens to connections from IRC clients/
@@ -108,8 +111,8 @@
 
 
 	#+BEGIN_SRC sh
-      /JOIN #fedoraindia
-      /LEAVE #fedoraindia
+	  /JOIN #fedoraindia
+	  /LEAVE #fedoraindia
 	#+END_SRC
 
 
@@ -250,13 +253,13 @@
 	 https://blogs.gnome.org/markmc/2014/02/20/naked-pings/
 
 **** Slides
-	 https://github.com/psachin/slides/
+	 https://gitlab.com/psachin/slides/
 
 *** Thanks
 **** Email
      =psachin@redhat.com=
 **** Blog
-     =http://psachin.github.io/about=
+     =http://psachin.gitlab.io/about=
 
 
 **** 

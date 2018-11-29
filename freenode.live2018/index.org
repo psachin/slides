@@ -162,8 +162,8 @@ video frames, then then show the title "GNU Emacs for all"
       - M-! eog image.png
   #+END_NOTES
   - LaTeX document
-  - Include image
-  - Include table
+  - Image
+  - Table
   - Source code
   - Flow diagram(ditaa)
 
@@ -202,6 +202,7 @@ video frames, then then show the title "GNU Emacs for all"
   #+ATTR_HTML: :width 50% :height
   [[./assets/trello-logo-blue.svg]]
 
+** org-trello
 ** Setup key and token
    #+BEGIN_SRC emacs-lisp -n
      ;; ~/.emacs.d/.trello/username.el
@@ -226,8 +227,8 @@ video frames, then then show the title "GNU Emacs for all"
 ** LaTeX Beamer
    [[https://opensource.com/article/18/4/how-create-latex-documents-emacs][how-create-latex-documents-emacs]]
    #+BEGIN_NOTES
-     - start by creating an empty org file: demo_document.org
-     - Insert empty template using C-c C-x #
+     - start by creating an empty org file: demo_presentation.org
+     - Insert empty template using C-c C-e #
      - Insert content from content.txt using C-x i
 
      - Let me transform this into a presentation using LaTeX beamer
@@ -301,7 +302,7 @@ video frames, then then show the title "GNU Emacs for all"
        - clock in (C-c C-x i)
        - clock out (C-c C-x o)
        - Hack the timestamp
-       - Show time for each day in column view C-c C-x c
+       - Show time for each day in column view C-c C-x C-c
        - Go to "* Insigts" and show tabular report C-c C-x C-r
    #+END_NOTES
 ** Orgmode for GTD
@@ -310,6 +311,7 @@ video frames, then then show the title "GNU Emacs for all"
 ** Terminal
    #+BEGIN_NOTES
      - You don't really get out of Emacs to perfom shell activities
+       - M-p, M-n
      - Open a new window and type M-x shell
    #+END_NOTES
 ** Man pages
@@ -366,7 +368,7 @@ video frames, then then show the title "GNU Emacs for all"
 * Games
 * Programming?
   - Support to all major programming languages
-  - Syntax coloring etc
+  - Syntax coloring etc.
     #+BEGIN_NOTES
       - Open an empty py file prog file and start typing `import os`
       - and then `os.sys.` till the pop up
